@@ -16,11 +16,13 @@ This is an alternative to libraries like CLD
 ## Getting Started
 
 ### Install
-> yarn install tinyld
+```sh
+# for npm users
+npm install --save tinyld
 
-or
-
-> npm install --save tinyld
+# for yarn users
+yarn add tinyld
+```
 
 ### Use
 
@@ -37,23 +39,27 @@ detect("and this is english.") // en
 
 ## Algorithm
 
-This library use a variant of usual N-gram algoritm, which give decent accuraccy and is blazing fast. Most library are directly doing
+This library use a variant of usual N-gram algoritm, which give fast and good results.
+
+Most libraries are directly doing the bayesian scoring algorithm. But TinyLD, decided to add a step before, trying to mimic human logic and identify language with their unique character patterns.
+
+Some language like japanese or korean can be identified right away, just based on their characters or punctuation and dont even need to reach the scoring algorithm.
 
 ### First pass
 
 Try to identify sequence of characters unique to a language
 
-Example:
+**Example**:
 * `も` is japanese
 * `두` is korean
 * `où` is french
 
-this identification is done on different size of grams (includes even 1-gram and 2-gram), which give better result than other library for short texts.
+this identification is done on different size of grams (includes even 1-gram and 2-gram), which give better result than other library on short texts.
 
-This pass is:
+**This pass is**:
 * really fast (a lookup in a map)
 * return only one locale (local detected this way are really accurate)
-* but 15~20% of text are not detected with this method
+* but ~20% of text are not detected with this method
 
 ### Second pass
 
@@ -61,7 +67,7 @@ More traditional method of statistic analysis. Run on 3-grams, try to find which
 
 At the end, sort by score and return the more probably one.
 
-This pass is:
+**This pass is**:
 * probabilistic
 * return multiples locale and they have to be scored and sorted
 
@@ -69,7 +75,7 @@ This pass is:
 
 ## Benchmark
 
-This benchmark will try to detect language of string from the tatoeba database (~9M sentences) on 16 of the most common languages
+This benchmark will try to detect language of sentence from the tatoeba database (~9M sentences) on 16 of the most common languages
 
 ### TinyLD
 Run: ```yarn bench:tinyld```
