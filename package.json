@@ -1,6 +1,6 @@
 {
   "name": "tinyld",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
   "license": "MIT",
