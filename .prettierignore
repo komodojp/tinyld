@@ -1,0 +1,11 @@
+.quasar
+node_modules
+dist
+public
+coverage
+build
+SteamCI
+config
+*.log
+package.json
+package-lock.json

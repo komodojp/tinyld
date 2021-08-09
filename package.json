@@ -1,0 +1,43 @@
+{
+  "name": "tinyld",
+  "version": "1.0.0",
+  "main": "./dist/tinyld.cjs.js",
+  "module": "./dist/tinyld.esm.js",
+  "license": "MIT",
+  "scripts": {
+    "train": "ts-node src/train.ts",
+    "dev": "ts-node src/dev.ts",
+    "bench:cld": "ts-node src/benchmark/cld.ts",
+    "bench:franc": "ts-node src/benchmark/franc.ts",
+    "bench:languagedetect": "ts-node src/benchmark/languagedetect.ts",
+    "bench:tinyld": "ts-node src/benchmark/tinyld.ts",
+    "build": "run-p build:*",
+    "build:node": "esbuild src/index.ts --bundle --minify --platform=node --outfile=dist/tinyld.cjs.js",
+    "build:web": "esbuild src/index.ts --bundle --minify --platform=browser --format=esm --outfile=dist/tinyld.esm.js",
+    "lint": "eslint --ext .js,.ts --fix ./ && prettier --config .prettierrc --ignore-path .prettierignore --write \"**/*.{ts,js}\"",
+    "test": "run-p test:*",
+    "test:dependencies": "yarn audit --level high || echo \"Run 'yarn update' to interactively update dependencies for this project\"",
+    "test:lint": "eslint --ext .js,.ts ./ && prettier --config .prettierrc --ignore-path .prettierignore --check \"**/*.{ts,js}\"",
+    "test:types": "tsc --noEmit",
+    "update": "yarn upgrade-interactive"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "cld": "^2.7.0",
+    "esbuild": "^0.12.19",
+    "eslint": "^7.32.0",
+    "franc": "^5.0.0",
+    "languagedetect": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
