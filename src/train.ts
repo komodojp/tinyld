@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { ILangProfiles, langs, ngramTokenizer } from './core'
+import { cleanString, ILangProfiles, langs, ngramTokenizer } from './core'
 
 interface NGram {
   country: string
@@ -38,11 +38,7 @@ for (const line of file.split('\n')) {
   langTexts.set(country, lines + 1)
 
   // clean and tokenize
-  const cleanText = text
-    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, '')
-    .replace(/[0-9]/g, '')
-    .trim()
-    .toLowerCase()
+  const cleanText = cleanString(text)
   for (const gramLength of [1, 2, 3, 4, 5]) {
     const { gramByLocale, gramAllLocale } = gramData[gramLength.toString()]
     const grams = ngramTokenizer(cleanText, gramLength)

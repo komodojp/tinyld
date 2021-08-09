@@ -86,6 +86,14 @@ export function ngramTokenizer(text: string, length: number, padding = true): st
   return ngramsArray
 }
 
+export function cleanString(value: string): string {
+  return value
+    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, '')
+    .replace(/[0-9]/g, '')
+    .trim()
+    .toLowerCase()
+}
+
 export function toISOLocale(value: string): string {
   if (value in langMap) return langMap[value]
   return value

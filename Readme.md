@@ -80,10 +80,10 @@ This benchmark will try to detect language of sentence from the tatoeba database
 ### TinyLD
 Run: ```yarn bench:tinyld```
 
-> - Properly identified: 97.14%
-> - Unproperly identified: 2.86%
+> - Properly identified: 98.46%
+> - Unproperly identified: 1.54%
 > - Unidentified: 0%
-> - Avg exec time: 36.87ms.
+> - Avg exec time: 34ms.
 
 ### node-cld
 Run: ```yarn bench:cld```
@@ -108,3 +108,24 @@ Run: ```yarn bench:languagedetect```
 > - Unproperly identified: 13.09%
 > - Unidentified: 28.04%
 > - Avg exec time: 161.22ms.
+
+---
+
+## Development
+
+```sh
+# install deps
+yarn
+
+# train and generate language profiles
+yarn train
+
+# build the library
+yarn build
+
+# code style linting
+yarn lint
+
+# test
+yarn test
+```
