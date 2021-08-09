@@ -1,9 +1,22 @@
 {
   "name": "tinyld",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
   "license": "MIT",
+  "keywords": [
+    "language",
+    "detection",
+    "library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/komodojp/tinyld.git"
+  },
+  "author": {
+    "name": "Kevin Destrem",
+    "email": "kevin_destrem@komodo.jp"
+  },
   "scripts": {
     "train": "ts-node src/train.ts",
     "dev": "ts-node src/dev.ts",
