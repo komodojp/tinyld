@@ -1,7 +1,7 @@
 import fs from 'fs'
-import { langs, toISOLocale } from '../core'
+import { approximate, langs, toISOLocale } from '../core'
 
-const file = fs.readFileSync('data/sentences.csv', 'utf-8')
+const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
 
 type DetectMethod = (val: string) => Promise<string> | string
 
@@ -36,11 +36,11 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
   const countryCheck = new Map<string, number>()
   const errorMap = new Map<string, number>()
 
-  for (const line of file.split('\n')) {
+  for (const line of file.split('\n').reverse()) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_id, country, text] = line.split('\t')
 
-    if ((countryCheck.get(country) || 0) > 5000) continue
+    if ((countryCheck.get(country) || 0) > 7500) continue
     if (!benchLangs.has(country)) continue
 
     countryCheck.set(country, (countryCheck.get(country) || 0) + 1)
@@ -66,19 +66,26 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
     }
   }
 
+  console.log(`--- Per language Accuracy ---`)
   for (const lang of total.keys()) {
     const s = success.get(lang) || 1
     const t = total.get(lang) || 1
-    console.log(`${lang} - accuracy: ${Math.round((s / t) * 10000) / 100}%`)
+    console.log(` - ${lang} - ${approximate((s / t) * 100)}%`)
   }
-
-  console.log(` --- Summary (${langs.size} languages)---`)
-  console.log(`- Properly identified: ${Math.round((detectIdentified / detectTotal) * 10000) / 100}%`)
-  console.log(`- Unproperly identified: ${Math.round((detectMistake / detectTotal) * 10000) / 100}%`)
-  console.log(`- Unidentified: ${Math.round((detectUnidentified / detectTotal) * 10000) / 100}%`)
-  console.log(`- Avg exec time: ${Math.round((executionTime / detectTotal) * 100) / 100}ms.`)
 
   const errors = [...errorMap.entries()]
   errors.sort((a, b) => b[1] - a[1])
-  console.log(`More common errors`, errors.slice(0, 20))
+  console.log(`\n--- More common errors (${detectMistake}) ---`)
+  console.log(
+    errors
+      .map((x) => ` - ${x[0]} : ${approximate((100 * x[1]) / detectMistake)}% (error: ${x[1]})`)
+      .slice(0, 20)
+      .join('\n')
+  )
+
+  console.log(`\n--- Summary (${langs.size} languages) ---`)
+  console.log(` - Properly identified: ${approximate((detectIdentified / detectTotal) * 100)}%`)
+  console.log(` - Improperly identified: ${approximate((detectMistake / detectTotal) * 100)}%`)
+  console.log(` - Unidentified: ${approximate((detectUnidentified / detectTotal) * 100)}%`)
+  console.log(` - Avg exec time: ${approximate(executionTime / detectTotal)}ms.`)
 }

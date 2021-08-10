@@ -33,9 +33,22 @@ import { detect } from 'tinyld'
 // or node: `const { detect } = require('tinyld')`
 
 detect('ceci est un text en francais.') // fr
-detect('これはにほんごです.') // ja
+detect('これは日本語です.') // ja
 detect('and this is english.') // en
 ```
+
+---
+
+## TinyLD (Light Flavor, for web usage)
+
+The normal library can be a bit massive (mostly caused by the language profile database), which can be problematic for web usage.
+
+For this usage we also provide a lighter version (a tradeoff between disk size and accuracy)
+
+- import with: `import { detect } from 'tinyld/dist/tinyld.light.cjs'`
+- normal version ~800KB, light version is only ~90KB
+- only 30 languages supported
+- slightly less accurate, only ~90%
 
 ---
 
@@ -81,43 +94,15 @@ At the end, sort by score and return the most probable one.
 
 This benchmark will try to detect language of sentence from the tatoeba database (~9M sentences) on 16 of the most common languages.
 
-### Library **TinyLD** (this one)
+| Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
+| -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
+| TinyLD         | `yarn bench:tinyld`         | 95.2954%            | 4.7046%               | 0%             | 41.4203ms.         | 850KB     |
+| TinyLD Light   | `yarn bench:tinyld-light`   | 91.4075%            | 8.5925%               | 0%             | 32.9869ms.         | 90KB      |
+| node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 56.38ms.           | > 10MB    |
+| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 132.59ms.          | 353.5kb   |
+| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 159.56ms.          | 243.6kb   |
 
-> Run: `yarn bench:tinyld`
-
-> - Properly identified: 94.85%
-> - Improperly identified: 5.15%
-> - Unidentified: 0%
-> - Avg exec time: 41.81ms.
-
-### Library **node-cld**
-
-> Run: `yarn bench:cld`
-
-> - Properly identified: 87.11%
-> - Improperly identified: 1.81%
-> - Unidentified: 11.08%
-> - Avg exec time: 56.38ms.
-
-### Library **franc**
-
-> Run: `yarn bench:franc`
-
-> - Properly identified: 65.39%
-> - Improperly identified: 34.61%
-> - Unidentified: 0%
-> - Avg exec time: 132.59ms.
-
-### Library **languagedetect**
-
-> Run: `yarn bench:languagedetect`
-
-> - Properly identified: 58.08%
-> - Improperly identified: 13.48%
-> - Unidentified: 28.44%
-> - Avg exec time: 159.56ms.
-
-#### Remark
+### Remark
 
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
 - To avoid any unfair advantage to **TinyLD**, the dataset is reversed between `training` and `benchmark`. It means that most sentences tested during benchmark are not part of the training set.

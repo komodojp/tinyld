@@ -1,5 +1,20 @@
 import fs from 'fs'
-import { cleanString, ILangProfiles, langs, ngramTokenizer } from './core'
+import { cleanString, normalize } from './clean'
+import {
+  approximate,
+  ILangProfiles,
+  langs,
+  DATASET_MAX_LINE_PER_LANGUAGE,
+  TOP_LANGUAGE_GRAMS,
+  TOP_LANGUAGE_UNIQUE_GRAMS,
+  TRAINING_UNIQUE_GRAMS,
+  isSkipProba,
+  isExtraSample,
+  DB_PROFILE_PATH,
+  configSet,
+  TOP_LANGUAGE_GRAMS_MAXLANG
+} from './core'
+import { ngramTokenizer } from './tokenizer'
 
 interface NGram {
   country: string
@@ -28,18 +43,23 @@ const gramData: { [id: string]: NGramByLength } = {
   '5': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() }
 }
 
-const file = fs.readFileSync('data/sentences.csv', 'utf-8')
-for (const line of file.split('\n')) {
+console.log(`[TinyLD] Training - Start ${configSet}`)
+const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
+const fileExtra = fs.readFileSync('data/extra-sentences.csv', 'utf-8')
+const lines = [...fileExtra.split('\n'), ...file.split('\n')]
+
+console.log('[TinyLD] Training - Parsing Dataset files')
+for (const line of lines) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_id, country, text] = line.split('\t')
   if (!langs.has(country)) continue
   const lines = langTexts.get(country) || 0
-  if (lines > 10000) continue
+  if (lines > DATASET_MAX_LINE_PER_LANGUAGE) continue
   langTexts.set(country, lines + 1)
 
   // clean and tokenize
   const cleanText = cleanString(text)
-  for (const gramLength of [1, 2, 3, 4, 5]) {
+  for (const gramLength of TRAINING_UNIQUE_GRAMS) {
     const { gramByLocale, gramAllLocale } = gramData[gramLength.toString()]
     const grams = ngramTokenizer(cleanText, gramLength)
     if (!gramByLocale.has(country)) gramByLocale.set(country, new Map())
@@ -59,7 +79,7 @@ for (const line of file.split('\n')) {
   }
 }
 
-for (const gramId of ['1', '2', '3', '4', '5']) {
+for (const gramId of TRAINING_UNIQUE_GRAMS.map((x) => x.toString())) {
   const locales = [...gramData[gramId].gramAllLocale.values()]
   locales
     .filter((x) => x.countries.size > 1)
@@ -73,8 +93,9 @@ const profiles: ILangProfiles = {
 }
 
 for (const country of langs) {
+  console.log(`[TinyLD] Training - Process Lang ${country}`)
   const currentCountryGrams = new Set<string>()
-  for (const gramLength of [1, 2, 3, 4, 5]) {
+  for (const gramLength of TRAINING_UNIQUE_GRAMS) {
     const { gramByLocale, nonSpecific } = gramData[gramLength.toString()]
     const countryGrams = [...(gramByLocale.get(country)?.values() || [])] as NGram[]
 
@@ -94,25 +115,67 @@ for (const country of langs) {
       return true
     })
     uniqueCountryGrams.sort((a, b) => b.usage - a.usage)
-    uniqueCountryGrams = uniqueCountryGrams.slice(0, 160)
+    uniqueCountryGrams = uniqueCountryGrams.slice(0, TOP_LANGUAGE_UNIQUE_GRAMS)
     uniqueCountryGrams.forEach((x) => currentCountryGrams.add(x.text))
     const uniques = uniqueCountryGrams.map((x) => x.text)
     uniques.forEach((x) => {
       profiles.uniques[x] = country
     })
     const countryUniques = new Set(uniques)
+    // console.log(`Unique ${country} - ${gramLength} - ${uniques.length}`)
 
     // save non unique 3-grams
     if (gramLength != 3) continue
+    if (isSkipProba(country)) continue
     const values = [...countryGrams]
     values.filter((x) => !countryUniques.has(x.text))
+    values.forEach((x) => (x.text = normalize(x.text)))
     values.sort((a, b) => b.usage - a.usage)
-    const entries = values.slice(0, 320)
-    entries.forEach((gram: NGram, index: number) => {
+
+    const entries = values.slice(0, isExtraSample(country) ? 2 * TOP_LANGUAGE_GRAMS : TOP_LANGUAGE_GRAMS)
+    entries.forEach((gram: NGram) => {
       if (!profiles.multiples[gram.text]) profiles.multiples[gram.text] = {}
-      profiles.multiples[gram.text][country] = index
+      profiles.multiples[gram.text][country] = gram.usage
     })
+    // console.log(`Probability ${country} - ${entries.length}`)
   }
 }
 
-fs.writeFileSync(`src/profiles.json`, JSON.stringify(profiles, null, 2))
+console.log(`[TinyLD] Training - Cleanup output`)
+// remove gram with too many language (lot of space and not specific enough)
+for (const id of Object.keys(profiles.multiples)) {
+  if (Object.keys(profiles.multiples[id]).length >= TOP_LANGUAGE_GRAMS_MAXLANG) {
+    delete profiles.multiples[id]
+    continue
+  }
+  // normalize (and square position)
+  const gram = profiles.multiples[id]
+  const max = Math.max(...Object.values(gram))
+  for (const country of Object.keys(profiles.multiples[id])) {
+    const val = profiles.multiples[id][country] / max
+    profiles.multiples[id][country] = approximate(val * val)
+    // remove match under 1% (save spage)
+    if (profiles.multiples[id][country] <= 0.01) delete profiles.multiples[id][country]
+  }
+}
+
+console.log(`[TinyLD] Training - Serialize`)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function sortKeys(key: string, value: any) {
+  if (value == null || value.constructor != Object) {
+    return value
+  }
+
+  return (
+    Object.keys(value)
+      .sort()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .reduce((s: any, k: any) => {
+        s[k] = value[k]
+        return s
+      }, {})
+  )
+}
+
+fs.writeFileSync(DB_PROFILE_PATH, JSON.stringify(profiles, sortKeys, 2))
+console.log(`[TinyLD] Done ${configSet} => ${DB_PROFILE_PATH}`)

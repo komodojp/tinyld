@@ -1,6 +1,6 @@
 import { cleanString, isString, normalize } from './clean'
 import { ILangProfiles } from './core'
-import data from './profiles/normal.json'
+import data from './profiles/light.json'
 import { detectAllPotentialGrams, detectPotentialGrams, detectUniqueGrams } from './tokenizer'
 
 const profiles = data as ILangProfiles

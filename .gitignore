@@ -1,6 +1,3 @@
 dist
 data
 node_modules
-
-.gcloud
-user.json

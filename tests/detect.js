@@ -16,13 +16,14 @@ test('Check input', () => {
 test('Detect French', () => {
   assertLocale('fr', 'Bonjour')
   assertLocale('fr', 'Bonne après-midi')
-  // console.log()
+  assertLocale('fr', 'Ceci est un texte en francais.')
   // assertLocale('fr', 'reste cool sac a merde')
 })
 
 test('Detect Japanese', () => {
   assertLocale('ja', 'モリーンです。')
   assertLocale('ja', '本は面白いです')
+  assertLocale('ja', 'これは日本語です.')
 })
 
 test('Detect Korean', () => {
@@ -34,6 +35,7 @@ test('Detect English', () => {
   assertLocale('en', 'I’m still learning English, so please speak slowly.')
   assertLocale('en', 'I just started working here')
   assertLocale('en', 'Good morning')
+  assertLocale('en', 'and this is english.')
 })
 
 test.run()

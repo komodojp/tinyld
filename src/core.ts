@@ -3,135 +3,122 @@ export interface ILangProfiles {
   multiples: { [gram: string]: { [country: string]: number } }
 }
 
-// Map ISO 639-2 -> ISO 639-1
-const langMap: { [id: string]: string } = {
+// different config profiles
+const config = {
+  light: {
+    DATASET_MAX_LINE_PER_LANGUAGE: 6000,
+    TRAINING_UNIQUE_GRAMS: [1, 2, 3],
+    TOP_LANGUAGE_UNIQUE_GRAMS: 80,
+    TOP_LANGUAGE_GRAMS: 70,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 6,
+    DB_PROFILE: 'src/profiles/light.json'
+  },
+  normal: {
+    DATASET_MAX_LINE_PER_LANGUAGE: 16000,
+    TRAINING_UNIQUE_GRAMS: [1, 2, 3, 4, 5],
+    TOP_LANGUAGE_UNIQUE_GRAMS: 200,
+    TOP_LANGUAGE_GRAMS: 750,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 12,
+    DB_PROFILE: 'src/profiles/normal.json'
+  }
+}
+
+// configuration
+export const configSet = (process.env.TINYLD_CONFIG || 'normal') as 'normal' | 'light'
+export const DATASET_MAX_LINE_PER_LANGUAGE = config[configSet].DATASET_MAX_LINE_PER_LANGUAGE
+export const TRAINING_UNIQUE_GRAMS = config[configSet].TRAINING_UNIQUE_GRAMS
+export const TOP_LANGUAGE_UNIQUE_GRAMS = config[configSet].TOP_LANGUAGE_UNIQUE_GRAMS
+export const TOP_LANGUAGE_GRAMS = config[configSet].TOP_LANGUAGE_GRAMS
+export const TOP_LANGUAGE_GRAMS_MAXLANG = config[configSet].TOP_LANGUAGE_GRAMS_MAXLANG
+export const DB_PROFILE_PATH = config[configSet].DB_PROFILE
+
+const PROBABILITY_ACCURACY = 10000
+
+export function approximate(value: number): number {
+  return Math.round(value * PROBABILITY_ACCURACY) / PROBABILITY_ACCURACY
+}
+
+export function isSkipProba(country: string): boolean {
+  return !!langMap[country].skipProb
+}
+
+export function isExtraSample(country: string): boolean {
+  return !!langMap[country].extraSample
+}
+
+type LangOption = { code: string; skipLight?: boolean; skipProb?: boolean; extraSample?: boolean }
+
+// Map ISO 639-3 -> ISO 639-1
+const langMap: { [id: string]: LangOption } = {
   // asia
-  jpn: 'ja', // japanese
-  cmn: 'zh', // chinese
-  kor: 'ko', // korean,
-  tha: 'th', // thai
-  vie: 'vi', // vietnamese
-  ind: 'id', // indonesian
-  hin: 'hi', // hindi
-  khm: 'km', // khmer
-  tgl: 'tl', // tagalog (Philippines)
-  ben: 'bn', // bengali
-  tam: 'ta', // tamil
-  mar: 'mr', // marathi
-  jav: 'jv', // javanese
+  jpn: { code: 'ja', skipProb: true }, // japanese
+  cmn: { code: 'zh', skipProb: true }, // chinese
+  kor: { code: 'ko', skipProb: true }, // korean,
+  tha: { code: 'th', skipProb: true }, // thai
+  vie: { code: 'vi', skipProb: true }, // vietnamese
+  ind: { code: 'id', skipLight: true }, // indonesian
+  hin: { code: 'hi' }, // hindi
+  khm: { code: 'km', skipProb: true, skipLight: true }, // khmer
+  tgl: { code: 'tl', skipLight: true }, // tagalog (Philippines)
+  ben: { code: 'bn', skipProb: true, skipLight: true }, // bengali
+  tam: { code: 'ta', skipLight: true }, // tamil
+  mar: { code: 'mr', skipLight: true }, // marathi
+  jav: { code: 'jv' }, // javanese
 
   // other
-  epo: 'eo', // esperanto
-  vol: 'vo', // volapuk
+  epo: { code: 'eo', skipLight: true }, // esperanto
+  vol: { code: 'vo', skipLight: true }, // volapuk
 
   // europe
-  fra: 'fr', // french
-  eng: 'en', // english
-  deu: 'de', // german
-  spa: 'es', // spanish
-  por: 'pt', // portuguese
-  ita: 'it', // italian
-  nld: 'nl', // dutch
-  dan: 'da', // danish
-  gle: 'ga', // irish
-  lat: 'la', // latin
+  fra: { code: 'fr', extraSample: true }, // french
+  eng: { code: 'en', extraSample: true }, // english
+  deu: { code: 'de' }, // german
+  spa: { code: 'es', extraSample: true }, // spanish
+  por: { code: 'pt' }, // portuguese
+  ita: { code: 'it', extraSample: true }, // italian
+  nld: { code: 'nl', extraSample: true, skipLight: true }, // dutch
+  dan: { code: 'da', skipLight: true }, // danish
+  gle: { code: 'ga', skipLight: true }, // irish
+  lat: { code: 'la', skipLight: true }, // latin
 
-  ces: 'cs', // czech
-  srp: 'sr', // serbian
-  ell: 'el', // greek
-  slk: 'sk', // slovak
-  slv: 'sl', // slovenian
+  ces: { code: 'cs', skipLight: true }, // czech
+  srp: { code: 'sr', skipLight: true }, // serbian
+  ell: { code: 'el' }, // greek
+  slk: { code: 'sk', skipLight: true }, // slovak
+  slv: { code: 'sl', skipLight: true }, // slovenian
 
-  swe: 'sv', // swedish
-  fin: 'fi', // finnish
-  nob: 'no', // norwegian
-  isl: 'is', // icelandic
+  swe: { code: 'sv', extraSample: true }, // swedish
+  fin: { code: 'fi', extraSample: true }, // finnish
+  nob: { code: 'no', extraSample: true }, // norwegian
+  isl: { code: 'is', skipLight: true }, // icelandic
 
-  hun: 'hu', // hungarian
-  ron: 'ro', // romanian
-  bul: 'bg', // bulgarian
-  bel: 'be', // belarussian
-  rus: 'ru', // russian
-  ukr: 'uk', // ukrainian
-  pol: 'pl', // polish
-  lit: 'lt', // lituanian
-  est: 'et', // estonian
-  lvs: 'lv', // latvian
+  hun: { code: 'hu' }, // hungarian
+  ron: { code: 'ro' }, // romanian
+  bul: { code: 'bg' }, // bulgarian
+  bel: { code: 'be', extraSample: true, skipLight: true }, // belarussian
+  rus: { code: 'ru', extraSample: true }, // russian
+  ukr: { code: 'uk', extraSample: true }, // ukrainian
+  pol: { code: 'pl' }, // polish
+  lit: { code: 'lt' }, // lituanian
+  est: { code: 'et' }, // estonian
+  lvs: { code: 'lv' }, // latvian
 
   // midle east
-  tur: 'tr', // turkish
-  heb: 'he', // hebrew
-  ara: 'ar', // arabic
-  pes: 'fa', // persian
-  tat: 'tt', // tatar
-  tel: 'te' // telugu
+  tur: { code: 'tr', skipProb: true }, // turkish
+  heb: { code: 'he', skipProb: true }, // hebrew
+  ara: { code: 'ar', skipProb: true }, // arabic
+  pes: { code: 'fa', skipProb: true }, // persian
+  tat: { code: 'tt', skipProb: true, skipLight: true }, // tatar
+  tel: { code: 'te', skipLight: true } // telugu
 }
 
-export const langs = new Set(Object.keys(langMap))
-
-export function ngramTokenizer(text: string, length: number, padding = true): string[] {
-  const ngramsArray = []
-  const array = padding ? ' '.repeat(length - 1) + text + ' '.repeat(length - 1) : text
-
-  for (let i = 0; i < array.length - (length - 1); i++) {
-    const subNgramsArray = []
-
-    for (let j = 0; j < length; j++) {
-      subNgramsArray.push(array[i + j])
-    }
-
-    ngramsArray.push(subNgramsArray.join(''))
-  }
-
-  return ngramsArray
-}
-
-export function cleanString(value: string): string {
-  return value
-    .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]/gi, '')
-    .replace(/[0-9]/g, '')
-    .trim()
-    .toLowerCase()
-}
+export const langs = new Set(
+  Object.entries(langMap)
+    .filter((x) => configSet === 'normal' || (configSet === 'light' && !x[1].skipLight))
+    .map((x) => x[0])
+)
 
 export function toISOLocale(value: string): string {
-  if (value in langMap) return langMap[value]
+  if (value in langMap) return langMap[value].code
   return value
-}
-
-export function detectUniqueGrams(text: string, profiles: ILangProfiles): string {
-  for (const rank of [1, 2, 3, 4, 5]) {
-    const grams = ngramTokenizer(text, rank)
-    for (const gram of grams) {
-      if (gram in profiles.uniques) return toISOLocale(profiles.uniques[gram])
-    }
-  }
-  return ''
-}
-
-export function detectPotentialGrams(text: string, profiles: ILangProfiles): string {
-  const langScores = new Map<string, number>()
-
-  const grams = ngramTokenizer(text, 3)
-  const langSet = new Set([...langs.keys()])
-
-  langSet.forEach((x) => langScores.set(x, 0))
-  for (const gram of grams) {
-    const gramStat = profiles.multiples[gram]
-    if (!gramStat) continue
-
-    const gramLangs = new Set(Object.keys(gramStat))
-    for (const lang of langs) {
-      if (gramLangs.has(lang)) {
-        langScores.set(lang, (langScores.get(lang) || 0) + gramStat[lang])
-      } else {
-        langScores.set(lang, (langScores.get(lang) || 0) + 400)
-      }
-    }
-  }
-
-  const entries = [...langScores.entries()]
-  entries.sort((a, b) => a[1] - b[1])
-  if (entries.length > 0) return toISOLocale(entries[0][0])
-  return ''
 }
