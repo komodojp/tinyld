@@ -30,3 +30,4 @@ export function detectAll(text: string, verbose = false): { lang: string; accura
 }
 
 export { cleanString } from './clean'
+export { toISO2, toISO3, validateISO2 } from './core'

@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { approximate, langs, toISOLocale } from '../core'
+import { approximate, langs, toISO2 } from '../core'
 
 const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
 
@@ -56,12 +56,12 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
     if (res === '') {
       // console.log('No unique property detected', id, text, res)
       detectUnidentified += 1
-    } else if (res === toISOLocale(country)) {
+    } else if (res === toISO2(country)) {
       success.set(country, (success.get(country) || 0) + 1)
       detectIdentified += 1
     } else {
       detectMistake += 1
-      const errorKey = `${toISOLocale(country)} -> ${res}`
+      const errorKey = `${toISO2(country)} -> ${res}`
       errorMap.set(errorKey, (errorMap.get(errorKey) || 0) + 1)
     }
   }

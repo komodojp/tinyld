@@ -101,8 +101,8 @@ At the end, sort by score and return the most probable one.
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| TinyLD         | `yarn bench:tinyld`         | 95.2954%            | 4.7046%               | 0%             | 41.4203ms.         | 850KB     |
-| TinyLD Light   | `yarn bench:tinyld-light`   | 91.4075%            | 8.5925%               | 0%             | 32.9869ms.         | 90KB      |
+| TinyLD         | `yarn bench:tinyld`         | 95.8876%%           | 4.1124%               | 0%             | 45.4203ms.         | 878KB     |
+| TinyLD Light   | `yarn bench:tinyld-light`   | 91.822%             | 8.178%                | 0%             | 36.4051ms.         | 92KB      |
 | node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 56.38ms.           | > 10MB    |
 | franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 132.59ms.          | 353.5kb   |
 | languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 159.56ms.          | 243.6kb   |

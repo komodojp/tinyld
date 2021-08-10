@@ -1,4 +1,4 @@
-import { approximate, ILangProfiles, langs, toISOLocale, TRAINING_UNIQUE_GRAMS } from './core'
+import { approximate, ILangProfiles, langs, toISO2, TRAINING_UNIQUE_GRAMS } from './core'
 
 export function ngramTokenizer(text: string, length: number, padding = true): string[] {
   const ngramsArray = []
@@ -22,7 +22,7 @@ export function detectUniqueGrams(text: string, profiles: ILangProfiles): string
   for (const rank of TRAINING_UNIQUE_GRAMS) {
     const grams = ngramTokenizer(text, rank)
     for (const gram of grams) {
-      if (gram in profiles.uniques) return toISOLocale(profiles.uniques[gram])
+      if (gram in profiles.uniques) return toISO2(profiles.uniques[gram])
     }
   }
   return ''
@@ -68,7 +68,7 @@ export function detectAllPotentialGrams(
   const max = Math.max(...entries.map((x) => x[1]))
   const result = entries.slice(0, 5).map((x) => {
     return {
-      lang: toISOLocale(x[0]),
+      lang: toISO2(x[0]),
       accuracy: approximate((max - x[1]) / max),
       score: approximate(x[1])
     }

@@ -127,8 +127,7 @@ for (const country of langs) {
     // save non unique 3-grams
     if (gramLength != 3) continue
     if (isSkipProba(country)) continue
-    const values = [...countryGrams]
-    values.filter((x) => !countryUniques.has(x.text))
+    const values = [...countryGrams].filter((x) => !countryUniques.has(x.text))
     values.forEach((x) => (x.text = normalize(x.text)))
     values.sort((a, b) => b.usage - a.usage)
 

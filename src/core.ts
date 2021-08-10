@@ -10,15 +10,15 @@ const config = {
     TRAINING_UNIQUE_GRAMS: [1, 2, 3],
     TOP_LANGUAGE_UNIQUE_GRAMS: 80,
     TOP_LANGUAGE_GRAMS: 70,
-    TOP_LANGUAGE_GRAMS_MAXLANG: 6,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 8,
     DB_PROFILE: 'src/profiles/light.json'
   },
   normal: {
-    DATASET_MAX_LINE_PER_LANGUAGE: 16000,
+    DATASET_MAX_LINE_PER_LANGUAGE: 24000,
     TRAINING_UNIQUE_GRAMS: [1, 2, 3, 4, 5],
     TOP_LANGUAGE_UNIQUE_GRAMS: 200,
-    TOP_LANGUAGE_GRAMS: 750,
-    TOP_LANGUAGE_GRAMS_MAXLANG: 12,
+    TOP_LANGUAGE_GRAMS: 800,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 16,
     DB_PROFILE: 'src/profiles/normal.json'
   }
 }
@@ -46,14 +46,14 @@ export function isExtraSample(country: string): boolean {
   return !!langMap[country].extraSample
 }
 
-type LangOption = { code: string; skipLight?: boolean; skipProb?: boolean; extraSample?: boolean }
+type LangOption = { code: string; alias?: string[]; skipLight?: boolean; skipProb?: boolean; extraSample?: boolean }
 
-// Map ISO 639-3 -> ISO 639-1
+// Map ISO 639-3 <-> ISO 639-1
 const langMap: { [id: string]: LangOption } = {
   // asia
-  jpn: { code: 'ja', skipProb: true }, // japanese
-  cmn: { code: 'zh', skipProb: true }, // chinese
-  kor: { code: 'ko', skipProb: true }, // korean,
+  jpn: { code: 'ja', alias: ['jp'], skipProb: true }, // japanese
+  cmn: { code: 'zh', alias: ['cn'], skipProb: true }, // chinese
+  kor: { code: 'ko', alias: ['kr'], skipProb: true }, // korean,
   tha: { code: 'th', skipProb: true }, // thai
   vie: { code: 'vi', skipProb: true }, // vietnamese
   ind: { code: 'id', skipLight: true }, // indonesian
@@ -71,10 +71,10 @@ const langMap: { [id: string]: LangOption } = {
 
   // europe
   fra: { code: 'fr', extraSample: true }, // french
-  eng: { code: 'en', extraSample: true }, // english
+  eng: { code: 'en', alias: ['us', 'gb'], extraSample: true }, // english
   deu: { code: 'de' }, // german
   spa: { code: 'es', extraSample: true }, // spanish
-  por: { code: 'pt' }, // portuguese
+  por: { code: 'pt', alias: ['po'] }, // portuguese
   ita: { code: 'it', extraSample: true }, // italian
   nld: { code: 'nl', extraSample: true, skipLight: true }, // dutch
   dan: { code: 'da', skipLight: true }, // danish
@@ -83,7 +83,7 @@ const langMap: { [id: string]: LangOption } = {
 
   ces: { code: 'cs', skipLight: true }, // czech
   srp: { code: 'sr', skipLight: true }, // serbian
-  ell: { code: 'el' }, // greek
+  ell: { code: 'el', alias: ['gr'] }, // greek
   slk: { code: 'sk', skipLight: true }, // slovak
   slv: { code: 'sl', skipLight: true }, // slovenian
 
@@ -118,7 +118,22 @@ export const langs = new Set(
     .map((x) => x[0])
 )
 
-export function toISOLocale(value: string): string {
-  if (value in langMap) return langMap[value].code
-  return value
+export function validateISO2(iso2: string): string {
+  const found = Object.entries(langMap).find((x) => x[1].code === iso2)
+  if (found) return found[1].code
+  const foundAlias = Object.entries(langMap).find((x) => x[1].alias && x[1].alias.includes(iso2))
+  return foundAlias ? foundAlias[1].code : ''
+}
+
+export function toISO2(iso3: string): string {
+  if (iso3 in langMap) return langMap[iso3].code
+  return iso3
+}
+
+export function toISO3(iso2: string): string {
+  const found = Object.entries(langMap).find((x) => x[1].code === iso2)
+  if (found) return found[0]
+  const foundAlias = Object.entries(langMap).find((x) => x[1].alias && x[1].alias.includes(iso2))
+  if (foundAlias) return foundAlias[0]
+  return ''
 }

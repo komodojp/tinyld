@@ -4,6 +4,7 @@
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
   "license": "MIT",
+  "types": "./src/index.ts",
   "keywords": [
     "language",
     "detection",
