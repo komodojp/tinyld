@@ -3,7 +3,6 @@
 ![npm](https://img.shields.io/npm/v/tinyld)
 ![npm](https://img.shields.io/npm/dm/tinyld)
 
-
 ![logo](./banner.png)
 
 **Tiny** **L**anguage **D**etector, simply detect the language of a unicode UTF-8 text:
