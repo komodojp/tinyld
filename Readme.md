@@ -1,5 +1,9 @@
 # TinyLD
 
+![npm](https://img.shields.io/npm/v/tinyld)
+![npm](https://img.shields.io/npm/dm/tinyld)
+
+
 ![logo](./banner.png)
 
 **Tiny** **L**anguage **D**etector, simply detect the language of a unicode UTF-8 text:
@@ -26,15 +30,19 @@ npm install --save tinyld
 yarn add tinyld
 ```
 
-### Use
+### API
 
 ```js
-import { detect } from 'tinyld'
+import { detect, detectAll } from 'tinyld'
 // or node: `const { detect } = require('tinyld')`
 
+// Detect
 detect('ceci est un text en francais.') // fr
 detect('これは日本語です.') // ja
 detect('and this is english.') // en
+
+// DetectAll
+detectAll('ceci est un text en francais.') // [ { lang: 'fr', accuracy: 0.5238 }, { lang: 'ro', accuracy: 0.3802 }, ... ]
 ```
 
 ---
@@ -92,8 +100,6 @@ At the end, sort by score and return the most probable one.
 
 ## Benchmark
 
-This benchmark will try to detect language of sentence from the tatoeba database (~9M sentences) on 16 of the most common languages.
-
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
 | TinyLD         | `yarn bench:tinyld`         | 95.2954%            | 4.7046%               | 0%             | 41.4203ms.         | 850KB     |
@@ -102,8 +108,9 @@ This benchmark will try to detect language of sentence from the tatoeba database
 | franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 132.59ms.          | 353.5kb   |
 | languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 159.56ms.          | 243.6kb   |
 
-### Remark
+**Remark**
 
+- This benchmark is done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
 - To avoid any unfair advantage to **TinyLD**, the dataset is reversed between `training` and `benchmark`. It means that most sentences tested during benchmark are not part of the training set.
 
