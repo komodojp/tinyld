@@ -143,10 +143,6 @@ for (const country of langs) {
 console.log(`[TinyLD] Training - Cleanup output`)
 // remove gram with too many language (lot of space and not specific enough)
 for (const id of Object.keys(profiles.multiples)) {
-  if (Object.keys(profiles.multiples[id]).length >= TOP_LANGUAGE_GRAMS_MAXLANG) {
-    delete profiles.multiples[id]
-    continue
-  }
   // normalize (and square position)
   const gram = profiles.multiples[id]
   const max = Math.max(...Object.values(gram))
@@ -155,6 +151,15 @@ for (const id of Object.keys(profiles.multiples)) {
     profiles.multiples[id][country] = approximate(val * val)
     // remove match under 1% (save spage)
     if (profiles.multiples[id][country] <= 0.01) delete profiles.multiples[id][country]
+  }
+
+  if (Object.keys(profiles.multiples[id]).length >= TOP_LANGUAGE_GRAMS_MAXLANG) {
+    const entries = Object.entries(profiles.multiples[id])
+    entries.sort((a, b) => b[1] - a[1])
+    const extraLangs = entries.slice(TOP_LANGUAGE_GRAMS_MAXLANG)
+    for (const lang of extraLangs) {
+      delete profiles.multiples[id][lang[0]]
+    }
   }
 }
 

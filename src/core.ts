@@ -6,19 +6,19 @@ export interface ILangProfiles {
 // different config profiles
 const config = {
   light: {
-    DATASET_MAX_LINE_PER_LANGUAGE: 6000,
+    DATASET_MAX_LINE_PER_LANGUAGE: 8000,
     TRAINING_UNIQUE_GRAMS: [1, 2, 3],
     TOP_LANGUAGE_UNIQUE_GRAMS: 80,
     TOP_LANGUAGE_GRAMS: 70,
-    TOP_LANGUAGE_GRAMS_MAXLANG: 8,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 6,
     DB_PROFILE: 'src/profiles/light.json'
   },
   normal: {
-    DATASET_MAX_LINE_PER_LANGUAGE: 24000,
+    DATASET_MAX_LINE_PER_LANGUAGE: 40000,
     TRAINING_UNIQUE_GRAMS: [1, 2, 3, 4, 5],
     TOP_LANGUAGE_UNIQUE_GRAMS: 200,
     TOP_LANGUAGE_GRAMS: 800,
-    TOP_LANGUAGE_GRAMS_MAXLANG: 16,
+    TOP_LANGUAGE_GRAMS_MAXLANG: 10,
     DB_PROFILE: 'src/profiles/normal.json'
   }
 }
