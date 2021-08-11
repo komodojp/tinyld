@@ -38,11 +38,10 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
 
   for (const line of file.split('\n').reverse()) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [_id, country, text] = line.split('\t')
+    const [, country, text] = line.split('\t')
 
-    if ((countryCheck.get(country) || 0) > 7500) continue
     if (!benchLangs.has(country)) continue
-
+    if ((countryCheck.get(country) || 0) > 7500) continue
     countryCheck.set(country, (countryCheck.get(country) || 0) + 1)
 
     total.set(country, (total.get(country) || 0) + 1)
@@ -50,7 +49,7 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
 
     const start = process.hrtime()
     const res = await detect(text)
-    const duration = process.hrtime(start)[1] / 1000
+    const duration = process.hrtime(start)[1] / 1000000
     executionTime += duration
 
     if (res === '') {

@@ -22,19 +22,24 @@ export function ngramTokenizer(text: string, length: number, padding = true): st
   return ngramsArray
 }
 
-export function detectUniqueGrams(text: string, profiles: ILangProfiles, options: DetectOption): string {
+export function detectUniqueGrams(
+  text: string,
+  profiles: ILangProfiles,
+  keys: Set<string>,
+  options: DetectOption
+): string {
   for (const rank of TRAINING_UNIQUE_GRAMS) {
     const grams = ngramTokenizer(text, rank)
     if (options.verbose) console.log(`[Pass 1] detectUniqueGrams of ${rank}-grams`, grams)
     for (const gram of grams) {
-      if (gram in profiles.uniques) {
-        const country = toISO2(profiles.uniques[gram])
-        if (options.only.length > 0) {
-          if (!options.only.includes(country)) continue
-        }
-        if (options.verbose) console.log(`- match '${gram}' to ${country}`)
-        return country
+      if (!keys.has(gram)) continue
+
+      const country = toISO2(profiles.uniques[gram])
+      if (options.only.length > 0) {
+        if (!options.only.includes(country)) continue
       }
+      if (options.verbose) console.log(`- match '${gram}' to ${country}`)
+      return country
     }
   }
   return ''

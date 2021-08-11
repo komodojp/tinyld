@@ -1,28 +1,25 @@
+const REGEXP_PUNCTUATIONS = /[,.。，、!¿?！？;:…/„“«»”"“_–—~\\/]/gi
+const REGEXP_NUMBERS = /[0-9]/g
+const REGEXP_FULLWIDTH_NUMBERS = /[\uFF10-\uFF19]/g
+const REGEXP_SPACES = /\s\s+/g
+const REGEXP_APOSTROPHE = /’/gi
+const REGEXP_NORMALIZE = /[\u0300-\u036f]/g
+
 export function isString(value: unknown): boolean {
   return typeof value === 'string' || value instanceof String
 }
 
-function stripPunctuation(val: string): string {
-  return val.replace(/[,.。，、!¿?！？;:…/„“«»”"“_–—~\\/]/gi, ' ')
-}
-
-function stripNumbers(val: string): string {
-  return val.replace(/[0-9]/g, '')
-}
-
-function replaceFullwidthNumbers(val: string): string {
-  return val.replace(/[\uFF10-\uFF19]/g, function (m) {
-    return String.fromCharCode(m.charCodeAt(0) - 0xfee0)
-  })
-}
-
 export function cleanString(value: string): string {
-  const data = value.replace(/’/gi, "'")
-  return stripPunctuation(stripNumbers(replaceFullwidthNumbers(data.toLowerCase())))
-    .replace(/\s\s+/g, ' ')
+  return value
+    .toLowerCase()
+    .replace(REGEXP_APOSTROPHE, "'")
+    .replace(REGEXP_PUNCTUATIONS, ' ')
+    .replace(REGEXP_FULLWIDTH_NUMBERS, (m) => String.fromCharCode(m.charCodeAt(0) - 0xfee0))
+    .replace(REGEXP_NUMBERS, '')
+    .replace(REGEXP_SPACES, ' ')
     .trim()
 }
 
 export function normalize(value: string): string {
-  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return value.normalize('NFD').replace(REGEXP_NORMALIZE, '')
 }

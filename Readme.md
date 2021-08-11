@@ -68,11 +68,11 @@ tinyld This is the text that I want to check
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| TinyLD         | `yarn bench:tinyld`         | 95.6304%%           | 4.3696%               | 0%             | 50.4203ms.         | 878KB     |
-| TinyLD Light   | `yarn bench:tinyld-light`   | 91.7805%            | 8.2195%               | 0%             | 38.4051ms.         | 92KB      |
-| node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 56.38ms.           | > 10MB    |
-| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 132.59ms.          | 353.5kb   |
-| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 159.56ms.          | 243.6kb   |
+| TinyLD         | `yarn bench:tinyld`         | 95.6304%%           | 4.3696%               | 0%             | 0.0504ms.          | 878KB     |
+| TinyLD Light   | `yarn bench:tinyld-light`   | 91.7805%            | 8.2195%               | 0%             | 0.0384ms.          | 92KB      |
+| node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 0.0563ms.          | > 10MB    |
+| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 0.1325ms.          | 353.5kb   |
+| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 0.1595ms.          | 243.6kb   |
 
 **Remark**
 
