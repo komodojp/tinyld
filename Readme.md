@@ -2,23 +2,23 @@
 
 [![npm](https://img.shields.io/npm/v/tinyld)](https://www.npmjs.com/package/tinyld)
 [![npm](https://img.shields.io/npm/dm/tinyld)](https://www.npmjs.com/package/tinyld)
+[![CDN Download](https://data.jsdelivr.com/v1/package/npm/tinyld/badge)](https://www.jsdelivr.com/package/npm/tinyld)
+[![License](https://img.shields.io/npm/l/tinyld.svg)](https://npmjs.org/package/tinyld)
 
 ![logo](./banner.png)
 
 **Tiny** **L**anguage **D**etector, simply detect the language of a unicode UTF-8 text:
 
-- pure javascript and no dependency (node and browser compatible)
+- pure javascript, no api call, and no dependency (node and browser compatible)
+- alternative to libraries like CLD
 - blazing fast and low memory footprint (unlike ML methods)
 - support 50 languages
 - works on small texts too
 - format ISO 639-1
 
-This is an alternative to libraries like CLD
+## Extra
 
----
-
-### Documentation
-
+- [Try the library](https://runkit.com/kefniark/tinyld)
 - [Getting Started](./docs/install.md)
 - [Algorithm](./docs/algorithm.md)
 - [CLI](./docs/cli.md)
