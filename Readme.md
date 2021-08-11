@@ -1,7 +1,7 @@
 # TinyLD
 
-![npm](https://img.shields.io/npm/v/tinyld)
-![npm](https://img.shields.io/npm/dm/tinyld)
+![https://www.npmjs.com/package/tinyld](https://img.shields.io/npm/v/tinyld)
+![https://www.npmjs.com/package/tinyld](https://img.shields.io/npm/dm/tinyld)
 
 ![logo](./banner.png)
 
