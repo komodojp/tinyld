@@ -44,8 +44,11 @@ const gramData: { [id: string]: NGramByLength } = {
 }
 
 console.log(`[TinyLD] Training - Start ${configSet}`)
+if (!fs.existsSync('data/tatoeba.csv')) {
+  throw new Error('You need the tatoeba.csv file, please check `doc/dev.md`')
+}
 const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
-const fileExtra = fs.readFileSync('data/extra-sentences.csv', 'utf-8')
+const fileExtra = fs.existsSync('data/extra-sentences.csv') ? fs.readFileSync('data/extra-sentences.csv', 'utf-8') : ''
 const lines = [...fileExtra.split('\n'), ...file.split('\n')]
 
 console.log('[TinyLD] Training - Parsing Dataset files')

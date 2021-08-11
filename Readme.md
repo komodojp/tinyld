@@ -17,109 +17,50 @@ This is an alternative to libraries like CLD
 
 ---
 
+### Documentation
+
+- [Getting Started](./docs/install.md)
+- [Algorithm](./docs/algorithm.md)
+- [CLI](./docs/cli.md)
+- [TinyLD Light](./docs/light.md)
+- [Developer](./docs/dev.md)
+
+---
+
 ## Getting Started
 
 ### Install
 
 ```sh
-# for npm users
-npm install --save tinyld
-
-# for yarn users
-yarn add tinyld
+yarn add tinyld # or npm install --save tinyld
 ```
 
 ### API
 
 ```js
 import { detect, detectAll } from 'tinyld'
-// or node: `const { detect } = require('tinyld')`
 
 // Detect
-detect('ceci est un text en francais.') // fr
 detect('これは日本語です.') // ja
 detect('and this is english.') // en
 
 // DetectAll
-detectAll('ceci est un text en francais.') // [ { lang: 'fr', accuracy: 0.5238 }, { lang: 'ro', accuracy: 0.3802 }, ... ]
+detectAll('ceci est un text en francais.')
+// [ { lang: 'fr', accuracy: 0.5238 }, { lang: 'ro', accuracy: 0.3802 }, ... ]
 ```
+
+[More Information](./docs/install.md)
 
 ---
 
 ### **TinyLD CLI**
 
-Time to time, it can be easier to use the library from a terminal _(Example: testing or debugging)_
-
-```sh
+```bash
 tinyld This is the text that I want to check
 # [ { lang: 'en', accuracy: 1 } ]
-
-tinyld これはテストです
-# [ { lang: 'ja', accuracy: 1 } ]
-
-tinyld Єсть на світі доля
-# [ { lang: 'uk', accuracy: 1 } ]
 ```
 
-_Options_
-
-- `--verbose` : Get an explanation of why **TinyLD** pick a language
-- `--only=en,ja,fr` : Restrict the detection to a subset of languages
-
-Can also be run with:
-
-- Npx: `npx tinyld [message]`
-- Yarn: `yarn tinyld [message]`
-- Bash: `./node_modules/.bin/tinyld [message]`
-
----
-
-### **TinyLD** (Light Flavor, for web usage)
-
-The normal library can be a bit massive (mostly caused by the language profile database), which can be problematic for web usage.
-
-For this usage we also provide a lighter version (a tradeoff between disk size and accuracy)
-
-- import with: `import { detect } from 'tinyld/dist/tinyld.light.cjs'`
-- normal version ~800KB, light version is only ~90KB (~25KB with gzip)
-- only 30 languages supported
-- slightly less accurate, only ~90%
-
----
-
-## Algorithm
-
-This library uses a variant of the usual N-gram algorithm, which gives fast and good results.
-
-Most libraries are directly using a bayesian scoring algorithm to identify a text language. But TinyLD, decided to add a step before, trying to mimic human logic and identify language with their unique character patterns.
-
-### First pass
-
-Some languages like japanese or korean can be identified right away, just based on their characters or punctuation and dont even need to reach the scoring algorithm.
-
-**Example**:
-
-- `も` is japanese
-- `두` is korean
-- `où` is french
-
-This identification is done on different sizes of grams (including 1-gram and 2-gram), which give better results than other libraries on short texts.
-
-**This pass is**:
-
-- really fast (a lookup in a map)
-- return only one locale (local detected this way are really accurate)
-- but ~20% of text are not detected with this method
-
-### Second pass
-
-More traditional method of statistical analysis. Run on 3-grams, try to find which locale they could match and score them.
-At the end, sort by score and return the most probable one.
-
-**This pass is**:
-
-- probabilistic
-- return multiples locale and they have to be scored and sorted
+[More Information](./docs/cli.md)
 
 ---
 
@@ -138,22 +79,3 @@ At the end, sort by score and return the most probable one.
 - This benchmark is done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
 - To avoid any unfair advantage to **TinyLD**, the dataset is reversed between `training` and `benchmark`. It means that most sentences tested during benchmark are not part of the training set.
-
-## Development
-
-```sh
-# install deps
-yarn
-
-# train and generate language profiles
-yarn train
-
-# build the library
-yarn build
-
-# code style linting
-yarn lint
-
-# test
-yarn test
-```
