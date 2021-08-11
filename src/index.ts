@@ -1,32 +1,34 @@
 import { cleanString, isString, normalize } from './clean'
-import { ILangProfiles } from './core'
+import { DetectOption, ILangProfiles, parseDetectOption } from './core'
 import data from './profiles/normal.json'
 import { detectAllPotentialGrams, detectPotentialGrams, detectUniqueGrams } from './tokenizer'
 
 const profiles = data as ILangProfiles
 
-export function detect(text: string): string {
+export function detect(text: string, opts?: Partial<DetectOption>): string {
+  const options = parseDetectOption(opts)
   if (!isString(text)) return ''
 
   const txt = cleanString(text) // clean input
   if (!txt) return ''
 
-  const res = detectUniqueGrams(txt, profiles) // pass 1 : unique grams
+  const res = detectUniqueGrams(txt, profiles, options) // pass 1 : unique grams
   if (res !== '') return res
 
-  return detectPotentialGrams(normalize(txt), profiles) // pass 2 : use probabilities
+  return detectPotentialGrams(normalize(txt), profiles, options) // pass 2 : use probabilities
 }
 
-export function detectAll(text: string, verbose = false): { lang: string; accuracy: number }[] {
+export function detectAll(text: string, opts?: Partial<DetectOption>): { lang: string; accuracy: number }[] {
+  const options = parseDetectOption(opts)
   if (!isString(text)) return []
 
   const txt = cleanString(text) // clean input
   if (!txt) return []
 
-  const res = detectUniqueGrams(txt, profiles) // pass 1 : unique grams
+  const res = detectUniqueGrams(txt, profiles, options) // pass 1 : unique grams
   if (res !== '') return [{ lang: res, accuracy: 1 }]
 
-  return detectAllPotentialGrams(normalize(txt), profiles, verbose) // pass 2 : use probabilities
+  return detectAllPotentialGrams(normalize(txt), profiles, options) // pass 2 : use probabilities
 }
 
 export { cleanString } from './clean'

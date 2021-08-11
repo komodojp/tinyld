@@ -1,4 +1,4 @@
-import { approximate, ILangProfiles, langs, toISO2, TRAINING_UNIQUE_GRAMS } from './core'
+import { approximate, DetectOption, ILangProfiles, langs, toISO2, TRAINING_UNIQUE_GRAMS } from './core'
 
 export function ngramTokenizer(text: string, length: number, padding = true): string[] {
   const ngramsArray = []
@@ -7,29 +7,41 @@ export function ngramTokenizer(text: string, length: number, padding = true): st
   for (let i = 0; i < array.length - (length - 1); i++) {
     const subNgramsArray = []
 
+    let consecutiveSpace = 0
     for (let j = 0; j < length; j++) {
+      if (array[i + j] === ' ') consecutiveSpace += 1
+      else consecutiveSpace = 0
+      if (consecutiveSpace > 1) continue
       subNgramsArray.push(array[i + j])
     }
 
     const str = subNgramsArray.join('')
-    if (str.trim().length > 0) ngramsArray.push(str)
+    if (str.trim().length > 0 && str.length === length) ngramsArray.push(str)
   }
 
   return ngramsArray
 }
 
-export function detectUniqueGrams(text: string, profiles: ILangProfiles): string {
+export function detectUniqueGrams(text: string, profiles: ILangProfiles, options: DetectOption): string {
   for (const rank of TRAINING_UNIQUE_GRAMS) {
     const grams = ngramTokenizer(text, rank)
+    if (options.verbose) console.log(`[Pass 1] detectUniqueGrams of ${rank}-grams`, grams)
     for (const gram of grams) {
-      if (gram in profiles.uniques) return toISO2(profiles.uniques[gram])
+      if (gram in profiles.uniques) {
+        const country = toISO2(profiles.uniques[gram])
+        if (options.only.length > 0) {
+          if (!options.only.includes(country)) continue
+        }
+        if (options.verbose) console.log(`- match '${gram}' to ${country}`)
+        return country
+      }
     }
   }
   return ''
 }
 
-export function detectPotentialGrams(text: string, profiles: ILangProfiles): string {
-  const res = detectAllPotentialGrams(text, profiles, false)
+export function detectPotentialGrams(text: string, profiles: ILangProfiles, options: DetectOption): string {
+  const res = detectAllPotentialGrams(text, profiles, options)
   if (res.length > 0) return res[0].lang
   return ''
 }
@@ -37,13 +49,18 @@ export function detectPotentialGrams(text: string, profiles: ILangProfiles): str
 export function detectAllPotentialGrams(
   text: string,
   profiles: ILangProfiles,
-  verbose: boolean
+  options: DetectOption
 ): { lang: string; accuracy: number }[] {
   const langScores = new Map<string, number>()
 
   const grams = ngramTokenizer(text, 3)
-  if (verbose) console.log('DetectPotentialGrams', text, grams)
-  const langSet = new Set([...langs.keys()])
+  if (options.verbose) console.log('[Pass 2] DetectPotentialGrams', text, grams)
+  const langSet = new Set(
+    [...langs.values()].filter((x) => {
+      if (options.only.length > 0) return options.only.includes(x) || options.only.includes(toISO2(x))
+      return true
+    })
+  )
 
   langSet.forEach((x) => langScores.set(x, 0))
   for (const gram of grams) {
@@ -52,7 +69,7 @@ export function detectAllPotentialGrams(
 
     const gramLangs = new Set(Object.keys(gramStat))
     const debug: string[] = []
-    for (const lang of langs) {
+    for (const lang of langSet) {
       if (gramLangs.has(lang)) {
         langScores.set(lang, (langScores.get(lang) || 0) + 500 * (1 - gramStat[lang]))
         debug.push(`${lang} = ${gramStat[lang] * 100}%`)
@@ -60,7 +77,7 @@ export function detectAllPotentialGrams(
         langScores.set(lang, (langScores.get(lang) || 0) + 750)
       }
     }
-    if (verbose && debug.length > 0) console.log(`Gram '${gram}'`, debug)
+    if (options.verbose && debug.length > 0) console.log(`Gram '${gram}'`, debug)
   }
 
   const entries = [...langScores.entries()]
@@ -73,6 +90,6 @@ export function detectAllPotentialGrams(
       score: approximate(x[1])
     }
   })
-  if (verbose) console.log(`Result`, text, result)
+  if (options.verbose) console.log(`Result`, text, result)
   return result
 }

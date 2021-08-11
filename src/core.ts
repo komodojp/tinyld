@@ -48,6 +48,17 @@ export function isExtraSample(country: string): boolean {
 
 type LangOption = { code: string; alias?: string[]; skipLight?: boolean; skipProb?: boolean; extraSample?: boolean }
 
+export const parseDetectOption = (options?: Partial<DetectOption>): DetectOption => {
+  const data = { only: [], verbose: false }
+  if (!options) return data
+  return Object.assign(data, options)
+}
+
+export interface DetectOption {
+  only: string[]
+  verbose: boolean
+}
+
 // Map ISO 639-3 <-> ISO 639-1
 const langMap: { [id: string]: LangOption } = {
   // asia

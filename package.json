@@ -1,10 +1,13 @@
 {
   "name": "tinyld",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
   "license": "MIT",
   "types": "./src/index.ts",
+  "bin": {
+    "tinyld": "./bin/tinyld.js"
+  },
   "keywords": [
     "language",
     "detection",

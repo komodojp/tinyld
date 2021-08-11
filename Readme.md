@@ -46,14 +46,42 @@ detectAll('ceci est un text en francais.') // [ { lang: 'fr', accuracy: 0.5238 }
 
 ---
 
-## TinyLD (Light Flavor, for web usage)
+### **TinyLD CLI**
+
+Time to time, it can be easier to use the library from a terminal _(Example: testing or debugging)_
+
+```sh
+tinyld This is the text that I want to check
+# [ { lang: 'en', accuracy: 1 } ]
+
+tinyld これはテストです
+# [ { lang: 'ja', accuracy: 1 } ]
+
+tinyld Єсть на світі доля
+# [ { lang: 'uk', accuracy: 1 } ]
+```
+
+_Options_
+
+- `--verbose` : Get an explanation of why **TinyLD** pick a language
+- `--only=en,ja,fr` : Restrict the detection to a subset of languages
+
+Can also be run with:
+
+- Npx: `npx tinyld [message]`
+- Yarn: `yarn tinyld [message]`
+- Bash: `./node_modules/.bin/tinyld [message]`
+
+---
+
+### **TinyLD** (Light Flavor, for web usage)
 
 The normal library can be a bit massive (mostly caused by the language profile database), which can be problematic for web usage.
 
 For this usage we also provide a lighter version (a tradeoff between disk size and accuracy)
 
 - import with: `import { detect } from 'tinyld/dist/tinyld.light.cjs'`
-- normal version ~800KB, light version is only ~90KB
+- normal version ~800KB, light version is only ~90KB (~25KB with gzip)
 - only 30 languages supported
 - slightly less accurate, only ~90%
 
@@ -101,8 +129,8 @@ At the end, sort by score and return the most probable one.
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| TinyLD         | `yarn bench:tinyld`         | 95.8876%%           | 4.1124%               | 0%             | 45.4203ms.         | 878KB     |
-| TinyLD Light   | `yarn bench:tinyld-light`   | 91.822%             | 8.178%                | 0%             | 36.4051ms.         | 92KB      |
+| TinyLD         | `yarn bench:tinyld`         | 95.6304%%           | 4.3696%               | 0%             | 50.4203ms.         | 878KB     |
+| TinyLD Light   | `yarn bench:tinyld-light`   | 91.7805%            | 8.2195%               | 0%             | 38.4051ms.         | 92KB      |
 | node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 56.38ms.           | > 10MB    |
 | franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 132.59ms.          | 353.5kb   |
 | languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 159.56ms.          | 243.6kb   |

@@ -4,7 +4,7 @@ const { detect, detectAll } = require('../dist/tinyld.cjs')
 
 function assertLocale(locale, val) {
   const res = detectAll(val)
-  if (res[0].lang != locale) detectAll(val, true)
+  if (res[0].lang != locale) detectAll(val, { verbose: true })
   assert.is(detect(val), locale, `is ${locale} : ${val}`)
 }
 
