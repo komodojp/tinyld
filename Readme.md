@@ -1,7 +1,7 @@
 # TinyLD
 
-![npm](https://img.shields.io/npm/v/tinyld)
-![npm](https://img.shields.io/npm/dm/tinyld)
+[![npm](https://img.shields.io/npm/v/tinyld)](https://www.npmjs.com/package/tinyld)
+[![npm](https://img.shields.io/npm/dm/tinyld)](https://www.npmjs.com/package/tinyld)
 
 ![logo](./banner.png)
 
@@ -91,13 +91,11 @@ For this usage we also provide a lighter version (a tradeoff between disk size a
 
 This library uses a variant of the usual N-gram algorithm, which gives fast and good results.
 
-Most libraries are directly doing the bayesian scoring algorithm. But TinyLD, decided to add a step before, trying to mimic human logic and identify language with their unique character patterns.
-
-Some languages like japanese or korean can be identified right away, just based on their characters or punctuation and dont even need to reach the scoring algorithm.
+Most libraries are directly using a bayesian scoring algorithm to identify a text language. But TinyLD, decided to add a step before, trying to mimic human logic and identify language with their unique character patterns.
 
 ### First pass
 
-Try to identify sequence of characters unique to a language
+Some languages like japanese or korean can be identified right away, just based on their characters or punctuation and dont even need to reach the scoring algorithm.
 
 **Example**:
 
