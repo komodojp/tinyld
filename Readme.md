@@ -88,12 +88,12 @@ tinyld This is the text that I want to check
 
 ### **Conclusion**
 
-#### Recommanded
+#### Recommended
 
 - For **NodeJS**: `TinyLD` or `node-cld` (fast and accurate)
 - For **Browser**: `TinyLD Light` or `franc` (small and decent accuracy)
 
 #### Not recommended
 
-- `node-lingua` is just too massive and slow
-- `languagedetect` is light but just not accurate enough, really focused on indo-european languages (support kazakh but no chinese, korean or japanese)
+- `node-lingua` is just too big and slow
+- `languagedetect` is light but just not accurate enough, really focused on indo-european languages (support kazakh but not chinese, korean or japanese)
