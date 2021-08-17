@@ -74,7 +74,11 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
 
   const errors = [...errorMap.entries()]
   errors.sort((a, b) => b[1] - a[1])
-  console.log(`\n--- More common errors (${detectMistake}) ---`)
+  console.log(
+    `\n--- More common errors (${
+      Math.round((detectMistake / detectTotal) * 100 * 100) / 100
+    }% : ${detectMistake} / ${detectTotal}) ---`
+  )
   console.log(
     errors
       .map((x) => ` - ${x[0]} : ${approximate((100 * x[1]) / detectMistake)}% (error: ${x[1]})`)

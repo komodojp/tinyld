@@ -13,16 +13,16 @@
 - alternative to libraries like CLD
 - blazing fast and low memory footprint (unlike ML methods)
 - support 50 languages
-- works on small texts too
 - format ISO 639-1
 
 ## Extra
 
-- [Try the library](https://runkit.com/kefniark/tinyld)
+- [**Playground** - Try the library](https://runkit.com/kefniark/tinyld)
 - [Getting Started](./docs/install.md)
-- [Algorithm](./docs/algorithm.md)
+- [API](./docs/api.md)
 - [CLI](./docs/cli.md)
 - [TinyLD Light](./docs/light.md)
+- [Algorithm](./docs/algorithm.md)
 - [Developer](./docs/dev.md)
 
 ---
@@ -68,14 +68,14 @@ tinyld This is the text that I want to check
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| TinyLD         | `yarn bench:tinyld`         | 95.6304%%           | 4.3696%               | 0%             | 0.0504ms.          | 878KB     |
-| TinyLD Light   | `yarn bench:tinyld-light`   | 91.7805%            | 8.2195%               | 0%             | 0.0384ms.          | 92KB      |
-| node-cld       | `yarn bench:cld`            | 87.1121%            | 1.8074%               | 11.08%         | 0.0563ms.          | > 10MB    |
-| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | 0%             | 0.1325ms.          | 353.5kb   |
-| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 0.1595ms.          | 243.6kb   |
+| **TinyLD**     | `yarn bench:tinyld`         | **95.4801%%**       | **3.1420%**           | **1.3779%**    | 0.0918ms.          | 676KB     |
+| **TinyLD Web** | `yarn bench:tinyld-light`   | **91.4835%**        | 4.2282%               | 4.2883%        | **0.0605ms.**      | **90KB**  |
+| node-cld       | `yarn bench:cld`            | 87.1121%            | **1.8074%**           | 11.08%         | **0.0563ms.**      | > 10MB    |
+| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | **0%**         | 0.1325ms.          | 350KB     |
+| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 0.1595ms.          | **240KB** |
 
 **Remark**
 
+- For each category, Best result are mark in **Bold**
 - This benchmark is done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
-- To avoid any unfair advantage to **TinyLD**, the dataset is reversed between `training` and `benchmark`. It means that most sentences tested during benchmark are not part of the training set.

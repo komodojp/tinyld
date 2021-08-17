@@ -4,7 +4,7 @@ const { detect, detectAll } = require('../dist/tinyld.cjs')
 
 function assertLocale(locale, val) {
   const res = detectAll(val)
-  if (res[0].lang != locale) detectAll(val, { verbose: true })
+  if (res.length > 0 && res[0].lang != locale) detectAll(val, { verbose: true })
   assert.is(detect(val), locale, `is ${locale} : ${val}`)
 }
 
@@ -14,7 +14,7 @@ test('Check input', () => {
 })
 
 test('Detect French', () => {
-  assertLocale('fr', 'Bonjour')
+  assertLocale('fr', 'Bonjour les gens')
   assertLocale('fr', 'Bonne après-midi')
   assertLocale('fr', 'Ceci est un texte en francais.')
   // assertLocale('fr', 'reste cool sac a merde')

@@ -1,172 +1,217 @@
 import fs from 'fs'
-import { cleanString, normalize } from './clean'
-import {
-  approximate,
-  ILangProfiles,
-  langs,
-  DATASET_MAX_LINE_PER_LANGUAGE,
-  TOP_LANGUAGE_GRAMS,
-  TOP_LANGUAGE_UNIQUE_GRAMS,
-  TRAINING_UNIQUE_GRAMS,
-  isSkipProba,
-  isExtraSample,
-  DB_PROFILE_PATH,
-  configSet,
-  TOP_LANGUAGE_GRAMS_MAXLANG
-} from './core'
+import readline from 'readline'
 import { ngramTokenizer } from './tokenizer'
+import { processTatoebaLineByLine } from './train/splitter'
+import pLimit from 'p-limit'
+import { normalize } from './clean'
+import {
+  configSet,
+  isSkipProba,
+  langs,
+  TOP_GRAM,
+  TOP_GRAM_MAXLANG,
+  TOP_LANGUAGE_UNIQUE_GRAMS,
+  TOP_WORD,
+  TOP_WORD_MAXLANG,
+  TRAINING_UNIQUE_GRAMS
+} from './core'
 
-interface NGram {
-  country: string
-  text: string
-  usage: number
-}
+const banWordList = new Set(['tatoeba', 'facebook', 'tom', '=', '-', '﹣'])
 
-interface NGramLocale {
-  countries: Set<string>
-  text: string
-  usage: number
-}
+async function processLang(lang: string) {
+  const wordRank = new Map<string, number>()
+  if (!fs.existsSync(`data/tmp`)) fs.mkdirSync(`data/tmp`)
+  if (!fs.existsSync(`data/tmp/${lang}`)) fs.mkdirSync(`data/tmp/${lang}`)
 
-interface NGramByLength {
-  gramByLocale: Map<string, Map<string, NGram>>
-  gramAllLocale: Map<string, NGramLocale>
-  nonSpecific: Set<string>
-}
+  if (!fs.existsSync(`data/tmp/${lang}/words.txt`)) {
+    // if (files[lang].freq) {
+    //   const res = await processFrequencyLineByLine(files[lang].freq as string)
+    //   res.forEach(x => wordRank.set(x.word, (wordRank.get(x.word) || 0) + x.count))
+    // }
 
-const langTexts = new Map<string, number>()
-const gramData: { [id: string]: NGramByLength } = {
-  '1': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() },
-  '2': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() },
-  '3': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() },
-  '4': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() },
-  '5': { gramByLocale: new Map(), gramAllLocale: new Map(), nonSpecific: new Set() }
-}
+    // parse tatoeba file
+    const res = await processTatoebaLineByLine('data/tatoeba.csv', lang)
+    res.forEach((x) => wordRank.set(x.word, (wordRank.get(x.word) || 0) + x.count))
 
-console.log(`[TinyLD] Training - Start ${configSet}`)
-if (!fs.existsSync('data/tatoeba.csv')) {
-  throw new Error('You need the tatoeba.csv file, please check `doc/dev.md`')
-}
-const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
-const fileExtra = fs.existsSync('data/extra-sentences.csv') ? fs.readFileSync('data/extra-sentences.csv', 'utf-8') : ''
-const lines = [...fileExtra.split('\n'), ...file.split('\n')]
+    // words
+    const wordOutStream = fs.createWriteStream(`data/tmp/${lang}/words.txt`, { flags: 'a' })
+    const values = [...wordRank.entries()]
+    values.sort((a, b) => b[1] - a[1])
+    const wordMax = values[0][1]
+    values.forEach((x) => {
+      if (x[1] < 10 || x[1] / wordMax < 0.00001) return
+      if (banWordList.has(x[0])) return
+      wordOutStream.write(`${x[0]}\t${x[1] / wordMax}\n`)
+    })
+    wordOutStream.close()
 
-console.log('[TinyLD] Training - Parsing Dataset files')
-for (const line of lines) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_id, country, text] = line.split('\t')
-  if (!langs.has(country)) continue
-  const lines = langTexts.get(country) || 0
-  if (lines > DATASET_MAX_LINE_PER_LANGUAGE) continue
-  langTexts.set(country, lines + 1)
+    for (const gram of TRAINING_UNIQUE_GRAMS) {
+      const gramRank = new Map<string, number>()
 
-  // clean and tokenize
-  const cleanText = cleanString(text)
-  for (const gramLength of TRAINING_UNIQUE_GRAMS) {
-    const { gramByLocale, gramAllLocale } = gramData[gramLength.toString()]
-    const grams = ngramTokenizer(cleanText, gramLength)
-    if (!gramByLocale.has(country)) gramByLocale.set(country, new Map())
+      for (const word of wordRank.keys()) {
+        const count = wordRank.get(word) || 0
 
-    // index
-    const gramMap = gramByLocale.get(country) as Map<string, NGram>
-    for (const gram of grams) {
-      const value = gramMap.get(gram) || { country, text: gram, usage: 0 }
-      value.usage++
-      gramMap.set(gram, value)
-
-      const value2 = gramAllLocale.get(gram) || { countries: new Set(), text: gram, usage: 0 }
-      value2.countries.add(country)
-      value2.usage++
-      gramAllLocale.set(gram, value2)
-    }
-  }
-}
-
-for (const gramId of TRAINING_UNIQUE_GRAMS.map((x) => x.toString())) {
-  const locales = [...gramData[gramId].gramAllLocale.values()]
-  locales
-    .filter((x) => x.countries.size > 1)
-    .map((x) => x.text)
-    .forEach((x) => gramData[gramId].nonSpecific.add(x))
-}
-
-const profiles: ILangProfiles = {
-  uniques: {},
-  multiples: {}
-}
-
-for (const country of langs) {
-  console.log(`[TinyLD] Training - Process Lang ${country}`)
-  const currentCountryGrams = new Set<string>()
-  for (const gramLength of TRAINING_UNIQUE_GRAMS) {
-    const { gramByLocale, nonSpecific } = gramData[gramLength.toString()]
-    const countryGrams = [...(gramByLocale.get(country)?.values() || [])] as NGram[]
-
-    // remove non specific
-    let uniqueCountryGrams = countryGrams.filter((x) => !nonSpecific.has(x.text))
-
-    // save unique grams
-    // remove already cover by lower rank grams
-    uniqueCountryGrams = uniqueCountryGrams.filter((x) => {
-      if (gramLength > 1) {
-        for (let i = 1; i <= gramLength - 1; i++) {
-          if (ngramTokenizer(x.text, i, false).some((y) => currentCountryGrams.has(y))) {
-            return false
-          }
-        }
+        ngramTokenizer(word, gram).forEach((x) => {
+          gramRank.set(x, (gramRank.get(x) || 0) + count)
+        })
       }
-      return true
-    })
-    uniqueCountryGrams.sort((a, b) => b.usage - a.usage)
-    uniqueCountryGrams = uniqueCountryGrams.slice(0, TOP_LANGUAGE_UNIQUE_GRAMS)
-    uniqueCountryGrams.forEach((x) => currentCountryGrams.add(x.text))
-    const uniques = uniqueCountryGrams.map((x) => x.text)
-    uniques.forEach((x) => {
-      profiles.uniques[x] = country
-    })
-    const countryUniques = new Set(uniques)
-    // console.log(`Unique ${country} - ${gramLength} - ${uniques.length}`)
 
-    // save non unique 3-grams
-    if (gramLength != 3) continue
-    if (isSkipProba(country)) continue
-    const values = [...countryGrams].filter((x) => !countryUniques.has(x.text))
-    values.forEach((x) => (x.text = normalize(x.text)))
-    values.sort((a, b) => b.usage - a.usage)
-
-    const entries = values.slice(0, isExtraSample(country) ? 2 * TOP_LANGUAGE_GRAMS : TOP_LANGUAGE_GRAMS)
-    entries.forEach((gram: NGram) => {
-      if (!profiles.multiples[gram.text]) profiles.multiples[gram.text] = {}
-      profiles.multiples[gram.text][country] = gram.usage
-    })
-    // console.log(`Probability ${country} - ${entries.length}`)
-  }
-}
-
-console.log(`[TinyLD] Training - Cleanup output`)
-// remove gram with too many language (lot of space and not specific enough)
-for (const id of Object.keys(profiles.multiples)) {
-  // normalize (and square position)
-  const gram = profiles.multiples[id]
-  const max = Math.max(...Object.values(gram))
-  for (const country of Object.keys(profiles.multiples[id])) {
-    const val = profiles.multiples[id][country] / max
-    profiles.multiples[id][country] = approximate(val * val)
-    // remove match under 1% (save spage)
-    if (profiles.multiples[id][country] <= 0.01) delete profiles.multiples[id][country]
-  }
-
-  if (Object.keys(profiles.multiples[id]).length >= TOP_LANGUAGE_GRAMS_MAXLANG) {
-    const entries = Object.entries(profiles.multiples[id])
-    entries.sort((a, b) => b[1] - a[1])
-    const extraLangs = entries.slice(TOP_LANGUAGE_GRAMS_MAXLANG)
-    for (const lang of extraLangs) {
-      delete profiles.multiples[id][lang[0]]
+      const gramOutStream = fs.createWriteStream(`data/tmp/${lang}/${gram}-gram.txt`, { flags: 'a' })
+      const gramValues = [...gramRank.entries()]
+      gramValues.sort((a, b) => b[1] - a[1])
+      const max = gramValues[0][1]
+      gramValues.forEach((x) => {
+        if (x[1] < 10 || x[1] / max < 0.00001) return
+        gramOutStream.write(`${x[0]}\t${x[1] / max}\n`)
+      })
+      gramOutStream.close()
     }
   }
 }
 
-console.log(`[TinyLD] Training - Serialize`)
+const checkNgramContains = (txt: string, gram: number, uniques: Set<string>) => {
+  for (let i = 1; i < gram - 1; i++) {
+    const grams = ngramTokenizer(txt, i)
+    if (grams.some((x) => uniques.has(x))) return true
+  }
+  return false
+}
+
+async function processUniqueGrams(langs: string[], gram: number, uniques: Set<string>) {
+  const map = new Map<string, Map<string, { count: number; index: number }>>()
+  for (const lang of langs) {
+    console.log('process Gram', lang, gram)
+    const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+    let index = 0
+    for await (const line of rl) {
+      const [txt, usage] = line.split('\t')
+      if (banWordList.has(txt)) continue
+      if (checkNgramContains(txt, gram, uniques)) continue
+      if (!map.has(txt)) map.set(txt, new Map())
+
+      const gramData = map.get(txt) as Map<string, { count: number; index: number }>
+      gramData.set(lang, { count: parseFloat(usage), index })
+      index++
+    }
+    fileStream.close()
+  }
+
+  const uniqueMap = new Map<string, [number, string][]>()
+  ;[...map.entries()].forEach((gram) => {
+    if (gram[1].size !== 1) return
+    const txt = gram[0]
+    const country = [...gram[1].keys()][0]
+    const index = gram[1].get(country)?.index || 0
+    if (!uniqueMap.has(country)) uniqueMap.set(country, [])
+    uniqueMap.get(country)?.push([index, txt])
+  })
+
+  const result: { [id: string]: string } = {}
+  ;[...uniqueMap.entries()].forEach((x) => {
+    let count = 0
+    x[1].forEach((y) => {
+      if (count > TOP_LANGUAGE_UNIQUE_GRAMS) return
+      count++
+      result[y[1]] = x[0]
+    })
+  })
+
+  return result
+}
+
+async function processStatsWords(langs: string[], uniques: Set<string>) {
+  const map = new Map<string, Map<string, { count: number; index: number }>>()
+  for (const lang of langs) {
+    if (isSkipProba(lang)) continue
+    console.log('process Words', lang)
+    const fileStream = fs.createReadStream(`data/tmp/${lang}/words.txt`)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+    let index = 0
+    for await (const line of rl) {
+      const [text, usage] = line.split('\t')
+      const txt = normalize(text)
+      if (uniques.has(txt)) continue
+      if (banWordList.has(txt)) continue
+      if (checkNgramContains(txt, 4, uniques)) continue
+      if (!map.has(txt)) map.set(txt, new Map())
+      if (txt.length > 8) continue
+
+      const gramData = map.get(txt) as Map<string, { count: number; index: number }>
+      gramData.set(lang, { count: parseFloat(usage), index })
+      index++
+    }
+    fileStream.close()
+  }
+
+  const result: { [gram: string]: { [country: string]: number } } = {}
+
+  ;[...map.entries()].forEach((gram) => {
+    if (gram[1].size > TOP_WORD_MAXLANG) return
+
+    const txt = gram[0]
+    ;[...gram[1].entries()].forEach((entry) => {
+      if (entry[1].count * 100000 < 500) return
+      if (entry[1].index > TOP_WORD) return
+      if (!result[txt]) result[txt] = {}
+      const val = 1 - (1 - entry[1].count) * (1 - entry[1].count)
+      result[txt][entry[0]] = Math.round(val * 100000)
+    })
+  })
+
+  return result
+}
+
+async function processStatsGrams(langs: string[], gram: number, uniques: Set<string>) {
+  const map = new Map<string, Map<string, { count: number; index: number }>>()
+  for (const lang of langs) {
+    if (isSkipProba(lang)) continue
+    console.log('process Stats Gram', lang, gram)
+    const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+    let index = 0
+    for await (const line of rl) {
+      const [text, usage] = line.split('\t')
+      const txt = normalize(text)
+      if (banWordList.has(txt)) continue
+      if (checkNgramContains(txt, gram, uniques)) continue
+      if (uniques.has(txt)) continue
+      if (!map.has(txt)) map.set(txt, new Map())
+
+      const gramData = map.get(txt) as Map<string, { count: number; index: number }>
+      gramData.set(lang, { count: parseFloat(usage), index })
+      index++
+    }
+    fileStream.close()
+  }
+
+  const result: { [gram: string]: { [country: string]: number } } = {}
+
+  ;[...map.entries()].forEach((gram) => {
+    if (gram[1].size > TOP_GRAM_MAXLANG) return
+
+    const txt = gram[0]
+    ;[...gram[1].entries()].forEach((entry) => {
+      if (entry[1].count * 100000 < 500) return
+      if (entry[1].index > TOP_GRAM) return
+      if (!result[txt]) result[txt] = {}
+      const val = 1 - (1 - entry[1].count) * (1 - entry[1].count)
+      result[txt][entry[0]] = Math.round(val * 100000)
+    })
+  })
+
+  return result
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function sortKeys(key: string, value: any) {
   if (value == null || value.constructor != Object) {
@@ -184,5 +229,53 @@ function sortKeys(key: string, value: any) {
   )
 }
 
-fs.writeFileSync(DB_PROFILE_PATH, JSON.stringify(profiles, sortKeys, 2))
-console.log(`[TinyLD] Done ${configSet} => ${DB_PROFILE_PATH}`)
+async function processFiles() {
+  console.log('Start')
+  const processLangs = [...langs.values()]
+
+  const limit = pLimit(4)
+
+  await Promise.all(
+    processLangs.map((lang) => {
+      return limit(() => {
+        console.log('Extract', lang)
+        return processLang(lang)
+      })
+    })
+  )
+
+  let uniques = {}
+  for (const gram of TRAINING_UNIQUE_GRAMS) {
+    uniques = { ...uniques, ...(await processUniqueGrams(processLangs, gram, new Set([...Object.keys(uniques)]))) }
+  }
+
+  const words = {
+    ...(await processStatsWords(processLangs, new Set(Object.keys(uniques))))
+  }
+
+  let multiples = {}
+  for (const gram of [4]) {
+    multiples = {
+      ...multiples,
+      ...(await processStatsGrams(processLangs, gram, new Set([...Object.keys(uniques), ...Object.keys(words)])))
+    }
+  }
+
+  fs.writeFileSync(
+    `src/profiles/${configSet}.json`,
+    JSON.stringify(
+      {
+        id: 'tinyld-dict',
+        uniques,
+        multiples,
+        words
+      },
+      sortKeys,
+      2
+    )
+  )
+
+  console.log('End')
+}
+
+processFiles()
