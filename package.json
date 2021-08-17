@@ -9,9 +9,11 @@
     "tinyld": "./bin/tinyld.js"
   },
   "keywords": [
+    "natural-language",
     "language",
     "detection",
-    "library"
+    "classification",
+    "nodejs"
   ],
   "repository": {
     "type": "git",
