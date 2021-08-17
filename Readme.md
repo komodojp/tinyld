@@ -12,7 +12,7 @@
 - pure javascript, no api call, and no dependency (node and browser compatible)
 - alternative to libraries like CLD
 - blazing fast and low memory footprint (unlike ML methods)
-- support 50 languages
+- support 62 languages (30 for the web version)
 - format ISO 639-1
 
 ## Extra
@@ -21,7 +21,8 @@
 - [Getting Started](./docs/install.md)
 - [API](./docs/api.md)
 - [CLI](./docs/cli.md)
-- [TinyLD Light](./docs/light.md)
+- [TinyLD Web](./docs/light.md)
+- [Supported Language](./docs/langs.md)
 - [Algorithm](./docs/algorithm.md)
 - [Developer](./docs/dev.md)
 
@@ -74,7 +75,7 @@ tinyld This is the text that I want to check
 | **TinyLD Web** | `yarn bench:tinyld-light`   | **90.4754%**        | 5.0452%               | **4.4794%**    | **0.0605ms.**      | **90KB**  |
 | **node-cld**   | `yarn bench:cld`            | **86.7068%**        | **2.1064%**           | 11.1868%       | **0.0563ms.**      | > 10MB    |
 | node-lingua    | `yarn bench:lingua`         | 82.3157%            | **0.2158%**           | 17.4685%       | 0.7085ms.          | ~100MB    |
-| franc          | `yarn bench:franc`          | 64.7064%            | 35.2936%              | **0%**         | 0.1325ms.          | **350KB** |
+| franc-min      | `yarn bench:franc`          | 64.7064%            | 29.7064%              | **6.1258%**    | 0.1325ms.          | **105KB** |
 | languagedetect | `yarn bench:languagedetect` | 60.0853%            | 13.3216%              | 26.5931%       | 0.1595ms.          | **240KB** |
 
 ### **Remark**
@@ -91,7 +92,7 @@ tinyld This is the text that I want to check
 #### Recommended
 
 - For **NodeJS**: `TinyLD` or `node-cld` (fast and accurate)
-- For **Browser**: `TinyLD Light` or `franc` (small and decent accuracy)
+- For **Browser**: `TinyLD Light` or `franc-min` (small, decent accuracy, franc is less accurate but support more languages)
 
 #### Not recommended
 

@@ -10,35 +10,26 @@
     " ach": {
       "por": 13780
     },
-    " aeg": {
-      "est": 7405
-    },
-    " aja": {
-      "fin": 12566,
-      "jav": 20021
-    },
-    " api": {
-      "lit": 14560
-    },
-    " bij": {
-      "lvs": 30282
-    },
     " bli": {
       "nob": 20237,
       "swe": 10270
     },
     " chc": {
+      "ces": 19457,
       "pol": 24445
+    },
+    " cht": {
+      "ces": 8330
     },
     " cre": {
       "ron": 30274
     },
-    " dec": {
-      "ron": 15149
+    " dac": {
+      "ron": 14925
     },
-    " dev": {
-      "ita": 12280,
-      "por": 14750
+    " dag": {
+      "nob": 14419,
+      "swe": 10581
     },
     " dla": {
       "pol": 13761
@@ -50,14 +41,19 @@
       "por": 8968,
       "spa": 12208
     },
+    " enn": {
+      "fin": 6544,
+      "hun": 9014,
+      "nob": 11411
+    },
     " foa": {
       "ron": 21040
     },
     " foi": {
       "por": 17697
     },
-    " fro": {
-      "eng": 10907
+    " geb": {
+      "nld": 14818
     },
     " geh": {
       "deu": 16200
@@ -74,17 +70,20 @@
     " hic": {
       "tur": 17149
     },
+    " hie": {
+      "nld": 14007
+    },
     " hij": {
       "nld": 56692
     },
-    " hja": {
-      "swe": 9892
-    },
-    " hvo": {
-      "nob": 27312
+    " hla": {
+      "ces": 6928
     },
     " i'm": {
       "eng": 15673
+    },
+    " i-a": {
+      "ron": 10352
     },
     " ich": {
       "deu": 83352
@@ -92,45 +91,42 @@
     " ihm": {
       "fin": 11260
     },
+    " ihn": {
+      "deu": 10986
+    },
     " ihr": {
       "deu": 24370
     },
-    " jag": {
-      "swe": 100000
+    " iht": {
+      "tur": 6342
     },
-    " jak": {
-      "pol": 29858
-    },
-    " kee": {
-      "est": 26838
-    },
-    " kep": {
-      "jav": 15599
+    " ji ": {
+      "ces": 6454
     },
     " l'a": {
       "ita": 12534
     },
-    " lak": {
-      "est": 6799
-    },
     " lie": {
-      "deu": 11988,
-      "lvs": 17971
+      "deu": 11988
     },
-    " liv": {
-      "por": 8210
+    " m-a": {
+      "ron": 12029
+    },
+    " moc": {
+      "ces": 8224
     },
     " moe": {
       "nld": 32609
+    },
+    " moh": {
+      "ces": 9193
     },
     " moi": {
       "fra": 16996
     },
     " moj": {
+      "ces": 10127,
       "pol": 7391
-    },
-    " mok": {
-      "lit": 21397
     },
     " n'a": {
       "fra": 28344
@@ -144,124 +140,55 @@
     " och": {
       "swe": 29665
     },
+    " ojc": {
+      "pol": 4955
+    },
     " ola": {
       "tur": 25789
     },
     " oll": {
       "fin": 26243
     },
-    " oln": {
-      "est": 6596
-    },
-    " ots": {
-      "est": 7203
+    " ote": {
+      "ces": 7112
     },
     " ott": {
+      "fin": 6868,
       "hun": 11489
     },
     " pid": {
       "fin": 13921
     },
-    " roh": {
-      "est": 6393
-    },
-    " s-a": {
-      "ron": 28439
-    },
-    " tag": {
-      "est": 11790,
-      "lvs": 6948
+    " teb": {
+      "ces": 6760
     },
     " tee": {
-      "est": 14525
+      "fin": 9372
     },
     " teg": {
-      "est": 11000,
       "pol": 13331
     },
     " teh": {
-      "est": 7203,
       "fin": 16970
     },
-    " tek": {
-      "fin": 14001,
-      "tur": 10509
-    },
-    " tev": {
-      "lit": 8886,
-      "lvs": 9208
+    " tej": {
+      "pol": 5123
     },
     " thi": {
       "eng": 47211
     },
-    " voc": {
-      "por": 72451
-    },
-    " voi": {
-      "est": 17026,
-      "fin": 41336,
-      "fra": 17609,
-      "ita": 13512,
-      "ron": 17809
-    },
-    " vor": {
-      "deu": 15068,
-      "ron": 22932
-    },
-    " vot": {
-      "est": 9012
-    },
-    " vre": {
-      "ron": 31719
-    },
-    " лиш": {
-      "ukr": 6596
+    " thr": {
+      "eng": 6934
     },
     " люд": {
       "rus": 6249,
       "ukr": 6605
     },
-    " мен": {
-      "rus": 35921,
-      "ukr": 56273
-    },
-    " мер": {
-      "ukr": 37028
-    },
-    " ни ": {
-      "rus": 6093
-    },
-    " ним": {
-      "rus": 6559
-    },
-    " нич": {
-      "rus": 9333
-    },
-    " пер": {
-      "ukr": 19316
-    },
-    " пре": {
-      "rus": 19722
-    },
-    " при": {
-      "rus": 44473,
-      "ukr": 27542
-    },
-    " тре": {
-      "ukr": 4805
-    },
-    " три": {
-      "rus": 6988,
-      "ukr": 6819
-    },
-    " цим": {
-      "ukr": 3866
-    },
     " цю ": {
       "ukr": 4032
     },
-    " чер": {
-      "ukr": 4115
+    "'da ": {
+      "tur": 8510
     },
     "'ll ": {
       "eng": 10717
@@ -269,8 +196,8 @@
     "'re ": {
       "eng": 11009
     },
-    "aagi": {
-      "est": 9810
+    "aag ": {
+      "nld": 16019
     },
     "aba ": {
       "spa": 22111
@@ -280,12 +207,6 @@
     },
     "abbi": {
       "ita": 14991
-    },
-    "abi ": {
-      "lvs": 6948
-    },
-    "abs ": {
-      "lvs": 7326
     },
     "ach ": {
       "pol": 9103
@@ -299,38 +220,17 @@
     "adec": {
       "tur": 10503
     },
-    "ads ": {
-      "lvs": 8833
-    },
     "aggi": {
       "ita": 12201
-    },
-    "ajad": {
-      "lvs": 10699
-    },
-    "ajag": {
-      "lvs": 8833
-    },
-    "akeh": {
-      "jav": 15599
-    },
-    "akke": {
-      "nob": 16294
-    },
-    "akla": {
-      "tur": 8607
-    },
-    "akst": {
-      "lvs": 11810
-    },
-    "akta": {
-      "tur": 7006
     },
     "bbia": {
       "ita": 17294
     },
     "bic ": {
       "pol": 8997
+    },
+    "bie ": {
+      "pol": 5243
     },
     "bre ": {
       "por": 8695
@@ -352,8 +252,24 @@
       "deu": 24783,
       "nld": 16831
     },
+    "cji ": {
+      "pol": 5285
+    },
+    "dad ": {
+      "spa": 24012
+    },
+    "dade": {
+      "por": 20431
+    },
+    "dag ": {
+      "nob": 13672,
+      "swe": 12649
+    },
     "dde ": {
       "nob": 19855
+    },
+    "ded ": {
+      "eng": 7484
     },
     "deg ": {
       "nob": 28078
@@ -367,51 +283,47 @@
     "dla ": {
       "pol": 8137
     },
+    "dlac": {
+      "pol": 5021
+    },
     "dn't": {
       "eng": 27252
     },
     "dre ": {
       "nob": 15860
     },
-    "dta ": {
-      "hun": 9928
+    "echc": {
+      "ces": 8254
     },
-    "e's ": {
-      "eng": 13380
+    "echn": {
+      "ces": 9721
     },
     "eed ": {
-      "eng": 8921,
-      "est": 6190
+      "eng": 8921
     },
     "eeft": {
       "nld": 38782
     },
-    "eegi": {
-      "est": 9411
-    },
     "eft ": {
       "nld": 44752
     },
-    "egi ": {
-      "est": 16643
+    "efte": {
+      "swe": 7242
     },
-    "egst": {
-      "lit": 12372
+    "egi ": {
+      "tur": 6343
+    },
+    "egli": {
+      "ita": 11564
+    },
+    "ehda": {
+      "fin": 10441
     },
     "ehr ": {
       "deu": 17661
     },
-    "eja ": {
-      "lvs": 15461
-    },
-    "eke ": {
-      "jav": 69436
-    },
-    "eks ": {
-      "est": 16068
-    },
-    "ekte": {
-      "tur": 13420
+    "end ": {
+      "eng": 6634
     },
     "endr": {
       "fra": 19002
@@ -420,7 +332,8 @@
       "jav": 27127
     },
     "enn ": {
-      "deu": 16274
+      "deu": 16274,
+      "nob": 13010
     },
     "fen ": {
       "deu": 15838
@@ -431,9 +344,6 @@
     "for ": {
       "eng": 27177,
       "nob": 49505
-    },
-    "fors": {
-      "nob": 13716
     },
     "ght ": {
       "eng": 26584
@@ -447,17 +357,17 @@
     "gli ": {
       "ita": 22803
     },
-    "grib": {
-      "lvs": 17971
-    },
-    "gsta": {
-      "lit": 6780
+    "glia": {
+      "ita": 11801
     },
     "hic ": {
       "tur": 11612
     },
     "hij ": {
       "nld": 56576
+    },
+    "hren": {
+      "deu": 10955
     },
     "hte ": {
       "deu": 14300
@@ -471,12 +381,12 @@
     "ibi ": {
       "tur": 9909
     },
-    "ich ": {
-      "deu": 100000,
-      "pol": 9309
-    },
     "icht": {
       "deu": 75133
+    },
+    "idad": {
+      "por": 16304,
+      "spa": 16152
     },
     "idn'": {
       "eng": 19710
@@ -484,29 +394,17 @@
     "ied ": {
       "eng": 8639
     },
+    "ieda": {
+      "fin": 14320
+    },
     "iej ": {
       "pol": 16177
-    },
-    "iejs": {
-      "pol": 6874
-    },
-    "iek ": {
-      "lit": 12134
-    },
-    "iekv": {
-      "lit": 5887
     },
     "ight": {
       "eng": 16960
     },
-    "igi ": {
-      "lvs": 7704
-    },
     "igli": {
       "ita": 14875
-    },
-    "igs ": {
-      "lvs": 8458
     },
     "igt ": {
       "swe": 24022
@@ -517,38 +415,14 @@
     "ihre": {
       "deu": 11159
     },
-    "ija ": {
-      "lit": 8095,
-      "lvs": 7704
-    },
-    "ijk ": {
-      "nld": 30490
+    "ijd ": {
+      "nld": 15402
     },
     "ijn ": {
       "nld": 82826
     },
-    "jag ": {
-      "lvs": 7326,
-      "swe": 100000
-    },
-    "ked ": {
-      "eng": 12230,
-      "hun": 13020
-    },
-    "keeg": {
-      "est": 9012
-    },
-    "kke ": {
-      "nob": 82558
-    },
-    "kten": {
-      "tur": 13241
-    },
-    "laba": {
-      "lit": 25924
-    },
-    "laks": {
-      "est": 6799
+    "labi": {
+      "tur": 7381
     },
     "ldn'": {
       "eng": 7730
@@ -557,28 +431,29 @@
       "deu": 32471
     },
     "lig ": {
-      "nob": 34020
+      "nob": 34020,
+      "swe": 8870
     },
     "ligt": {
       "swe": 11968
     },
-    "lijk": {
-      "nld": 35383
-    },
-    "livr": {
-      "por": 8206
-    },
-    "lja ": {
-      "est": 9411
-    },
     "llie": {
       "nld": 19556
     },
-    "lvoj": {
-      "lit": 8643
+    "llt ": {
+      "swe": 7908
     },
     "m'a ": {
       "tur": 9559
+    },
+    "moc ": {
+      "ces": 10277
+    },
+    "moch": {
+      "pol": 5758
+    },
+    "mohl": {
+      "ces": 11772
     },
     "moi ": {
       "fra": 17262
@@ -589,33 +464,27 @@
     "molt": {
       "ita": 23518
     },
-    "more": {
-      "eng": 8403
+    "mpi ": {
+      "fin": 7997
     },
     "n't ": {
       "eng": 73768
     },
-    "ncs ": {
-      "hun": 17411
+    "nch ": {
+      "eng": 6106
     },
     "ngi ": {
-      "jav": 24324
+      "jav": 24324,
+      "tur": 6481
     },
-    "nns ": {
-      "swe": 9316
-    },
-    "nsch": {
-      "deu": 13516
-    },
-    "nske": {
-      "nob": 15729
+    "ngla": {
+      "fin": 5824
     },
     "nted": {
       "eng": 7492
     },
-    "nts ": {
-      "eng": 8182,
-      "fra": 18623
+    "ntee": {
+      "fin": 6823
     },
     "obre": {
       "por": 9346
@@ -625,10 +494,14 @@
       "swe": 29665
     },
     "oen ": {
-      "nld": 20219
+      "nld": 20219,
+      "nob": 12833
     },
-    "oks ": {
-      "lit": 7178
+    "ohl ": {
+      "ces": 8087
+    },
+    "oie ": {
+      "ron": 11040
     },
     "olac": {
       "tur": 9430
@@ -636,74 +509,59 @@
     "old ": {
       "eng": 16713
     },
-    "ors ": {
-      "lit": 8430
+    "oord": {
+      "nld": 16464
+    },
+    "orla": {
+      "tur": 6355
+    },
+    "ott ": {
+      "hun": 8476
     },
     "piac": {
       "ita": 20671
     },
-    "pied": {
-      "lvs": 8833
+    "pida": {
+      "fin": 11510
     },
-    "prie": {
-      "lvs": 11440
+    "pre ": {
+      "ron": 10276
+    },
+    "pred": {
+      "ces": 11995
+    },
+    "pro ": {
+      "ces": 10547
     },
     "rebb": {
       "ita": 14437
     },
+    "rech": {
+      "deu": 10526
+    },
+    "ree ": {
+      "eng": 6329
+    },
     "rep ": {
       "jav": 25732
     },
-    "rija": {
-      "lvs": 8833
+    "rfor": {
+      "swe": 8605
+    },
+    "rig ": {
+      "swe": 8820
+    },
+    "roc ": {
+      "ces": 14827
     },
     "rro ": {
       "por": 9720
     },
-    "s-a ": {
-      "ron": 22932
-    },
-    "sch ": {
-      "deu": 15131
-    },
-    "schl": {
-      "deu": 17489
-    },
-    "ske ": {
-      "nob": 16987
-    },
-    "sli ": {
-      "pol": 6099
-    },
-    "sn't": {
-      "eng": 24717
-    },
-    "sted": {
-      "tur": 11247
-    },
-    "t's ": {
-      "eng": 17796
-    },
-    "taa ": {
-      "fin": 35421
-    },
-    "tab ": {
-      "est": 14912
-    },
-    "tac ": {
-      "pol": 6707
-    },
-    "tak ": {
-      "hun": 10047,
-      "jav": 18560,
-      "pol": 11300
-    },
-    "ted ": {
-      "eng": 24379,
-      "hun": 11346
-    },
     "teen": {
       "fin": 12705
+    },
+    "tehd": {
+      "fin": 10722
     },
     "tej ": {
       "pol": 6981
@@ -711,144 +569,24 @@
     "tenh": {
       "por": 13845
     },
-    "tev ": {
-      "lvs": 23566
-    },
     "treb": {
+      "ces": 14358,
       "ron": 41189
     },
-    "tta ": {
-      "fin": 32690,
-      "swe": 15252
+    "trec": {
+      "ron": 11877
     },
-    "ttaa": {
-      "fin": 15991
+    "tten": {
+      "fin": 6529
     },
-    "voi ": {
-      "fin": 15208,
-      "ita": 13509,
-      "ron": 15483
+    "льм ": {
+      "rus": 1260
     },
-    "voln": {
-      "hun": 10798
+    "мню ": {
+      "rus": 1353
     },
-    "vor ": {
-      "nob": 13848
-    },
-    "vorb": {
-      "ron": 19305
-    },
-    "дит ": {
-      "rus": 8053
-    },
-    "дить": {
-      "rus": 8511,
-      "ukr": 5057
-    },
-    "елеф": {
-      "ukr": 5245
-    },
-    "ели ": {
-      "rus": 9918
-    },
-    "ельн": {
-      "rus": 13619
-    },
-    "ень ": {
-      "rus": 25176,
-      "ukr": 5684
-    },
-    "еред": {
-      "ukr": 5680
-    },
-    "ерем": {
-      "ukr": 3071
-    },
-    "еть ": {
-      "rus": 10236
-    },
-    "ечер": {
-      "ukr": 3539
-    },
-    "лени": {
-      "rus": 6112,
-      "ukr": 3021
-    },
-    "лише": {
-      "ukr": 4226
-    },
-    "лиши": {
-      "ukr": 3885
-    },
-    "льни": {
-      "ukr": 5556
-    },
-    "льше": {
-      "rus": 12193,
-      "ukr": 7150
-    },
-    "люди": {
-      "ukr": 4534
-    },
-    "мени": {
-      "rus": 7885
-    },
-    "ним ": {
-      "ukr": 7036
-    },
-    "нить": {
-      "rus": 6768
-    },
-    "них ": {
-      "ukr": 4906
-    },
-    "ниче": {
-      "rus": 9473
-    },
-    "пере": {
-      "ukr": 19813
-    },
-    "пини": {
-      "ukr": 3280
-    },
-    "пред": {
-      "rus": 12697
-    },
-    "прин": {
-      "rus": 7068
-    },
-    "рит ": {
-      "rus": 7348
-    },
-    "рить": {
-      "rus": 11945,
-      "ukr": 3354
-    },
-    "три ": {
-      "rus": 6684,
-      "ukr": 4051
-    },
-    "трим": {
-      "ukr": 5117
-    },
-    "цим ": {
-      "ukr": 3751
-    },
-    "ченн": {
-      "ukr": 3053
-    },
-    "чень": {
-      "rus": 17951
-    },
-    "чеш ": {
-      "ukr": 4938
-    },
-    "ьше ": {
-      "rus": 16252,
-      "ukr": 7127
-    },
-    "юди ": {
-      "ukr": 3640
+    "тью ": {
+      "rus": 2907
     },
     "ють ": {
       "ukr": 9693
@@ -858,85 +596,62 @@
     " #": "eng",
     " &": "eng",
     " aú": "spa",
-    " aš": "lit",
     " bà": "vie",
-    " bę": "pol",
+    " bý": "ces",
     " cs": "hun",
     " cò": "vie",
-    " dl": "pol",
-    " dė": "lit",
     " fă": "ron",
     " gì": "vie",
-    " hv": "nob",
+    " hl": "ces",
     " hà": "vie",
     " i'": "eng",
     " i-": "ron",
     " iy": "tur",
     " iç": "tur",
     " iş": "tur",
-    " iš": "lit",
     " j'": "fra",
-    " jõ": "est",
-    " jā": "lvs",
+    " jí": "ces",
+    " kd": "ces",
     " ks": "pol",
-    " kt": "pol",
-    " kõ": "est",
-    " kā": "lvs",
     " l-": "ron",
-    " lh": "por",
     " lj": "swe",
     " lì": "ita",
-    " lõ": "est",
     " m-": "ron",
     " mb": "jav",
     " mj": "swe",
-    " mn": "pol",
     " mà": "vie",
     " mì": "vie",
-    " mõ": "est",
-    " mā": "lvs",
     " mă": "ron",
-    " mė": "lit",
     " nà": "vie",
     " nê": "vie",
-    " nõ": "est",
-    " nā": "lvs",
-    " nė": "lit",
     " oí": "spa",
     " où": "fra",
     " pè": "fra",
-    " pā": "lvs",
     " pă": "ron",
     " rz": "pol",
     " s-": "ron",
-    " sb": "ita",
     " sì": "ita",
-    " sõ": "est",
     " sû": "fra",
-    " sā": "lvs",
     " tã": "por",
     " tè": "ita",
-    " tì": "vie",
-    " tõ": "est",
-    " tā": "lvs",
-    " už": "lit",
+    " uo": "ita",
+    " vz": "ces",
     " và": "vie",
     " vì": "vie",
-    " võ": "est",
-    " vā": "lvs",
+    " vý": "ces",
+    " vš": "ces",
     " ws": "pol",
+    " wz": "pol",
     " wä": "deu",
     " wü": "deu",
     " yh": "fin",
     " yk": "fin",
     " yl": "fin",
     " ym": "fin",
-    " ys": "fin",
     " yè": "jav",
     " yü": "tur",
-    " zd": "pol",
-    " zn": "pol",
-    " zr": "pol",
+    " zk": "ces",
+    " zp": "ces",
     " | ": "hin",
     " ¡": "spa",
     " ª": "por",
@@ -951,38 +666,31 @@
     " éx": "spa",
     " éé": "nld",
     " êt": "fra",
+    " íg": "hun",
     " ír": "hun",
     " îi": "ron",
     " îm": "ron",
     " în": "ron",
     " ñ": "spa",
-    " õ": "est",
-    " õh": "est",
-    " õn": "est",
-    " õp": "est",
-    " öe": "est",
-    " öö": "est",
     " ø": "nob",
     " úg": "hun",
     " új": "hun",
-    " üh": "est",
     " üç": "tur",
+    " ý ": "vie",
     " ăn": "vie",
-    " č": "lit",
-    " či": "lit",
+    " č": "ces",
     " đ": "vie",
-    " į": "lit",
-    " ļ": "lvs",
     " ō": "deu",
     " ő": "hun",
     " œ": "fra",
+    " ř": "ces",
     " ś": "pol",
     " şe": "tur",
+    " še": "ces",
+    " šk": "ces",
+    " šp": "ces",
     " ż": "pol",
-    " ž": "lit",
-    " ža": "lit",
-    " ži": "lit",
-    " žm": "lit",
+    " ž": "ces",
     " ș": "ron",
     " ț": "ron",
     " έ": "ell",
@@ -997,36 +705,40 @@
     " ο": "ell",
     " σ": "ell",
     " τ": "ell",
+    " бъ": "bul",
     " бы": "rus",
+    " бя": "bul",
     " вж": "ukr",
     " вы": "rus",
+    " гд": "rus",
+    " дъ": "bul",
     " ещ": "rus",
     " з ": "ukr",
     " з'": "ukr",
     " зб": "ukr",
-    " и": "rus",
-    " и ": "rus",
-    " из": "rus",
-    " им": "rus",
-    " ис": "rus",
+    " зг": "ukr",
     " й ": "ukr",
     " йд": "ukr",
     " к ": "rus",
     " кт": "rus",
+    " къ": "bul",
+    " мъ": "bul",
     " мы": "rus",
+    " нр": "rus",
     " п'": "ukr",
-    " сд": "rus",
+    " пъ": "bul",
+    " тъ": "bul",
     " ты": "rus",
     " хт": "ukr",
     " ць": "ukr",
     " цю": "ukr",
-    " ця": "ukr",
     " чт": "rus",
-    " що": "ukr",
+    " ъ": "bul",
     " э": "rus",
     " є": "ukr",
     " і": "ukr",
     " ї": "ukr",
+    " ѝ": "bul",
     " א": "heb",
     " ב": "heb",
     " ה": "heb",
@@ -1101,6 +813,22 @@
     " व": "hin",
     " स": "hin",
     " ह": "hin",
+    " । ": "hin",
+    " আ": "ben",
+    " এ": "ben",
+    " ক": "ben",
+    " খ": "ben",
+    " চ": "ben",
+    " ট": "ben",
+    " ত": "ben",
+    " দ": "ben",
+    " ন": "ben",
+    " প": "ben",
+    " ব": "ben",
+    " ম": "ben",
+    " য": "ben",
+    " স": "ben",
+    " হ": "ben",
     " ค": "tha",
     " ฉ": "tha",
     " ท": "tha",
@@ -1283,6 +1011,7 @@
     "'d ": "eng",
     "'da": "tur",
     "'hu": "fra",
+    "'j": "nld",
     "'ll": "eng",
     "'ni": "tur",
     "'uo": "ita",
@@ -1302,6 +1031,7 @@
     "'î": "fra",
     "'œ": "fra",
     "'я": "ukr",
+    "'я ": "ukr",
     "'яз": "ukr",
     "'ят": "ukr",
     "*": "ara",
@@ -1315,20 +1045,17 @@
     "-í": "por",
     "-ș": "ron",
     "-ț": "ron",
-    "aav": "fin",
+    "-ни": "rus",
     "abg": "deu",
-    "abā": "lvs",
     "acj": "pol",
     "acz": "pol",
     "acă": "ron",
-    "adė": "lit",
-    "aeg": "est",
     "afí": "spa",
+    "agy": "hun",
     "ahd": "fin",
-    "ają": "pol",
     "akè": "jav",
     "ală": "ron",
-    "alė": "lit",
+    "apm": "tur",
     "arà": "ita",
     "arò": "ita",
     "arü": "deu",
@@ -1336,8 +1063,6 @@
     "asă": "ron",
     "atz": "deu",
     "ată": "ron",
-    "atė": "lit",
-    "awf": "eng",
     "ayó": "spa",
     "azú": "spa",
     "ază": "ron",
@@ -1352,18 +1077,15 @@
     "añ": "spa",
     "aún": "spa",
     "ać": "pol",
-    "ač": "lit",
-    "ači": "lit",
+    "ač": "ces",
     "ağ": "tur",
     "ał": "pol",
-    "aś": "pol",
     "aşk": "tur",
     "aşl": "tur",
-    "aš ": "lit",
-    "aša": "lit",
+    "aše": "ces",
     "aţ": "ron",
     "aż": "pol",
-    "aži": "lit",
+    "až": "ces",
     "aș": "ron",
     "aț": "ron",
     "baş": "tur",
@@ -1372,7 +1094,7 @@
     "bge": "deu",
     "blè": "fra",
     "brí": "spa",
-    "brā": "lvs",
+    "buo": "ita",
     "buu": "nld",
     "bym": "pol",
     "bäs": "swe",
@@ -1382,9 +1104,10 @@
     "bø": "nob",
     "büc": "deu",
     "büy": "tur",
-    "bā": "lvs",
-    "bė": "lit",
-    "będ": "pol",
+    "bý": "ces",
+    "být": "ces",
+    "bę": "pol",
+    "bě": "ces",
     "bı": "tur",
     "bő": "hun",
     "bœ": "fra",
@@ -1393,30 +1116,30 @@
     "c'è": "ita",
     "c'é": "fra",
     "caç": "por",
+    "ceš": "ces",
     "chk": "deu",
     "chä": "deu",
     "chö": "deu",
     "chú": "vie",
     "chü": "deu",
     "ciò": "ita",
-    "cią": "pol",
-    "cię": "pol",
+    "cji": "pol",
     "coj": "spa",
     "csa": "hun",
     "cse": "hun",
     "cug": "ita",
     "cuá": "spa",
+    "cz ": "pol",
     "czn": "pol",
     "czo": "pol",
+    "czu": "pol",
     "czy": "pol",
-    "czę": "pol",
     "cât": "ron",
     "cç": "por",
     "cè": "fra",
     "cê ": "por",
     "cês": "por",
     "cì": "ita",
-    "cí ": "spa",
     "cò ": "ita",
     "còn": "vie",
     "cóm": "spa",
@@ -1424,8 +1147,6 @@
     "că ": "ron",
     "căr": "ron",
     "cę": "pol",
-    "cę ": "pol",
-    "cī": "lvs",
     "cı": "tur",
     "cœ": "fra",
     "cț": "ron",
@@ -1436,13 +1157,17 @@
     "daq": "por",
     "daş": "tur",
     "ddl": "eng",
-    "dly": "eng",
+    "deš": "ces",
+    "dl ": "ces",
     "dn'": "eng",
+    "dní": "ces",
+    "drz": "pol",
     "drà": "ita",
     "drí": "spa",
     "drò": "ita",
     "dsh": "eng",
     "dzo": "pol",
+    "dzy": "pol",
     "dá-": "por",
     "dä ": "fin",
     "dät": "fin",
@@ -1453,7 +1178,6 @@
     "dê": "por",
     "dì": "ita",
     "dì ": "ita",
-    "dí ": "spa",
     "dî": "fra",
     "dò ": "ita",
     "dô": "por",
@@ -1462,21 +1186,15 @@
     "dû": "fra",
     "dü ": "tur",
     "düş": "tur",
-    "dā": "lvs",
-    "dā ": "lvs",
+    "dý ": "ces",
     "dă": "ron",
     "dă ": "ron",
-    "dē": "lvs",
-    "dė": "lit",
-    "dė ": "lit",
-    "dėj": "lit",
-    "dėl": "lit",
-    "dī": "lvs",
+    "dę": "pol",
+    "dě": "ces",
     "dı": "tur",
     "dł": "pol",
     "dō": "deu",
     "dő": "hun",
-    "dži": "lit",
     "e'r": "eng",
     "e'v": "eng",
     "edì": "ita",
@@ -1487,14 +1205,15 @@
     "eix": "por",
     "ejó": "spa",
     "elq": "fra",
-    "eną": "lit",
+    "ený": "ces",
     "erà": "ita",
     "erã": "por",
     "erò": "ita",
     "età": "ita",
     "eux": "fra",
-    "evn": "nob",
     "ewh": "eng",
+    "eyó": "spa",
+    "ezé": "hun",
     "ezó": "spa",
     "eß": "deu",
     "eã": "por",
@@ -1504,6 +1223,7 @@
     "eën": "nld",
     "eí ": "spa",
     "eía": "spa",
+    "eíb": "spa",
     "eíd": "spa",
     "eïn": "nld",
     "eñ": "spa",
@@ -1512,20 +1232,25 @@
     "eõ": "por",
     "eû": "fra",
     "eć": "pol",
+    "eč": "ces",
     "eğ": "tur",
     "eś": "pol",
+    "eš": "ces",
+    "eš ": "ces",
+    "ešt": "ces",
     "eţ": "ron",
     "eż": "pol",
+    "ež": "ces",
     "eș": "ron",
     "eț": "ron",
     "fd ": "nld",
     "fds": "nld",
-    "fej": "hun",
     "few": "eng",
     "ffn": "deu",
     "fft": "deu",
     "frå": "swe",
     "frü": "deu",
+    "fuo": "ita",
     "fà": "ita",
     "fã": "por",
     "fäh": "deu",
@@ -1545,6 +1270,7 @@
     "fő": "hun",
     "fű": "hun",
     "gdy": "pol",
+    "gdz": "pol",
     "geç": "tur",
     "geï": "nld",
     "ggs": "eng",
@@ -1554,12 +1280,14 @@
     "glê": "por",
     "glü": "deu",
     "grü": "deu",
-    "grā": "lvs",
     "gså": "nob",
     "gth": "eng",
     "gye": "hun",
     "gyi": "hun",
     "gyo": "hun",
+    "gyu": "hun",
+    "gyá": "hun",
+    "gyü": "hun",
     "gày": "vie",
     "gåe": "nob",
     "gån": "swe",
@@ -1569,21 +1297,16 @@
     "gõ": "por",
     "gù": "ita",
     "güe": "spa",
-    "gā": "lvs",
     "gă ": "ron",
-    "gė": "lit",
     "gł": "pol",
     "gő": "hun",
-    "gų": "lit",
     "gư": "vie",
-    "hci": "pol",
     "hdä": "fin",
     "he'": "eng",
     "heç": "por",
     "hiç": "tur",
     "hiê": "vie",
     "hlt": "deu",
-    "hly": "eng",
     "hnl": "deu",
     "ho'": "eng",
     "hoy": "spa",
@@ -1591,6 +1314,7 @@
     "hrl": "deu",
     "hrs": "deu",
     "hrt": "deu",
+    "hrá": "ces",
     "htä": "fin",
     "huo": "fin",
     "huw": "nld",
@@ -1613,6 +1337,7 @@
     "hìn": "vie",
     "hív": "hun",
     "hôn": "vie",
+    "hõ": "por",
     "höv": "swe",
     "hø": "nob",
     "hő": "hun",
@@ -1634,22 +1359,16 @@
     "igk": "deu",
     "igå": "swe",
     "ihå": "swe",
-    "ijd": "nld",
+    "iik": "fin",
     "ijf": "nld",
     "ijg": "nld",
     "ijp": "nld",
-    "ijt": "nld",
     "ijv": "nld",
     "ijz": "nld",
-    "ijā": "lvs",
-    "ikā": "lvs",
-    "ikė": "lit",
-    "inā": "lvs",
     "ină": "ron",
-    "inė": "lit",
+    "irj": "fin",
     "irà": "ita",
     "irò": "ita",
-    "irš": "lit",
     "isã": "por",
     "isä": "fin",
     "ità": "ita",
@@ -1677,22 +1396,15 @@
     "iø": "nob",
     "iù": "ita",
     "iù ": "ita",
+    "ią": "pol",
     "ić": "pol",
+    "ič": "ces",
     "ię": "pol",
-    "ię ": "pol",
-    "ięc": "pol",
-    "ięk": "pol",
     "iğ": "tur",
     "ił": "pol",
-    "iņ": "lvs",
     "iś": "pol",
     "iş ": "tur",
     "işi": "tur",
-    "iš": "lit",
-    "iš ": "lit",
-    "išk": "lit",
-    "iū": "lit",
-    "ių": "lit",
     "iș": "ron",
     "iț": "ron",
     "i̇": "tur",
@@ -1705,6 +1417,7 @@
     "j'é": "fra",
     "jds": "nld",
     "jdt": "nld",
+    "ješ": "ces",
     "jf ": "nld",
     "jft": "nld",
     "jg ": "nld",
@@ -1719,39 +1432,37 @@
     "jns": "nld",
     "jp ": "nld",
     "jpe": "nld",
+    "jse": "ces",
+    "jsm": "ces",
+    "jso": "ces",
+    "juo": "fin",
     "jze": "nld",
     "jà": "fra",
     "jà ": "fra",
-    "ják": "hun",
     "jár": "hun",
     "ját": "hun",
     "jã": "por",
-    "jä ": "fin",
     "jå": "nob",
     "jæ": "nob",
     "jé ": "spa",
+    "jí ": "ces",
+    "jím": "ces",
     "jól": "hun",
-    "jõ": "est",
     "jø": "nob",
-    "jā": "lvs",
-    "jā ": "lvs",
-    "jām": "lvs",
-    "jās": "lvs",
-    "jį": "lit",
-    "jų": "lit",
+    "ją": "pol",
+    "ję": "pol",
     "kaç": "tur",
+    "kdy": "ces",
     "khi": "vie",
     "khô": "vie",
     "kië": "nld",
-    "kiş": "tur",
     "kkä": "fin",
+    "kly": "eng",
     "ksj": "nob",
     "kså": "swe",
     "ksé": "hun",
-    "kuf": "nob",
     "kvä": "swe",
     "kä ": "fin",
-    "käv": "fin",
     "käy": "fin",
     "kää": "fin",
     "kç": "tur",
@@ -1761,37 +1472,29 @@
     "kér": "hun",
     "kés": "hun",
     "két": "hun",
-    "kõ": "est",
-    "kõi": "est",
-    "kõr": "est",
+    "ków": "pol",
     "kö ": "fin",
+    "köv": "hun",
     "köz": "hun",
     "kø": "nob",
     "kú": "hun",
-    "kā": "lvs",
-    "kā ": "lvs",
-    "kād": "lvs",
-    "kāp": "lvs",
-    "kār": "lvs",
-    "kė": "lit",
-    "kė ": "lit",
+    "kę": "pol",
     "kı": "tur",
-    "kł": "pol",
     "kő": "hun",
     "l'é": "fra",
     "laî": "fra",
     "laş": "tur",
-    "lbė": "lit",
+    "lcs": "hun",
     "lf-": "eng",
     "lfd": "nld",
     "lgú": "spa",
+    "liw": "pol",
     "lië": "nld",
-    "lkä": "fin",
     "lsj": "nld",
     "ltà": "ita",
     "lvf": "nob",
+    "lví": "spa",
     "làm": "vie",
-    "läb": "est",
     "lää": "fin",
     "låg": "swe",
     "læ": "nob",
@@ -1800,20 +1503,12 @@
     "lês": "por",
     "lì": "ita",
     "lì ": "ita",
-    "lí ": "spa",
     "lía": "spa",
     "lò ": "ita",
-    "lõp": "est",
+    "lõ": "por",
     "lø": "nob",
-    "lā": "lvs",
     "lă": "ron",
     "lă ": "ron",
-    "ląd": "pol",
-    "lē": "lvs",
-    "lė": "lit",
-    "lė ": "lit",
-    "lī": "lvs",
-    "lį": "lit",
     "lı": "tur",
     "lő": "hun",
     "lț": "ron",
@@ -1830,6 +1525,7 @@
     "myö": "fin",
     "m ": "por",
     "mà ": "vie",
+    "máš": "ces",
     "mãe": "por",
     "mão": "por",
     "mä ": "fin",
@@ -1838,35 +1534,26 @@
     "mèr": "fra",
     "mêm": "fra",
     "mìn": "vie",
-    "mí ": "spa",
     "mía": "spa",
     "mój": "pol",
     "mów": "pol",
-    "mõn": "est",
-    "mõt": "est",
+    "mõ": "por",
     "möc": "deu",
     "mø": "nob",
     "mún": "spa",
     "mû": "fra",
-    "mā": "lvs",
-    "mā ": "lvs",
-    "māc": "lvs",
-    "māj": "lvs",
-    "māt": "lvs",
     "mă": "ron",
     "mă ": "ron",
-    "mē": "lvs",
-    "mė": "lit",
-    "mėg": "lit",
-    "mī": "lvs",
+    "mě": "ces",
     "mı": "tur",
+    "mů": "ces",
     "mű": "hun",
     "mộ": "vie",
     "n'y": "fra",
     "n'é": "fra",
+    "naš": "ces",
     "ncă": "ron",
     "ndò": "ita",
-    "než": "lit",
     "nft": "deu",
     "nfí": "spa",
     "ngà": "vie",
@@ -1876,7 +1563,6 @@
     "niã": "por",
     "niè": "fra",
     "nië": "nld",
-    "nká": "hun",
     "nly": "eng",
     "nnr": "nob",
     "nnå": "nob",
@@ -1892,9 +1578,9 @@
     "nà": "vie",
     "nào": "vie",
     "này": "vie",
+    "náš": "ces",
     "não": "por",
     "nä ": "fin",
-    "näk": "fin",
     "näy": "fin",
     "nää": "fin",
     "någ": "swe",
@@ -1906,48 +1592,39 @@
     "nék": "hun",
     "néz": "hun",
     "nì": "ita",
+    "ník": "ces",
+    "ním": "ces",
     "nò": "ita",
     "nò ": "ita",
     "nói": "vie",
-    "nõ": "est",
-    "nõu": "est",
     "nø": "nob",
     "nù": "ita",
     "nüy": "tur",
-    "nüü": "est",
-    "nā": "lvs",
-    "nā ": "lvs",
-    "nāj": "lvs",
-    "nāk": "lvs",
-    "nāt": "lvs",
+    "ný": "ces",
+    "ný ": "ces",
     "nă ": "ron",
-    "nč": "lit",
-    "nė": "lit",
-    "nė ": "lit",
-    "nī": "lvs",
-    "nį": "lit",
+    "ną": "pol",
+    "ně": "ces",
     "nı": "tur",
     "nő": "hun",
     "nţ": "ron",
     "nű": "hun",
-    "nų": "lit",
     "nț": "ron",
     "n‘": "deu",
     "o'c": "eng",
     "obú": "spa",
     "ocz": "pol",
     "ocê": "por",
-    "odė": "lit",
+    "oeg": "nld",
     "oek": "nld",
     "oep": "nld",
     "ofd": "nld",
-    "ogę": "pol",
+    "ojc": "pol",
     "ojk": "swe",
+    "ojí": "ces",
     "omú": "spa",
-    "omā": "lvs",
     "opd": "nld",
     "opg": "nld",
-    "orė": "lit",
     "osì": "ita",
     "ou'": "eng",
     "ouw": "nld",
@@ -1955,12 +1632,15 @@
     "ov'": "ita",
     "ovv": "ita",
     "ovò": "ita",
+    "ový": "ces",
     "ow'": "eng",
     "owd": "eng",
     "owé": "jav",
     "oyf": "eng",
+    "ozw": "pol",
     "oß": "deu",
     "oå": "swe",
+    "oí ": "spa",
     "oír": "spa",
     "oî": "fra",
     "oñ": "spa",
@@ -1968,15 +1648,16 @@
     "où": "fra",
     "où ": "fra",
     "oû": "fra",
+    "oč": "ces",
     "oğ": "tur",
     "oł": "pol",
     "oń": "pol",
     "oś": "pol",
     "oż": "pol",
+    "ož": "ces",
     "oș": "ron",
     "oț": "ron",
-    "paž": "lit",
-    "pev": "ita",
+    "peó": "spa",
     "pf ": "deu",
     "pfl": "deu",
     "pge": "nld",
@@ -1997,35 +1678,30 @@
     "pèr": "fra",
     "pì": "ita",
     "pò": "ita",
+    "põ": "por",
     "pø": "nob",
-    "pā": "lvs",
-    "pār": "lvs",
     "pă": "ron",
     "pă ": "ron",
     "păr": "ron",
-    "pē": "lvs",
-    "pė": "lit",
     "pı": "tur",
-    "pł": "pol",
     "pő": "hun",
+    "př": "ces",
     "qq": "ita",
     "qu'": "fra",
     "qur": "eng",
-    "raš": "lit",
     "rdì": "ita",
     "reí": "spa",
     "rgd": "nld",
+    "rgí": "spa",
     "rië": "nld",
     "rkj": "nob",
     "rlf": "eng",
+    "rly": "eng",
     "rmã": "por",
-    "rmí": "spa",
     "rrà": "ita",
-    "rrò": "ita",
     "rsq": "fra",
     "rvä": "swe",
     "rzt": "deu",
-    "rzy": "pol",
     "rzä": "deu",
     "rã": "por",
     "rão": "por",
@@ -2039,20 +1715,11 @@
     "rês": "por",
     "rêt": "fra",
     "rì ": "ita",
+    "rów": "pol",
     "rø": "nob",
     "rû": "fra",
-    "rā": "lvs",
-    "rā ": "lvs",
-    "rād": "lvs",
-    "rāk": "lvs",
-    "rām": "lvs",
+    "rý ": "ces",
     "ră ": "ron",
-    "rē": "lvs",
-    "rė": "lit",
-    "rė ": "lit",
-    "rėj": "lit",
-    "rī": "lvs",
-    "rį": "lit",
     "rı": "tur",
     "rō": "deu",
     "rő": "hun",
@@ -2062,16 +1729,13 @@
     "s'è": "ita",
     "scă": "ron",
     "shr": "eng",
-    "siä": "fin",
-    "się": "pol",
     "sj ": "nob",
-    "sjö": "swe",
     "sks": "eng",
+    "slí": "ces",
     "sn'": "eng",
     "snö": "swe",
     "ssã": "por",
     "stã": "por",
-    "stā": "lvs",
     "stă": "ron",
     "svå": "swe",
     "syö": "fin",
@@ -2079,7 +1743,6 @@
     "szá": "hun",
     "szé": "hun",
     "szí": "hun",
-    "szę": "pol",
     "sä ": "fin",
     "sää": "fin",
     "såd": "swe",
@@ -2091,28 +1754,22 @@
     "sê": "por",
     "sì": "ita",
     "sì ": "ita",
-    "sí ": "spa",
     "sív": "por",
     "sò": "ita",
     "sò ": "ita",
-    "sõb": "est",
-    "sõi": "est",
-    "sõn": "est",
+    "sõ": "por",
     "söy": "tur",
-    "söö": "est",
     "sø": "nob",
     "sù": "ita",
     "sû": "fra",
     "sûr": "fra",
-    "süü": "est",
     "să ": "ron",
     "să-": "ron",
-    "sė": "lit",
+    "są": "pol",
     "sı": "tur",
     "sł": "pol",
     "ső": "hun",
     "sœ": "fra",
-    "sų": "lit",
     "sẽ": "vie",
     "t'v": "eng",
     "thd": "eng",
@@ -2121,49 +1778,44 @@
     "thí": "vie",
     "tiy": "tur",
     "tió": "spa",
-    "tné": "hun",
+    "tly": "eng",
+    "tní": "ces",
     "tq": "deu",
     "tr-": "ron",
     "trz": "pol",
-    "trā": "lvs",
+    "tsé": "hun",
     "ttà": "ita",
     "tvä": "swe",
     "två": "swe",
     "ty-": "eng",
     "tyy": "fin",
+    "tyá": "hun",
     "tzu": "deu",
     "tà ": "ita",
-    "ták": "hun",
     "tã": "por",
     "tão": "por",
     "tä ": "fin",
+    "täi": "fin",
     "täy": "fin",
     "tää": "fin",
     "tåg": "swe",
     "tè ": "ita",
     "tée": "fra",
-    "ték": "hun",
     "têm": "por",
     "tío": "spa",
     "tò ": "ita",
     "tôi": "vie",
     "tôt": "fra",
+    "tõ": "por",
     "tø": "nob",
-    "tā": "lvs",
-    "tā ": "lvs",
-    "tāj": "lvs",
-    "tās": "lvs",
     "tă ": "ron",
-    "tē": "lvs",
-    "tė": "lit",
-    "tė ": "lit",
-    "tī": "lvs",
-    "tį": "lit",
+    "tę": "pol",
+    "tě": "ces",
     "tı": "tur",
     "tō": "deu",
     "tő": "hun",
+    "tř": "ces",
     "tű": "hun",
-    "tų": "lit",
     "u'e": "fra",
     "u'i": "fra",
     "u'l": "eng",
@@ -2179,17 +1831,16 @@
     "ufg": "deu",
     "uiu": "por",
     "uió": "spa",
-    "uję": "pol",
-    "unā": "lvs",
+    "ují": "ces",
     "ună": "ron",
     "uoc": "ita",
     "upă": "ron",
     "urü": "deu",
     "ură": "ron",
-    "urė": "lit",
     "usg": "deu",
-    "uue": "est",
+    "uul": "fin",
     "uvé": "fra",
+    "uví": "ces",
     "uw ": "nld",
     "uwd": "nld",
     "uws": "nld",
@@ -2209,41 +1860,51 @@
     "uó": "spa",
     "uă": "ron",
     "uă ": "ron",
+    "uč": "ces",
     "uğ": "tur",
     "uşm": "tur",
     "uż": "pol",
-    "už": "lit",
-    "už ": "lit",
+    "už": "ces",
     "uș": "ron",
     "uț": "ron",
     "uố": "vie",
     "v'è": "ita",
     "vgj": "nob",
+    "vij": "nld",
     "vió": "spa",
     "vn ": "nob",
+    "vní": "ces",
     "vrà": "ita",
+    "vrá": "ces",
     "vvo": "ita",
+    "vyp": "ces",
     "và": "vie",
     "và ": "vie",
     "vào": "vie",
     "vão": "por",
     "vä ": "fin",
+    "väg": "swe",
+    "väh": "fin",
+    "vää": "fin",
     "vå ": "swe",
     "våk": "nob",
     "vån": "swe",
     "væ": "nob",
     "vè": "fra",
+    "vím": "ces",
     "vò ": "ita",
-    "või": "est",
-    "võt": "est",
+    "võ": "por",
     "vø": "nob",
-    "vā": "lvs",
-    "vār": "lvs",
+    "vý": "ces",
+    "vý ": "ces",
     "vă ": "ron",
-    "vē": "lvs",
-    "vė": "lit",
-    "vę": "lit",
+    "vě": "ces",
     "vő": "hun",
+    "vš": "ces",
+    "vše": "ces",
+    "vši": "ces",
+    "vů": "ces",
+    "vű": "hun",
     "vớ": "vie",
     "w's": "eng",
     "wav": "eng",
@@ -2257,15 +1918,22 @@
     "who": "eng",
     "why": "eng",
     "wia": "pol",
-    "wię": "pol",
     "wly": "eng",
     "woh": "deu",
+    "woi": "pol",
     "woj": "pol",
+    "wró": "pol",
     "wsz": "pol",
     "wt ": "nld",
     "wv": "nld",
+    "wyb": "pol",
     "wyc": "pol",
     "wye": "eng",
+    "wyg": "pol",
+    "wyj": "pol",
+    "wyk": "pol",
+    "wym": "pol",
+    "wyp": "pol",
     "wys": "pol",
     "wá": "spa",
     "wä": "deu",
@@ -2275,7 +1943,7 @@
     "wèk": "jav",
     "wé": "jav",
     "wé ": "jav",
-    "wó": "pol",
+    "wój": "pol",
     "wö": "deu",
     "wü": "deu",
     "wün": "deu",
@@ -2299,6 +1967,7 @@
     "yfr": "eng",
     "ygd": "nob",
     "yht": "fin",
+    "ykd": "nob",
     "ymr": "nob",
     "ytä": "fin",
     "ywh": "eng",
@@ -2313,6 +1982,7 @@
     "yś": "pol",
     "yū": "deu",
     "yű": "hun",
+    "yž": "ces",
     "z-v": "fra",
     "zco": "spa",
     "zcz": "pol",
@@ -2320,15 +1990,15 @@
     "zoe": "nld",
     "zq": "spa",
     "zqu": "spa",
-    "zro": "pol",
-    "zsk": "lvs",
-    "ztá": "hun",
-    "zyc": "pol",
+    "zwy": "pol",
+    "zyb": "pol",
     "zyj": "pol",
     "zym": "pol",
     "zys": "pol",
+    "zyt": "pol",
+    "zyw": "pol",
     "zzá": "hun",
-    "zám": "hun",
+    "zág": "hun",
     "zã": "por",
     "zä": "deu",
     "zäh": "deu",
@@ -2339,13 +2009,12 @@
     "zúc": "spa",
     "ză": "ron",
     "ză ": "ron",
-    "zē": "lvs",
-    "zī": "lvs",
+    "zą": "pol",
+    "zę": "pol",
     "zı": "tur",
     "zł": "pol",
     "ző": "hun",
     "zű": "hun",
-    " o": "por",
     "¡": "spa",
     "¡ ": "spa",
     "¡a": "spa",
@@ -2373,6 +2042,7 @@
     "¡¡": "spa",
     "¡á": "spa",
     "¡é": "spa",
+    "¨": "ces",
     "ª ": "por",
     "­s": "deu",
     "° ": "ita",
@@ -2417,22 +2087,17 @@
     "ày ": "vie",
     "á-l": "por",
     "ább": "hun",
-    "ád ": "hun",
     "ág ": "hun",
     "áis": "spa",
-    "ák": "hun",
-    "ák ": "hun",
-    "áln": "hun",
-    "ána": "hun",
-    "ány": "hun",
+    "álj": "hun",
     "áo ": "vie",
-    "ár ": "hun",
-    "áro": "hun",
-    "áso": "hun",
+    "ásá": "hun",
     "áts": "hun",
     "átt": "hun",
     "áé": "hun",
     "áñ": "spa",
+    "áš": "ces",
+    "áš ": "ces",
     "âc": "fra",
     "âg": "fra",
     "âin": "ron",
@@ -2450,12 +2115,12 @@
     "äch": "deu",
     "ädc": "deu",
     "ädd": "swe",
-    "äev": "est",
+    "äga": "swe",
     "ägg": "swe",
-    "ähd": "fin",
     "ähl": "deu",
     "ähr": "deu",
     "ähä": "fin",
+    "äin": "fin",
     "äiv": "fin",
     "äj": "fin",
     "äkt": "swe",
@@ -2471,16 +2136,16 @@
     "ätä": "fin",
     "äuf": "deu",
     "äum": "deu",
-    "ävi": "fin",
     "ävä": "fin",
     "äx": "swe",
     "äy": "fin",
     "äyt": "fin",
     "äz": "deu",
     "äß": "deu",
+    "ää": "fin",
     "ää ": "fin",
-    "ääg": "est",
     "ääl": "fin",
+    "ään": "fin",
     "ääs": "fin",
     "äät": "fin",
     "äö": "fin",
@@ -2558,7 +2223,6 @@
     "ées": "fra",
     "ég ": "hun",
     "éjà": "fra",
-    "ék ": "hun",
     "éke": "hun",
     "éln": "hun",
     "ény": "hun",
@@ -2596,11 +2260,14 @@
     "ình": "vie",
     "í-": "por",
     "ían": "spa",
+    "íc ": "ces",
     "íng": "por",
     "ío ": "spa",
     "íos": "spa",
     "íts": "hun",
     "íç": "por",
+    "íš": "ces",
+    "íš ": "ces",
     "îc": "fra",
     "îi": "ron",
     "îi ": "ron",
@@ -2624,10 +2291,13 @@
     "ñó": "spa",
     "òn ": "vie",
     "òng": "vie",
+    "óbá": "hun",
     "óh": "hun",
     "ój ": "pol",
     "ónd": "spa",
     "ópr": "por",
+    "óre": "pol",
+    "óry": "pol",
     "ów": "pol",
     "ów ": "pol",
     "ówi": "pol",
@@ -2644,54 +2314,22 @@
     "ôt": "fra",
     "ôt ": "fra",
     "ôv": "por",
-    "õb": "est",
-    "õbe": "est",
-    "õbr": "est",
-    "õd": "est",
-    "õh": "est",
-    "õht": "est",
-    "õi": "est",
-    "õi ": "est",
-    "õib": "est",
-    "õig": "est",
-    "õik": "est",
-    "õim": "est",
-    "õin": "est",
-    "õit": "est",
-    "õl": "est",
-    "õn": "est",
-    "õna": "est",
-    "õnn": "est",
-    "õp": "est",
-    "õpe": "est",
-    "õpi": "est",
-    "õpp": "est",
-    "õr": "est",
-    "õrv": "est",
-    "õs": "est",
-    "õt": "est",
-    "õta": "est",
-    "õtt": "est",
-    "õu": "est",
-    "õun": "est",
-    "õus": "est",
-    "õv": "est",
+    "õe": "por",
+    "ões": "por",
     "öbb": "hun",
     "öch": "deu",
     "öda": "swe",
-    "öel": "est",
     "öhn": "deu",
     "öi": "fin",
-    "öjd": "swe",
     "öjl": "swe",
     "öo": "fin",
     "öra": "swe",
+    "örö": "hun",
     "ötü": "tur",
     "öw": "deu",
     "öß": "deu",
     "öä": "fin",
-    "öö ": "est",
-    "ööd": "est",
+    "öö": "fin",
     "öğ": "tur",
     "ø": "nob",
     "ø ": "nob",
@@ -2714,22 +2352,20 @@
     "úc ": "vie",
     "úe": "spa",
     "úgy": "hun",
-    "úk": "hun",
+    "új ": "hun",
     "ún ": "spa",
     "úo": "spa",
     "û ": "fra",
     "ûl": "fra",
     "ûr": "fra",
     "ût": "fra",
-    "üa ": "est",
     "üch": "deu",
     "ück": "deu",
-    "üd ": "est",
-    "üdr": "est",
     "üen": "spa",
     "ühl": "deu",
     "ühr": "deu",
     "üi": "spa",
+    "ülö": "hun",
     "ünf": "deu",
     "ünü": "tur",
     "ütz": "deu",
@@ -2741,36 +2377,13 @@
     "üç": "tur",
     "üé": "spa",
     "üí": "spa",
-    "üü": "est",
-    "üüa": "est",
-    "üüd": "est",
     "üğ": "tur",
     "üş": "tur",
     "üşü": "tur",
-    "ý": "vie",
-    "ā ": "lvs",
-    "āc": "lvs",
-    "ād": "lvs",
-    "āds": "lvs",
-    "ādā": "lvs",
-    "āj": "lvs",
-    "āja": "lvs",
-    "āji": "lvs",
-    "āju": "lvs",
-    "ājā": "lvs",
-    "āk": "lvs",
-    "āk ": "lvs",
-    "āka": "lvs",
-    "āli": "lvs",
-    "ām ": "lvs",
-    "āma": "lvs",
-    "āp": "lvs",
-    "ār": "lvs",
-    "ārd": "lvs",
-    "ās": "lvs",
-    "ās ": "lvs",
-    "āt": "lvs",
-    "āt ": "lvs",
+    "ých": "ces",
+    "ým": "ces",
+    "ým ": "ces",
+    "ā": "pes",
     "ă ": "ron",
     "ă-": "ron",
     "ă-m": "ron",
@@ -2794,15 +2407,22 @@
     "ău ": "ron",
     "ăz": "ron",
     "ăț": "ron",
+    "ą": "pol",
+    "ą ": "pol",
     "ąc": "pol",
     "ąd": "pol",
-    "ąż": "pol",
     "ć": "pol",
     "ć ": "pol",
     "ĉ": "hun",
-    "či": "lit",
-    "čia": "lit",
-    "čiu": "lit",
+    "č": "ces",
+    "č ": "ces",
+    "ča": "ces",
+    "če": "ces",
+    "či": "ces",
+    "čk": "ces",
+    "čn": "ces",
+    "čí": "ces",
+    "ď": "ces",
     "đ": "vie",
     "đa": "vie",
     "đi": "vie",
@@ -2811,37 +2431,19 @@
     "đó": "vie",
     "đư": "vie",
     "đế": "vie",
-    "ē": "lvs",
-    "ēd": "lvs",
-    "ēj": "lvs",
-    "ēl": "lvs",
-    "ēr": "lvs",
-    "ēs": "lvs",
-    "ēt": "lvs",
-    "ė ": "lit",
-    "ėd": "lit",
-    "ėg": "lit",
-    "ėgs": "lit",
-    "ėj": "lit",
-    "ėja": "lit",
-    "ėjo": "lit",
-    "ėk": "lit",
-    "ėl": "lit",
-    "ėl ": "lit",
-    "ėm": "lit",
-    "ėr": "lit",
-    "ės": "lit",
-    "ės ": "lit",
-    "ėsi": "lit",
-    "ėt": "lit",
-    "ėti": "lit",
-    "ėv": "lit",
+    "ė": "hun",
+    "ę": "pol",
+    "ę ": "pol",
     "ęc": "pol",
     "ęd": "pol",
-    "ędz": "pol",
-    "ęk": "pol",
-    "ęs ": "lit",
-    "ęt": "pol",
+    "ě": "ces",
+    "ě ": "ces",
+    "ěc": "ces",
+    "ěd": "ces",
+    "ěj": "ces",
+    "ěk": "ces",
+    "ěl": "ces",
+    "ět": "ces",
     "ğ": "tur",
     "ğa": "tur",
     "ğe": "tur",
@@ -2851,22 +2453,7 @@
     "ğu": "tur",
     "ğü": "tur",
     "ğı": "tur",
-    "ģ": "lvs",
     "ĩ": "vie",
-    "ī": "lvs",
-    "ī ": "lvs",
-    "īb": "lvs",
-    "īd": "lvs",
-    "īg": "lvs",
-    "īj": "lvs",
-    "īl": "lvs",
-    "īn": "lvs",
-    "īs": "lvs",
-    "īt": "lvs",
-    "īv": "lvs",
-    "į": "lit",
-    "į ": "lit",
-    "įs": "lit",
     "ı": "tur",
     "ı ": "tur",
     "ıc": "tur",
@@ -2881,9 +2468,6 @@
     "ız": "tur",
     "ığ": "tur",
     "ış": "tur",
-    "ķ": "lvs",
-    "ļ": "lvs",
-    "ļo": "lvs",
     "ł": "pol",
     "ł ": "pol",
     "ła": "pol",
@@ -2893,13 +2477,7 @@
     "łu": "pol",
     "ły": "pol",
     "ń": "pol",
-    "ń ": "pol",
-    "ńc": "pol",
-    "ņ": "lvs",
-    "ņa": "lvs",
-    "ņi": "lvs",
-    "ņu": "lvs",
-    "ņš": "lvs",
+    "ň": "ces",
     "ō ": "deu",
     "ōc": "spa",
     "ōk": "deu",
@@ -2913,6 +2491,7 @@
     "őe": "hun",
     "őf": "hun",
     "őg": "hun",
+    "őh": "hun",
     "ői": "hun",
     "őj": "hun",
     "ők": "hun",
@@ -2927,13 +2506,16 @@
     "œ": "fra",
     "œi": "fra",
     "œu": "fra",
+    "ř": "ces",
+    "ře": "ces",
+    "ři": "ces",
+    "ří": "ces",
     "ś": "pol",
     "ś ": "pol",
     "śc": "pol",
     "śl": "pol",
     "śm": "pol",
     "śn": "pol",
-    "św": "pol",
     "ść": "pol",
     "şam": "tur",
     "şar": "tur",
@@ -2948,27 +2530,28 @@
     "şü": "tur",
     "şün": "tur",
     "şı": "tur",
-    "šau": "lit",
-    "šia": "lit",
-    "šit": "lit",
-    "šk": "lit",
-    "ška": "lit",
-    "šod": "lvs",
-    "št": "lit",
-    "šta": "lit",
-    "šv": "lit",
-    "šy": "lit",
-    "šė": "lit",
-    "šī": "lvs",
+    "š ": "ces",
+    "še": "ces",
+    "še ": "ces",
+    "šec": "ces",
+    "šel": "ces",
+    "ši": "ces",
+    "šic": "ces",
+    "ško": "ces",
+    "št": "ces",
+    "ší": "ces",
+    "ší ": "ces",
     "ţ": "ron",
     "ţa": "ron",
     "ţi": "ron",
+    "ť": "ces",
     "ũ": "vie",
-    "ūdz": "lvs",
-    "ūk": "lit",
-    "ūn": "lit",
-    "ūr": "lit",
-    "ūsu": "lvs",
+    "ū": "deu",
+    "ū ": "deu",
+    "ů": "ces",
+    "ů ": "ces",
+    "ůj": "ces",
+    "ůž": "ces",
     "ű": "hun",
     "ű ": "hun",
     "űe": "hun",
@@ -2981,27 +2564,18 @@
     "űt": "hun",
     "űv": "hun",
     "űz": "hun",
-    "ų": "lit",
-    "ų ": "lit",
     "ź": "pol",
     "ż": "pol",
     "ż ": "pol",
     "ża": "pol",
     "że": "pol",
-    "żk": "pol",
-    "żn": "pol",
-    "żo": "pol",
     "ży": "pol",
-    "ž ": "lit",
-    "ža": "lit",
-    "že": "lit",
-    "žia": "lit",
-    "žin": "lit",
-    "žiu": "lit",
-    "žk": "lit",
-    "žm": "lit",
-    "žmo": "lit",
-    "žo": "lit",
+    "ž": "ces",
+    "ž ": "ces",
+    "žd": "ces",
+    "že": "ces",
+    "ži": "ces",
+    "ží": "ces",
     "ơ": "vie",
     "ơn": "vie",
     "ư": "vie",
@@ -3112,158 +2686,233 @@
     "ώ": "ell",
     "авж": "ukr",
     "адт": "ukr",
-    "ает": "rus",
-    "аеш": "rus",
+    "акъ": "bul",
+    "алн": "bul",
+    "алс": "rus",
+    "ам'": "ukr",
     "асс": "rus",
     "ацю": "ukr",
     "ає": "ukr",
-    "бщ": "rus",
+    "бих": "bul",
+    "бъд": "bul",
+    "бър": "bul",
     "бы": "rus",
     "бы ": "rus",
     "был": "rus",
-    "бя": "rus",
-    "бя ": "rus",
+    "быт": "rus",
+    "бях": "bul",
     "бі": "ukr",
     "в'я": "ukr",
     "вае": "rus",
+    "ващ": "bul",
+    "вва": "ukr",
     "вж": "ukr",
     "вжд": "ukr",
     "вже": "ukr",
+    "взе": "bul",
     "вип": "ukr",
-    "вое": "rus",
-    "вой": "rus",
+    "вси": "bul",
+    "въз": "bul",
+    "въп": "bul",
+    "вър": "bul",
     "вы": "rus",
     "вы ": "rus",
     "вь": "rus",
+    "вяр": "bul",
     "вё": "rus",
     "ві": "ukr",
+    "где": "rus",
+    "гъ": "bul",
     "гі": "ukr",
     "дуж": "ukr",
     "дця": "ukr",
+    "дъл": "bul",
+    "дър": "bul",
     "ды": "rus",
     "дяк": "ukr",
     "дё": "rus",
     "ді": "ukr",
     "ебя": "rus",
-    "ее": "rus",
-    "ее ": "rus",
-    "етс": "rus",
+    "елн": "bul",
+    "ерь": "rus",
     "ець": "ukr",
     "ешь": "rus",
     "её": "rus",
+    "жъ": "bul",
     "жі": "ukr",
-    "зде": "rus",
-    "зп": "ukr",
-    "зпо": "ukr",
     "зы": "rus",
     "зьк": "ukr",
     "зі": "ukr",
-    "ие": "rus",
-    "ие ": "rus",
-    "ии": "rus",
-    "ии ": "rus",
+    "изп": "bul",
+    "ийд": "ukr",
     "ийш": "ukr",
-    "ио": "rus",
+    "илс": "rus",
     "итс": "rus",
     "ишь": "rus",
+    "ищо": "bul",
     "йом": "ukr",
     "йсь": "ukr",
     "йшл": "ukr",
     "йшо": "ukr",
+    "кры": "rus",
     "кщо": "ukr",
+    "къ": "bul",
+    "къд": "bul",
+    "къс": "bul",
+    "къщ": "bul",
     "кі": "ukr",
-    "лн": "rus",
     "лся": "rus",
+    "лъ": "bul",
     "лы": "rus",
     "лё": "rus",
     "лі": "ukr",
     "м'": "ukr",
     "м'я": "ukr",
-    "мой": "rus",
+    "маб": "ukr",
+    "мае": "rus",
     "мы": "rus",
     "мы ": "rus",
+    "мь": "rus",
     "мэ": "rus",
-    "мя": "rus",
     "мі": "ukr",
-    "нае": "rus",
-    "ние": "rus",
-    "ния": "rus",
+    "ниб": "rus",
     "нны": "rus",
+    "ное": "rus",
     "ной": "rus",
-    "нсь": "ukr",
-    "нуж": "rus",
+    "нра": "rus",
+    "нщ": "rus",
     "ны": "rus",
     "ны ": "rus",
+    "ные": "rus",
     "ный": "rus",
+    "ным": "rus",
     "нё": "rus",
     "ні": "ukr",
     "обы": "rus",
     "огд": "rus",
-    "ое ": "rus",
     "ожл": "ukr",
     "озп": "ukr",
-    "ои": "rus",
     "олж": "rus",
+    "очь": "rus",
     "оё": "rus",
     "оє": "ukr",
     "ої": "ukr",
+    "п'": "ukr",
     "п'я": "ukr",
+    "пв": "bul",
+    "пой": "rus",
+    "пъ": "bul",
+    "път": "bul",
     "пы": "rus",
-    "пя": "rus",
+    "пь": "rus",
     "пі": "ukr",
+    "ръ": "bul",
+    "ръг": "bul",
     "ры": "rus",
+    "рё": "rus",
     "рі": "ukr",
-    "сд": "rus",
+    "свъ": "bul",
     "сде": "rus",
-    "сег": "rus",
-    "сч": "rus",
+    "стъ": "bul",
+    "съм": "bul",
+    "със": "bul",
+    "същ": "bul",
     "сы": "rus",
     "сё": "rus",
     "сі": "ukr",
+    "твъ": "bul",
+    "тръ": "bul",
     "тся": "rus",
     "ття": "ukr",
-    "тув": "ukr",
+    "тър": "bul",
     "ты": "rus",
     "ты ": "rus",
     "ті": "ukr",
+    "учш": "rus",
     "ує": "ukr",
+    "фъ": "bul",
     "фі": "ukr",
     "хви": "ukr",
     "хі": "ukr",
     "цим": "ukr",
+    "цъ": "bul",
+    "цы": "rus",
     "ць": "ukr",
     "ць ": "ukr",
     "цьо": "ukr",
     "цю ": "ukr",
     "цюв": "ukr",
-    "ця": "ukr",
     "ця ": "ukr",
     "цят": "ukr",
     "ці": "ukr",
     "чег": "rus",
     "чог": "ukr",
-    "чор": "ukr",
+    "чол": "ukr",
     "что": "rus",
+    "чух": "bul",
     "чш": "rus",
+    "чъ": "bul",
     "чь": "rus",
+    "чь ": "rus",
     "чё": "rus",
     "чі": "ukr",
     "шви": "ukr",
     "шся": "ukr",
+    "шук": "ukr",
+    "шъ": "bul",
     "шь": "rus",
     "шь ": "rus",
     "шё": "rus",
     "ші": "ukr",
-    "щас": "ukr",
-    "що ": "ukr",
     "щоб": "ukr",
     "щос": "ukr",
+    "щт": "bul",
+    "щя": "bul",
     "щё": "rus",
-    "ъ": "rus",
+    "ъб": "bul",
+    "ъв": "bul",
+    "ъв ": "bul",
+    "ъг": "bul",
+    "ъд": "bul",
+    "ъде": "bul",
+    "ъж": "bul",
+    "ъз": "bul",
+    "ък": "bul",
+    "ък ": "bul",
+    "ъл": "bul",
+    "ълг": "bul",
+    "ълн": "bul",
+    "ъм": "bul",
+    "ъм ": "bul",
+    "ън": "bul",
+    "ън ": "bul",
+    "ъо": "bul",
+    "ъп": "bul",
+    "ъпр": "bul",
+    "ър": "bul",
+    "ър ": "bul",
+    "ърв": "bul",
+    "ърд": "bul",
+    "ърж": "bul",
+    "ърз": "bul",
+    "ърн": "bul",
+    "ърш": "bul",
+    "ъс": "bul",
+    "ъсн": "bul",
+    "ъст": "bul",
+    "ът": "bul",
+    "ът ": "bul",
+    "ъх": "bul",
+    "ъц": "bul",
+    "ъч": "bul",
+    "ъщ": "bul",
+    "ъща": "bul",
+    "ъщи": "bul",
     "ы ": "rus",
     "ыб": "rus",
     "ыв": "rus",
     "ыва": "rus",
+    "ыг": "rus",
     "ые": "rus",
     "ые ": "rus",
     "ый": "rus",
@@ -3271,30 +2920,43 @@
     "ык": "rus",
     "ыл": "rus",
     "ыл ": "rus",
+    "ыла": "rus",
     "ыло": "rus",
     "ым": "rus",
     "ым ": "rus",
+    "ын": "rus",
+    "ып": "rus",
+    "ыр": "rus",
     "ыс": "rus",
     "ыт": "rus",
+    "ыть": "rus",
     "ых": "rus",
+    "ых ": "rus",
+    "ыч": "rus",
     "ыш": "rus",
     "ье": "rus",
     "ьог": "ukr",
     "ьом": "ukr",
+    "ьё": "rus",
     "э": "rus",
     "эр": "rus",
     "эт": "rus",
     "юва": "ukr",
     "ют ": "rus",
     "ють": "ukr",
+    "ює": "ukr",
+    "ябв": "bul",
     "яе": "rus",
     "якщ": "ukr",
+    "ярв": "bul",
     "ё": "rus",
     "ё ": "rus",
     "ёл": "rus",
     "ём": "rus",
     "ён": "rus",
+    "ёр": "rus",
     "ёт": "rus",
+    "ёш": "rus",
     "є": "ukr",
     "є ": "ukr",
     "єм": "ukr",
@@ -3327,6 +2989,8 @@
     "ї ": "ukr",
     "їх": "ukr",
     "її": "ukr",
+    "ѝ": "bul",
+    "ѝ ": "bul",
     "ѣ": "rus",
     "ґ": "ukr",
     "ְ": "heb",
@@ -3705,6 +3369,7 @@
     "श": "hin",
     "ष": "hin",
     "स": "hin",
+    "स ": "hin",
     "से": "hin",
     "ह": "hin",
     "ह ": "hin",
@@ -3726,6 +3391,7 @@
     "ुम": "hin",
     "ू": "hin",
     "ृ": "hin",
+    "ॅ": "hin",
     "े": "hin",
     "े ": "hin",
     "ें": "hin",
@@ -3738,11 +3404,112 @@
     "ौ": "hin",
     "्": "hin",
     "्य": "hin",
-    "।": "hin",
-    "। ": "hin",
     "०": "hin",
     "१": "hin",
     "९": "hin",
+    "ঁ": "ben",
+    "ং": "ben",
+    "অ": "ben",
+    "আ": "ben",
+    "আপ": "ben",
+    "আম": "ben",
+    "ই": "ben",
+    "ই ": "ben",
+    "উ": "ben",
+    "এ": "ben",
+    "ও": "ben",
+    "ক": "ben",
+    "কর": "ben",
+    "কা": "ben",
+    "কি": "ben",
+    "কে": "ben",
+    "খ": "ben",
+    "খা": "ben",
+    "গ": "ben",
+    "ঘ": "ben",
+    "ঙ": "ben",
+    "চ": "ben",
+    "ছ": "ben",
+    "ছি": "ben",
+    "ছে": "ben",
+    "জ": "ben",
+    "ঝ": "ben",
+    "ঞ": "ben",
+    "ট": "ben",
+    "টম": "ben",
+    "টা": "ben",
+    "ঠ": "ben",
+    "ড": "ben",
+    "ঢ": "ben",
+    "ণ": "ben",
+    "ত": "ben",
+    "তে": "ben",
+    "থ": "ben",
+    "দ": "ben",
+    "দে": "ben",
+    "ধ": "ben",
+    "ন": "ben",
+    "ন ": "ben",
+    "ন।": "ben",
+    "না": "ben",
+    "নি": "ben",
+    "নে": "ben",
+    "ন্": "ben",
+    "প": "ben",
+    "পন": "ben",
+    "পা": "ben",
+    "ফ": "ben",
+    "ব": "ben",
+    "বা": "ben",
+    "ভ": "ben",
+    "ম": "ben",
+    "ম ": "ben",
+    "মা": "ben",
+    "মি": "ben",
+    "য": "ben",
+    "য়": "ben",
+    "র": "ben",
+    "র ": "ben",
+    "রা": "ben",
+    "রে": "ben",
+    "ল": "ben",
+    "লো": "ben",
+    "শ": "ben",
+    "ষ": "ben",
+    "স": "ben",
+    "হ": "ben",
+    "়": "ben",
+    "়ে": "ben",
+    "া": "ben",
+    "া ": "ben",
+    "াক": "ben",
+    "ান": "ben",
+    "ার": "ben",
+    "ি": "ben",
+    "ি ": "ben",
+    "িল": "ben",
+    "ী": "ben",
+    "ু": "ben",
+    "ূ": "ben",
+    "ৃ": "ben",
+    "ে": "ben",
+    "ে ": "ben",
+    "ে।": "ben",
+    "েছ": "ben",
+    "েন": "ben",
+    "ের": "ben",
+    "ৈ": "ben",
+    "ো": "ben",
+    "ো ": "ben",
+    "ো।": "ben",
+    "ৌ": "ben",
+    "্": "ben",
+    "্য": "ben",
+    "ৎ": "ben",
+    "০": "ben",
+    "১": "ben",
+    "৪": "ben",
+    "৯": "ben",
     "ก": "tha",
     "ข": "tha",
     "ขอ": "tha",
@@ -3938,7 +3705,6 @@
     "‚": "deu",
     "€": "deu",
     "−": "deu",
-    "− ": "deu",
     "あ": "jpn",
     "あな": "jpn",
     "ある": "jpn",
@@ -4419,6 +4185,9 @@
     "about": {
       "eng": 14580
     },
+    "aby": {
+      "ces": 13867
+    },
     "acest": {
       "ron": 14626
     },
@@ -4427,9 +4196,6 @@
     },
     "acum": {
       "ron": 10314
-    },
-    "aga": {
-      "est": 6596
     },
     "ai": {
       "ron": 25502
@@ -4464,6 +4230,7 @@
       "swe": 6966
     },
     "ale": {
+      "ces": 15441,
       "pol": 13456
     },
     "algo": {
@@ -4517,29 +4284,18 @@
     "andiamo": {
       "ita": 13452
     },
-    "ant": {
-      "lit": 8810
-    },
     "ao": {
       "por": 16767
     },
     "apa": {
       "jav": 37099
     },
-    "apie": {
-      "lit": 14222
-    },
     "aqui": {
       "por": 13309,
       "spa": 10262
     },
     "ar": {
-      "lit": 51193,
-      "lvs": 22186,
       "ron": 16188
-    },
-    "ara": {
-      "est": 18168
     },
     "are": {
       "eng": 27084,
@@ -4548,12 +4304,8 @@
     "arep": {
       "jav": 24190
     },
-    "ari": {
-      "lvs": 6568
-    },
     "as": {
-      "eng": 17261,
-      "lit": 100000
+      "eng": 17261
     },
     "asla": {
       "tur": 7494
@@ -4638,19 +4390,12 @@
     "bent": {
       "nld": 9493
     },
-    "bet": {
-      "lit": 11342,
-      "lvs": 11440
-    },
     "bien": {
       "fra": 12447,
       "spa": 9175
     },
     "bij": {
       "nld": 8793
-    },
-    "bija": {
-      "lvs": 22186
     },
     "bin": {
       "deu": 17761
@@ -4685,6 +4430,9 @@
     "bu": {
       "tur": 59459
     },
+    "bude": {
+      "ces": 12117
+    },
     "bugun": {
       "tur": 7535
     },
@@ -4703,18 +4451,25 @@
     "butun": {
       "tur": 6957
     },
-    "buvo": {
-      "lit": 27732
-    },
     "buyuk": {
       "tur": 8041
     },
     "by": {
+      "ces": 16941,
       "eng": 13405,
       "pol": 8616
     },
     "byc": {
       "pol": 11072
+    },
+    "bych": {
+      "ces": 17491
+    },
+    "byl": {
+      "ces": 27197
+    },
+    "byla": {
+      "ces": 10451
     },
     "c'est": {
       "fra": 28344
@@ -4746,6 +4501,9 @@
     "cette": {
       "fra": 16121
     },
+    "chci": {
+      "ces": 12117
+    },
     "che": {
       "ita": 85401
     },
@@ -4753,16 +4511,11 @@
       "ita": 16809,
       "pol": 13810
     },
-    "cia": {
-      "lit": 15323
-    },
     "cie": {
       "pol": 9629
     },
-    "cik": {
-      "lvs": 9582
-    },
     "co": {
+      "ces": 47338,
       "pol": 34574
     },
     "cok": {
@@ -4805,12 +4558,6 @@
     "cum": {
       "ron": 12105
     },
-    "da": {
-      "tur": 7386
-    },
-    "dabar": {
-      "lit": 10427
-    },
     "daca": {
       "ron": 14626
     },
@@ -4824,7 +4571,6 @@
       "fra": 32268
     },
     "dar": {
-      "lit": 14016,
       "ron": 10811,
       "swe": 11770
     },
@@ -4837,15 +4583,6 @@
     "dat": {
       "nld": 66342
     },
-    "daudz": {
-      "lvs": 11440
-    },
-    "daug": {
-      "lit": 13942
-    },
-    "daugiau": {
-      "lit": 7744
-    },
     "deg": {
       "nob": 28084
     },
@@ -4854,7 +4591,6 @@
     },
     "del": {
       "ita": 16321,
-      "lit": 7255,
       "spa": 22789
     },
     "dem": {
@@ -4936,7 +4672,11 @@
     "dlaczego": {
       "pol": 8069
     },
+    "dnes": {
+      "ces": 10696
+    },
     "do": {
+      "ces": 31760,
       "eng": 55812,
       "pol": 56669
     },
@@ -4948,9 +4688,6 @@
     },
     "doesn't": {
       "eng": 10831
-    },
-    "domaju": {
-      "lvs": 6568
     },
     "domu": {
       "pol": 11609
@@ -4985,12 +4722,8 @@
       "hun": 33489
     },
     "ei": {
-      "est": 72090,
       "fin": 63846,
       "ron": 21147
-    },
-    "eile": {
-      "est": 6393
     },
     "ein": {
       "deu": 55005
@@ -5055,15 +4788,7 @@
     },
     "es": {
       "deu": 64232,
-      "lvs": 98916,
       "spa": 73442
-    },
-    "esi": {
-      "lit": 7056,
-      "lvs": 8081
-    },
-    "esmu": {
-      "lvs": 23910
     },
     "eso": {
       "spa": 12280
@@ -5096,11 +4821,7 @@
     "estoy": {
       "spa": 12697
     },
-    "esu": {
-      "lit": 9552
-    },
     "et": {
-      "est": 38030,
       "fin": 9840,
       "fra": 37066,
       "nob": 29485
@@ -5207,9 +4928,6 @@
     "gaan": {
       "nld": 11834
     },
-    "gali": {
-      "lit": 10893
-    },
     "gar": {
       "nob": 11770,
       "swe": 8432
@@ -5250,12 +4968,6 @@
     },
     "gora": {
       "swe": 11476
-    },
-    "gramatu": {
-      "lvs": 6188
-    },
-    "gribu": {
-      "lvs": 5807
     },
     "gun": {
       "tur": 7529
@@ -5342,9 +5054,6 @@
       "fin": 14414,
       "spa": 9192
     },
-    "hea": {
-      "est": 8611
-    },
     "heb": {
       "nld": 39202
     },
@@ -5391,6 +5100,7 @@
       "eng": 28747
     },
     "ho": {
+      "ces": 15461,
       "ita": 34794
     },
     "hoe": {
@@ -5438,9 +5148,6 @@
     "icin": {
       "tur": 47685
     },
-    "iet": {
-      "lvs": 6948
-    },
     "if": {
       "eng": 13275
     },
@@ -5475,9 +5182,6 @@
     "ils": {
       "fra": 16814
     },
-    "ilus": {
-      "est": 5172
-    },
     "im": {
       "deu": 23668
     },
@@ -5507,18 +5211,14 @@
       "ita": 46161
     },
     "ir": {
-      "lit": 31953,
-      "lvs": 100000,
       "por": 9486
     },
     "is": {
       "eng": 68657,
       "hun": 13702,
-      "lit": 23344,
       "nld": 94378
     },
     "isa": {
-      "est": 8210,
       "jav": 27163
     },
     "isn't": {
@@ -5539,23 +5239,26 @@
     "itt": {
       "hun": 7902
     },
+    "ja": {
+      "ces": 10940,
+      "fin": 41975,
+      "por": 13102
+    },
     "jag": {
       "swe": 100000
     },
     "jak": {
+      "ces": 24223,
       "pol": 31291
     },
-    "jam": {
-      "lit": 8506
+    "jako": {
+      "ces": 13024
     },
     "jamais": {
       "fra": 9720
     },
-    "jau": {
-      "lit": 10938,
-      "lvs": 7326
-    },
     "je": {
+      "ces": 97705,
       "fra": 93203,
       "nld": 79596
     },
@@ -5564,6 +5267,9 @@
     },
     "jego": {
       "pol": 15514
+    },
+    "jeho": {
+      "ces": 12843
     },
     "jej": {
       "pol": 12324
@@ -5574,6 +5280,9 @@
     "jest": {
       "pol": 87193
     },
+    "jeste": {
+      "ces": 16114
+    },
     "jestem": {
       "pol": 20228
     },
@@ -5583,18 +5292,8 @@
     "jeszcze": {
       "pol": 9410
     },
-    "ji": {
-      "lit": 10772
-    },
-    "jie": {
-      "lit": 21312
-    },
-    "jis": {
-      "lit": 62235
-    },
     "jo": {
-      "hun": 6223,
-      "lit": 18295
+      "hun": 6223
     },
     "joka": {
       "fin": 9759
@@ -5603,49 +5302,37 @@
       "hun": 4197
     },
     "jos": {
-      "fin": 13928,
-      "lit": 10923
+      "fin": 13928
+    },
+    "jsem": {
+      "ces": 88718
+    },
+    "jsi": {
+      "ces": 35952
+    },
+    "jsme": {
+      "ces": 21037
+    },
+    "jsou": {
+      "ces": 19747
+    },
+    "jste": {
+      "ces": 14745
     },
     "jullie": {
       "nld": 19363
     },
-    "jums": {
-      "lvs": 9955
-    },
-    "jus": {
-      "lvs": 16900
-    },
     "juz": {
       "pol": 15808
     },
-    "ka": {
-      "lit": 24066,
-      "lvs": 22532
-    },
-    "kad": {
-      "lit": 53161,
-      "lvs": 10699
-    },
-    "kada": {
-      "lit": 9037
+    "k": {
+      "ces": 13466
     },
     "kadar": {
       "tur": 25764
     },
-    "kads": {
-      "lvs": 6948
-    },
-    "kai": {
-      "lit": 7546
-    },
     "kaikki": {
       "fin": 12113
-    },
-    "kaip": {
-      "lit": 19953
-    },
-    "kaks": {
-      "est": 7001
     },
     "kan": {
       "nld": 21942,
@@ -5658,38 +5345,26 @@
     "kanssa": {
       "fin": 9588
     },
-    "kapec": {
-      "lvs": 6568
-    },
     "karo": {
       "jav": 37099
-    },
-    "kas": {
-      "est": 45698,
-      "lit": 18897,
-      "lvs": 15100
-    },
-    "kaut": {
-      "lvs": 5807
     },
     "kaya": {
       "jav": 16498
     },
-    "keegi": {
-      "est": 9012
+    "kde": {
+      "ces": 15004
     },
-    "keelt": {
-      "est": 8009
+    "kdo": {
+      "ces": 15064
+    },
+    "kdyz": {
+      "ces": 16607
     },
     "keine": {
       "deu": 11882
     },
     "kell": {
-      "est": 5172,
       "hun": 11330
-    },
-    "kes": {
-      "est": 10207
     },
     "ket": {
       "hun": 3012
@@ -5702,15 +5377,6 @@
     },
     "know": {
       "eng": 25643
-    },
-    "ko": {
-      "lvs": 20093
-    },
-    "kodel": {
-      "lit": 12788
-    },
-    "koik": {
-      "est": 11395
     },
     "kom": {
       "swe": 7317
@@ -5731,12 +5397,6 @@
     "kudu": {
       "jav": 25684
     },
-    "kui": {
-      "est": 25034
-    },
-    "kuidas": {
-      "est": 6799
-    },
     "kuin": {
       "fin": 21280
     },
@@ -5749,36 +5409,14 @@
     "kun": {
       "fin": 17375
     },
-    "kunagi": {
-      "est": 5580
-    },
     "kunne": {
       "nob": 8262
     },
     "kunnen": {
       "nld": 8317
     },
-    "kur": {
-      "lit": 12565,
-      "lvs": 12178
-    },
-    "kus": {
-      "est": 9611
-    },
     "kuwi": {
       "jav": 45036
-    },
-    "labai": {
-      "lit": 24508
-    },
-    "labi": {
-      "lvs": 6568
-    },
-    "labs": {
-      "lvs": 6948
-    },
-    "lai": {
-      "lvs": 15100
     },
     "las": {
       "spa": 34076
@@ -5817,12 +5455,6 @@
     "los": {
       "spa": 46875
     },
-    "loti": {
-      "lvs": 15461
-    },
-    "ludzu": {
-      "lvs": 6948
-    },
     "lui": {
       "fra": 13565,
       "ita": 24515,
@@ -5835,7 +5467,7 @@
       "tur": 8294
     },
     "ma": {
-      "est": 95779,
+      "ces": 23753,
       "fra": 12699,
       "hun": 4679,
       "nob": 13322,
@@ -5852,37 +5484,18 @@
     "mais": {
       "por": 29433
     },
-    "maja": {
-      "est": 6799
-    },
     "mam": {
+      "ces": 20268,
       "pol": 18327
     },
     "man": {
-      "deu": 22795,
-      "lit": 36198,
-      "lvs": 49699
-    },
-    "mana": {
-      "lvs": 9208
-    },
-    "mane": {
-      "lit": 13248
+      "deu": 22795
     },
     "maneh": {
       "jav": 16498
     },
     "mange": {
       "nob": 9709
-    },
-    "mani": {
-      "lvs": 15822
-    },
-    "mano": {
-      "lit": 33413
-    },
-    "mans": {
-      "lvs": 11070
     },
     "mar": {
       "hun": 13249
@@ -5901,7 +5514,6 @@
     },
     "me": {
       "eng": 33378,
-      "est": 23208,
       "fin": 11488,
       "fra": 26719,
       "ita": 13314,
@@ -5916,9 +5528,6 @@
       "nob": 40303,
       "swe": 31516
     },
-    "meeldib": {
-      "est": 7808
-    },
     "meer": {
       "nld": 10619
     },
@@ -5930,6 +5539,9 @@
     },
     "meine": {
       "deu": 14200
+    },
+    "mel": {
+      "ces": 15441
     },
     "men": {
       "nob": 11369
@@ -5943,10 +5555,6 @@
     "mer": {
       "nob": 7989
     },
-    "mes": {
-      "lit": 36831,
-      "lvs": 24593
-    },
     "met": {
       "nld": 31149
     },
@@ -5955,6 +5563,7 @@
       "ron": 15335
     },
     "mi": {
+      "ces": 41669,
       "hun": 7845,
       "ita": 38259,
       "pol": 29047,
@@ -5965,12 +5574,6 @@
     },
     "mich": {
       "deu": 27823
-    },
-    "mida": {
-      "est": 14331
-    },
-    "midagi": {
-      "est": 9810
     },
     "miert": {
       "hun": 6424
@@ -5990,14 +5593,8 @@
     "mikor": {
       "hun": 2752
     },
-    "miks": {
-      "est": 8411
-    },
     "miksi": {
       "fin": 9461
-    },
-    "milu": {
-      "lvs": 7326
     },
     "milyen": {
       "hun": 3365
@@ -6008,9 +5605,6 @@
     },
     "mina": {
       "fin": 39465
-    },
-    "mind": {
-      "est": 12379
     },
     "minden": {
       "hun": 5622
@@ -6024,14 +5618,8 @@
     "minha": {
       "por": 16295
     },
-    "minna": {
-      "est": 6190
-    },
     "mint": {
       "hun": 8091
-    },
-    "minu": {
-      "est": 19113
     },
     "minua": {
       "fin": 13318
@@ -6050,9 +5638,6 @@
     },
     "mir": {
       "deu": 31999
-    },
-    "mis": {
-      "est": 17407
     },
     "misin": {
       "tur": 10476
@@ -6076,11 +5661,11 @@
     "mitt": {
       "swe": 6866
     },
-    "mitte": {
-      "est": 5784
-    },
     "mnie": {
       "pol": 27314
+    },
+    "moc": {
+      "ces": 9879
     },
     "moet": {
       "nld": 14091
@@ -6097,6 +5682,9 @@
     "moj": {
       "pol": 11873
     },
+    "moje": {
+      "ces": 10574
+    },
     "molto": {
       "ita": 18806
     },
@@ -6110,7 +5698,7 @@
       "pol": 11459
     },
     "mu": {
-      "est": 19678,
+      "ces": 11185,
       "pol": 8309
     },
     "mucho": {
@@ -6119,22 +5707,11 @@
     "muito": {
       "por": 27150
     },
-    "mul": {
-      "est": 24489
-    },
-    "mulle": {
-      "est": 17217
+    "muj": {
+      "ces": 13506
     },
     "mult": {
       "ron": 14776
-    },
-    "mums": {
-      "lit": 7698,
-      "lvs": 16542
-    },
-    "musu": {
-      "lit": 9371,
-      "lvs": 7326
     },
     "mutta": {
       "fin": 13129
@@ -6152,6 +5729,7 @@
       "fra": 12126
     },
     "na": {
+      "ces": 73189,
       "nob": 8806,
       "pol": 73695,
       "por": 25653
@@ -6161,9 +5739,6 @@
     },
     "nach": {
       "deu": 17285
-    },
-    "nad": {
-      "est": 12379
     },
     "nada": {
       "por": 9198,
@@ -6182,20 +5757,16 @@
       "nob": 13145,
       "swe": 9837
     },
-    "nav": {
-      "lvs": 24252
-    },
     "ne": {
       "hun": 9323,
-      "lvs": 7326,
       "ron": 10505,
       "tur": 40385
     },
+    "neco": {
+      "ces": 11225
+    },
     "neden": {
       "tur": 15446
-    },
-    "nekad": {
-      "lvs": 6188
     },
     "neked": {
       "hun": 4999
@@ -6212,17 +5783,14 @@
     "neng": {
       "jav": 25684
     },
-    "nera": {
-      "lit": 9340
-    },
-    "nevaru": {
-      "lvs": 6188
+    "neni": {
+      "ces": 22049
     },
     "nevoie": {
       "ron": 10429
     },
-    "nezinu": {
-      "lvs": 7326
+    "nez": {
+      "ces": 13486
     },
     "ngerti": {
       "jav": 16498
@@ -6231,6 +5799,7 @@
       "swe": 18196
     },
     "nic": {
+      "ces": 11773,
       "pol": 8415
     },
     "nicht": {
@@ -6242,23 +5811,17 @@
     "nie": {
       "pol": 100000
     },
-    "niekada": {
-      "lit": 9189
-    },
-    "nieko": {
-      "lit": 8445
-    },
     "niet": {
       "nld": 70086
     },
     "nigdy": {
       "pol": 9877
     },
-    "nii": {
-      "est": 8812
-    },
     "niin": {
       "fin": 18481
+    },
+    "nikdy": {
+      "ces": 13386
     },
     "nincs": {
       "hun": 6019
@@ -6267,7 +5830,6 @@
       "pol": 8213
     },
     "no": {
-      "lvs": 20443,
       "spa": 89966
     },
     "noch": {
@@ -6292,15 +5854,6 @@
     "non": {
       "ita": 100000
     },
-    "nori": {
-      "lit": 10968
-    },
-    "noriu": {
-      "lit": 9673
-    },
-    "nors": {
-      "lit": 8399
-    },
     "nos": {
       "spa": 8822
     },
@@ -6316,9 +5869,6 @@
     },
     "nunca": {
       "por": 10544
-    },
-    "nuo": {
-      "lit": 8399
     },
     "nur": {
       "deu": 15386
@@ -6343,14 +5893,9 @@
       "tur": 8572
     },
     "ole": {
-      "est": 21174,
       "fin": 39355
     },
-    "oled": {
-      "est": 15491
-    },
     "olen": {
-      "est": 22471,
       "fin": 28608
     },
     "olet": {
@@ -6360,7 +5905,6 @@
       "fin": 7959
     },
     "oli": {
-      "est": 19490,
       "fin": 35232
     },
     "olisi": {
@@ -6372,9 +5916,6 @@
     "ollut": {
       "fin": 11893
     },
-    "olnud": {
-      "est": 6596
-    },
     "olyan": {
       "hun": 5500
     },
@@ -6383,12 +5924,8 @@
       "nob": 23593,
       "swe": 31802
     },
-    "oma": {
-      "est": 25939
-    },
     "on": {
       "eng": 25882,
-      "est": 100000,
       "fin": 100000,
       "fra": 13228,
       "pol": 30165
@@ -6459,18 +5996,11 @@
     "paljon": {
       "fin": 12508
     },
-    "palju": {
-      "est": 9211
-    },
-    "palun": {
-      "est": 10009
-    },
     "pan": {
       "pol": 10019
     },
     "par": {
-      "fra": 13766,
-      "lvs": 26290
+      "fra": 13766
     },
     "para": {
       "por": 49570,
@@ -6479,21 +6009,14 @@
     "pas": {
       "fra": 82716
     },
-    "patik": {
-      "lvs": 9208
-    },
     "pe": {
       "ron": 51288
-    },
-    "pean": {
-      "est": 6393
     },
     "pentru": {
       "ron": 34235
     },
     "per": {
-      "ita": 52145,
-      "lit": 11267
+      "ita": 52145
     },
     "perche": {
       "ita": 19195
@@ -6519,9 +6042,6 @@
     "poate": {
       "ron": 13765
     },
-    "pole": {
-      "est": 13942
-    },
     "por": {
       "spa": 43813
     },
@@ -6533,6 +6053,12 @@
     },
     "pourquoi": {
       "fra": 9646
+    },
+    "pro": {
+      "ces": 14207
+    },
+    "proc": {
+      "ces": 19883
     },
     "prosze": {
       "pol": 10124
@@ -6587,28 +6113,30 @@
     "ra": {
       "hun": 2700
     },
+    "rad": {
+      "ces": 19147
+    },
     "ranskaa": {
       "fin": 8648
     },
     "really": {
       "eng": 9735
     },
-    "reikia": {
-      "lit": 9431
+    "rekl": {
+      "ces": 18584
     },
     "rog": {
       "ron": 10314
+    },
+    "s": {
+      "ces": 37393
     },
     "s-a": {
       "ron": 22932
     },
     "sa": {
-      "est": 58981,
       "fra": 13276,
       "pol": 18182
-    },
-    "saa": {
-      "est": 7001
     },
     "sadece": {
       "tur": 14293
@@ -6625,22 +6153,11 @@
     "sapa": {
       "jav": 19620
     },
-    "savo": {
-      "lit": 32057
-    },
-    "savu": {
-      "lvs": 9208
-    },
     "se": {
+      "ces": 99687,
       "fin": 42877,
       "fra": 23348,
       "ron": 33016
-    },
-    "seda": {
-      "est": 23758
-    },
-    "see": {
-      "est": 51847
     },
     "seg": {
       "nob": 17077
@@ -6657,15 +6174,6 @@
     },
     "seine": {
       "deu": 11210
-    },
-    "seit": {
-      "lvs": 8081
-    },
-    "selle": {
-      "est": 12379
-    },
-    "sellest": {
-      "est": 5376
     },
     "sem": {
       "hun": 6990
@@ -6703,11 +6211,8 @@
       "eng": 33710
     },
     "si": {
-      "fra": 17141,
-      "lvs": 6568
-    },
-    "siandien": {
-      "lit": 7454
+      "ces": 56124,
+      "fra": 17141
     },
     "sich": {
       "deu": 38984
@@ -6720,9 +6225,6 @@
     },
     "sig": {
       "swe": 15699
-    },
-    "siin": {
-      "est": 10604
     },
     "siita": {
       "fin": 10100
@@ -6738,14 +6240,10 @@
       "fin": 26196
     },
     "sind": {
-      "deu": 26672,
-      "est": 9012
+      "deu": 26672
     },
     "sing": {
       "jav": 60397
-    },
-    "sinu": {
-      "est": 8009
     },
     "sinua": {
       "fin": 9215
@@ -6773,14 +6271,10 @@
       "swe": 16160
     },
     "so": {
-      "deu": 24155,
-      "lvs": 12178
+      "deu": 24155
     },
     "sobie": {
       "pol": 9295
-    },
-    "sodien": {
-      "lvs": 12178
     },
     "soha": {
       "hun": 2630
@@ -6815,8 +6309,6 @@
       "ita": 11982
     },
     "su": {
-      "est": 11395,
-      "lit": 27584,
       "spa": 32771
     },
     "sua": {
@@ -6825,12 +6317,6 @@
     },
     "suis": {
       "fra": 24377
-    },
-    "sul": {
-      "est": 11790
-    },
-    "sulle": {
-      "est": 10406
     },
     "sunt": {
       "ron": 44068
@@ -6841,35 +6327,26 @@
     "sus": {
       "spa": 9907
     },
+    "sve": {
+      "ces": 9715
+    },
+    "ta": {
+      "jav": 18066,
+      "swe": 7234
+    },
     "taalla": {
       "fin": 8902
     },
-    "tagad": {
-      "lvs": 6948
-    },
-    "tagasi": {
-      "est": 5172
-    },
-    "tahan": {
-      "est": 11000
-    },
-    "tai": {
-      "lit": 43637
-    },
-    "taip": {
-      "lit": 12966
+    "tady": {
+      "ces": 13406
     },
     "tak": {
+      "ces": 18759,
       "jav": 19620,
       "pol": 17510
     },
-    "tal": {
-      "est": 5784
-    },
-    "talle": {
-      "est": 6393
-    },
     "tam": {
+      "ces": 12702,
       "pol": 7838
     },
     "tama": {
@@ -6884,42 +6361,20 @@
     "tan": {
       "spa": 8957
     },
-    "tana": {
-      "est": 5376
-    },
-    "tas": {
-      "lit": 10291,
-      "lvs": 30610
-    },
-    "tau": {
-      "lit": 18496
-    },
-    "tava": {
-      "lvs": 6188
-    },
-    "tave": {
-      "lit": 8825
-    },
-    "tavo": {
-      "lit": 16663
-    },
     "taytyy": {
       "fin": 8603
     },
+    "ted": {
+      "ces": 9654
+    },
     "tego": {
       "pol": 21120
-    },
-    "teha": {
-      "est": 5580
     },
     "tehda": {
       "fin": 9759
     },
     "tej": {
       "pol": 8261
-    },
-    "tema": {
-      "est": 8611
     },
     "tempo": {
       "por": 10932
@@ -6928,7 +6383,7 @@
       "fra": 10686
     },
     "ten": {
-      "lit": 7178,
+      "ces": 15600,
       "pol": 19923
     },
     "tengo": {
@@ -6936,18 +6391,6 @@
     },
     "tenho": {
       "por": 13213
-    },
-    "tere": {
-      "est": 5376
-    },
-    "tev": {
-      "lvs": 23566
-    },
-    "tevi": {
-      "lvs": 12546
-    },
-    "tevs": {
-      "lvs": 5807
     },
     "that": {
       "eng": 87406
@@ -6971,6 +6414,7 @@
       "eng": 10797
     },
     "ti": {
+      "ces": 18058,
       "ita": 13429
     },
     "tiempo": {
@@ -6978,9 +6422,6 @@
     },
     "tiene": {
       "spa": 16501
-    },
-    "tik": {
-      "lit": 12758
     },
     "til": {
       "nob": 54570
@@ -6995,9 +6436,8 @@
       "ron": 9930
     },
     "to": {
+      "ces": 93892,
       "eng": 100000,
-      "lit": 12521,
-      "lvs": 35433,
       "pol": 79940
     },
     "todella": {
@@ -7009,6 +6449,9 @@
     "todos": {
       "por": 9781,
       "spa": 10105
+    },
+    "tohle": {
+      "ces": 11611
     },
     "told": {
       "eng": 14569
@@ -7023,21 +6466,12 @@
       "tur": 38672
     },
     "toma": {
+      "ces": 25383,
       "pol": 11100
     },
-    "tomam": {
-      "lvs": 9955
-    },
-    "tomas": {
-      "lit": 69391
-    },
     "tomi": {
-      "est": 8009,
       "fin": 37131,
       "hun": 8641
-    },
-    "tomile": {
-      "est": 6190
     },
     "tomilla": {
       "fin": 7494
@@ -7045,14 +6479,8 @@
     "tomin": {
       "fin": 15689
     },
-    "tomo": {
-      "lit": 8110
-    },
-    "toms": {
-      "lvs": 52717
-    },
-    "tomui": {
-      "lit": 7943
+    "tomovi": {
+      "ces": 17530
     },
     "ton": {
       "fra": 8685
@@ -7076,9 +6504,9 @@
       "nob": 8080
     },
     "tu": {
+      "ces": 14307,
       "fra": 44496,
       "ita": 13176,
-      "lvs": 53792,
       "pol": 10693
     },
     "tudom": {
@@ -7090,11 +6518,8 @@
     "tuo": {
       "fin": 9796
     },
-    "turi": {
-      "lit": 16808
-    },
-    "turiu": {
-      "lit": 9355
+    "ty": {
+      "ces": 11245
     },
     "tycker": {
       "swe": 9985
@@ -7110,6 +6535,12 @@
     },
     "uc": {
       "tur": 8068
+    },
+    "udelal": {
+      "ces": 9940
+    },
+    "udelat": {
+      "ces": 11286
     },
     "uit": {
       "nld": 16257
@@ -7127,7 +6558,6 @@
     "un": {
       "fra": 59002,
       "ita": 57989,
-      "lvs": 28300,
       "ron": 51963,
       "spa": 63286
     },
@@ -7156,15 +6586,14 @@
       "nob": 12304,
       "swe": 10708
     },
-    "utles": {
-      "est": 5580
-    },
     "uw": {
       "nld": 8312
     },
     "uz": {
-      "lit": 11342,
-      "lvs": 21491
+      "ces": 24411
+    },
+    "v": {
+      "ces": 55364
     },
     "va": {
       "ita": 14507
@@ -7175,15 +6604,11 @@
     "vado": {
       "ita": 12962
     },
-    "vaga": {
-      "est": 16835
-    },
     "vagyok": {
       "hun": 8855
     },
     "vai": {
       "ita": 13123,
-      "lvs": 44265,
       "por": 13353
     },
     "vain": {
@@ -7191,9 +6616,6 @@
     },
     "valami": {
       "hun": 2718
-    },
-    "valja": {
-      "est": 7203
     },
     "van": {
       "hun": 24650,
@@ -7206,24 +6628,23 @@
       "ita": 12484
     },
     "var": {
-      "lvs": 5807,
       "tur": 32583
     },
     "varfor": {
       "swe": 8133
     },
-    "vari": {
-      "lvs": 6188
-    },
     "ve": {
+      "ces": 13907,
       "tur": 38737
     },
     "veel": {
-      "est": 7808,
       "nld": 12708
     },
     "veldig": {
       "nob": 11280
+    },
+    "velmi": {
+      "ces": 11793
     },
     "vero": {
       "ita": 13220
@@ -7253,25 +6674,6 @@
     },
     "vill": {
       "swe": 17236
-    },
-    "vina": {
-      "lvs": 32237
-    },
-    "vinam": {
-      "lvs": 12546
-    },
-    "vini": {
-      "lvs": 13280
-    },
-    "vins": {
-      "lvs": 46011
-    },
-    "vinu": {
-      "lvs": 9955
-    },
-    "visi": {
-      "lit": 7500,
-      "lvs": 7704
     },
     "voce": {
       "por": 72624
@@ -7415,13 +6817,12 @@
     "your": {
       "eng": 16289
     },
-    "yra": {
-      "lit": 61252
-    },
     "z": {
+      "ces": 21801,
       "pol": 56391
     },
     "za": {
+      "ces": 18233,
       "pol": 23891
     },
     "zal": {
@@ -7442,9 +6843,6 @@
     },
     "zijn": {
       "nld": 58189
-    },
-    "zinu": {
-      "lvs": 5807
     },
     "zo": {
       "nld": 12152
@@ -7471,6 +6869,12 @@
       "rus": 11903,
       "ukr": 5120
     },
+    "аз": {
+      "bul": 21140
+    },
+    "ако": {
+      "bul": 10032
+    },
     "але": {
       "ukr": 4782
     },
@@ -7479,6 +6883,9 @@
     },
     "багато": {
       "ukr": 7421
+    },
+    "беше": {
+      "bul": 18165
     },
     "би": {
       "ukr": 10441
@@ -7508,6 +6915,7 @@
       "ukr": 6703
     },
     "в": {
+      "bul": 44292,
       "rus": 82557,
       "ukr": 30741
     },
@@ -7520,6 +6928,7 @@
       "ukr": 9877
     },
     "ви": {
+      "bul": 12812,
       "ukr": 38285
     },
     "вона": {
@@ -7528,12 +6937,30 @@
     "вони": {
       "ukr": 13134
     },
+    "време": {
+      "bul": 7289
+    },
+    "время": {
+      "rus": 6843
+    },
     "все": {
       "rus": 10375,
       "ukr": 11153
     },
-    "где": {
-      "rus": 8893
+    "всички": {
+      "bul": 6148
+    },
+    "всичко": {
+      "bul": 5957
+    },
+    "го": {
+      "bul": 26541
+    },
+    "говори": {
+      "bul": 6964
+    },
+    "да": {
+      "bul": 100000
     },
     "де": {
       "ukr": 8720
@@ -7541,22 +6968,18 @@
     "делать": {
       "rus": 6950
     },
-    "день": {
-      "rus": 6310
-    },
     "для": {
       "rus": 9998,
       "ukr": 7730
     },
     "до": {
+      "bul": 9791,
       "rus": 7916,
       "ukr": 22402
     },
     "добре": {
+      "bul": 8208,
       "ukr": 6801
-    },
-    "должен": {
-      "rus": 6338
     },
     "дуже": {
       "ukr": 18665
@@ -7565,8 +6988,17 @@
       "rus": 8678,
       "ukr": 6248
     },
+    "е": {
+      "bul": 82734
+    },
     "его": {
       "rus": 24171
+    },
+    "един": {
+      "bul": 7911
+    },
+    "една": {
+      "bul": 5712
     },
     "еи": {
       "rus": 8490
@@ -7590,20 +7022,21 @@
       "ukr": 34462
     },
     "за": {
+      "bul": 38985,
       "rus": 17438,
       "ukr": 14636
     },
     "зараз": {
       "ukr": 6276
     },
+    "защо": {
+      "bul": 7668
+    },
     "здесь": {
       "rus": 10293
     },
-    "знав": {
-      "ukr": 4468
-    },
-    "знал": {
-      "rus": 6393
+    "знам": {
+      "bul": 6720
     },
     "знаю": {
       "rus": 10406,
@@ -7615,17 +7048,61 @@
     "зробити": {
       "ukr": 13621
     },
+    "и": {
+      "rus": 44460,
+      "ukr": 5017
+    },
+    "из": {
+      "rus": 13755
+    },
+    "има": {
+      "bul": 12523
+    },
+    "имам": {
+      "bul": 7181
+    },
+    "иого": {
+      "ukr": 15318
+    },
+    "иому": {
+      "ukr": 6090
+    },
+    "искам": {
+      "bul": 8800
+    },
+    "искаш": {
+      "bul": 6801
+    },
+    "их": {
+      "rus": 7581
+    },
     "к": {
       "rus": 13407
     },
     "как": {
+      "bul": 8854,
       "rus": 29044
+    },
+    "какво": {
+      "bul": 16425
+    },
+    "като": {
+      "bul": 8046
+    },
+    "когато": {
+      "bul": 6284
     },
     "когда": {
       "rus": 12478
     },
+    "което": {
+      "bul": 8504
+    },
     "коли": {
       "ukr": 9150
+    },
+    "колко": {
+      "bul": 6339
     },
     "кто": {
       "rus": 9548
@@ -7633,8 +7110,17 @@
     "ласка": {
       "ukr": 7481
     },
+    "ли": {
+      "bul": 50967
+    },
+    "малко": {
+      "bul": 7018
+    },
     "маю": {
       "ukr": 4815
+    },
+    "ме": {
+      "bul": 12391
     },
     "мене": {
       "ukr": 25771
@@ -7642,39 +7128,58 @@
     "меня": {
       "rus": 33051
     },
+    "мери": {
+      "bul": 12891
+    },
     "ми": {
+      "bul": 42578,
       "ukr": 28273
+    },
+    "мисля": {
+      "bul": 20565
     },
     "мне": {
       "rus": 45092
     },
     "много": {
+      "bul": 22484,
       "rus": 7495
+    },
+    "мога": {
+      "bul": 8262
     },
     "могу": {
       "rus": 9693
     },
     "може": {
+      "bul": 17067,
       "ukr": 7088
     },
     "может": {
       "rus": 8440
     },
-    "можна": {
-      "ukr": 4487
-    },
     "можу": {
       "ukr": 7513
+    },
+    "моля": {
+      "bul": 6148
     },
     "моя": {
       "ukr": 5082
     },
+    "му": {
+      "bul": 11308
+    },
     "на": {
+      "bul": 69033,
       "rus": 56950,
       "ukr": 43602
     },
     "надо": {
       "rus": 9846
+    },
+    "наистина": {
+      "bul": 5164
     },
     "нам": {
       "rus": 10959,
@@ -7685,6 +7190,7 @@
       "ukr": 6513
     },
     "не": {
+      "bul": 85883,
       "rus": 99900,
       "ukr": 95475
     },
@@ -7694,23 +7200,39 @@
     "нет": {
       "rus": 11699
     },
+    "нещо": {
+      "bul": 11202
+    },
+    "ни": {
+      "bul": 7695
+    },
+    "ние": {
+      "bul": 5575
+    },
+    "никога": {
+      "bul": 7343
+    },
     "никогда": {
       "rus": 9354
     },
     "ничего": {
       "rus": 8168
     },
+    "нищо": {
+      "bul": 7100
+    },
     "но": {
+      "bul": 5984,
       "rus": 10489
     },
     "нужно": {
       "rus": 8538
     },
+    "няма": {
+      "bul": 16142
+    },
     "о": {
       "rus": 13054
-    },
-    "об": {
-      "rus": 6539
     },
     "он": {
       "rus": 48377
@@ -7722,35 +7244,58 @@
       "rus": 16787
     },
     "от": {
+      "bul": 32515,
       "rus": 11988
     },
     "очень": {
       "rus": 16941
     },
+    "още": {
+      "bul": 9898
+    },
     "по": {
+      "bul": 11626,
       "rus": 13645
     },
     "почему": {
       "rus": 12600
     },
+    "преди": {
+      "bul": 5766
+    },
     "про": {
       "ukr": 12771
     },
     "просто": {
-      "rus": 6239,
       "ukr": 5110
     },
     "робити": {
       "ukr": 7523
     },
     "с": {
+      "bul": 30723,
       "rus": 44326
+    },
+    "са": {
+      "bul": 15030
+    },
+    "само": {
+      "bul": 5465
+    },
+    "сделать": {
+      "rus": 8862
+    },
+    "се": {
+      "bul": 71352
     },
     "сегодня": {
       "rus": 8879
     },
     "сеичас": {
       "rus": 7294
+    },
+    "си": {
+      "bul": 62575
     },
     "сказав": {
       "ukr": 11894
@@ -7761,29 +7306,53 @@
     "сколько": {
       "rus": 7434
     },
+    "сте": {
+      "bul": 6937
+    },
     "та": {
       "ukr": 10159
+    },
+    "тази": {
+      "bul": 12523
     },
     "так": {
       "ukr": 12717
     },
     "те": {
+      "bul": 19811,
       "ukr": 5638
     },
     "тебе": {
       "rus": 21218,
       "ukr": 14410
     },
+    "тебя": {
+      "rus": 17897
+    },
     "ти": {
+      "bul": 31378,
       "ukr": 63955
     },
     "то": {
       "rus": 8745
     },
+    "това": {
+      "bul": 35802
+    },
+    "този": {
+      "bul": 9818
+    },
+    "тои": {
+      "bul": 30536
+    },
+    "толкова": {
+      "bul": 9042
+    },
     "только": {
       "rus": 9509
     },
     "том": {
+      "bul": 71892,
       "rus": 80360,
       "ukr": 90870
     },
@@ -7792,17 +7361,22 @@
       "ukr": 28635
     },
     "томом": {
-      "rus": 6444,
       "ukr": 8430
     },
     "тому": {
       "ukr": 19249
     },
-    "трохи": {
-      "ukr": 4501
+    "трябва": {
+      "bul": 25087
+    },
+    "тук": {
+      "bul": 10910
     },
     "тут": {
       "ukr": 10500
+    },
+    "тя": {
+      "bul": 16964
     },
     "у": {
       "rus": 44485,
@@ -7811,14 +7385,14 @@
     "уже": {
       "rus": 11976
     },
+    "френски": {
+      "bul": 19078
+    },
     "хотел": {
       "rus": 8553
     },
     "хоче": {
       "ukr": 6634
-    },
-    "хочет": {
-      "rus": 6355
     },
     "хочеш": {
       "ukr": 4843
@@ -7839,6 +7413,9 @@
     "час": {
       "ukr": 5120
     },
+    "че": {
+      "bul": 51320
+    },
     "чи": {
       "ukr": 10396
     },
@@ -7846,6 +7423,7 @@
       "ukr": 16169
     },
     "ще": {
+      "bul": 36005,
       "ukr": 12331
     },
     "що": {
@@ -7855,6 +7433,7 @@
       "ukr": 5470
     },
     "я": {
+      "bul": 6937,
       "rus": 100000,
       "ukr": 100000
     },
@@ -7863,6 +7442,9 @@
     },
     "якщо": {
       "ukr": 4890
+    },
+    "।": {
+      "hin": 5673
     }
   }
 }

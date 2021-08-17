@@ -12,8 +12,9 @@ const langMap: { [id: string]: string } = {
 
 function detect(val: string): string {
   let res = franc(val)
-  if (res in langMap) res = langMap[res]
-  return toISO2(res)
+  if (res === 'und') res = ''
+  else if (res in langMap) res = langMap[res]
+  return res ? toISO2(res) : ''
 }
 
 benchmark(detect)

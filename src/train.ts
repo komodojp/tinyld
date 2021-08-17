@@ -45,7 +45,7 @@ async function processLang(lang: string) {
     })
     wordOutStream.close()
 
-    for (const gram of TRAINING_UNIQUE_GRAMS) {
+    for (const gram of [1, 2, 3, 4]) {
       const gramRank = new Map<string, number>()
 
       for (const word of wordRank.keys()) {

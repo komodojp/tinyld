@@ -16,11 +16,11 @@ const config = {
   },
   normal: {
     TRAINING_UNIQUE_GRAMS: [1, 2, 3],
-    TOP_LANGUAGE_UNIQUE_GRAMS: 350,
+    TOP_LANGUAGE_UNIQUE_GRAMS: 400,
     TOP_WORD: 1000000,
-    TOP_WORD_MAXLANG: 24,
+    TOP_WORD_MAXLANG: 30,
     TOP_GRAM: 1000000,
-    TOP_GRAM_MAXLANG: 24
+    TOP_GRAM_MAXLANG: 30
   }
 }
 
@@ -65,12 +65,8 @@ const langMap: { [id: string]: LangOption } = {
   tha: { code: 'th', skipProb: true }, // thai
   vie: { code: 'vi', skipProb: true }, // vietnamese
   ind: { code: 'id', skipLight: true }, // indonesian
-  hin: { code: 'hi' }, // hindi
   khm: { code: 'km', skipLight: true, skipProb: true }, // khmer
   tgl: { code: 'tl', skipLight: true }, // tagalog (Philippines)
-  ben: { code: 'bn', skipLight: true, skipProb: true }, // bengali
-  tam: { code: 'ta', skipLight: true, skipProb: true }, // tamil
-  mar: { code: 'mr', skipLight: true, skipProb: true }, // marathi
   jav: { code: 'jv' }, // javanese
 
   // other
@@ -89,9 +85,11 @@ const langMap: { [id: string]: LangOption } = {
   gle: { code: 'ga', skipLight: true }, // irish
   lat: { code: 'la', skipLight: true }, // latin
 
-  ces: { code: 'cs', skipLight: true }, // czech
+  ces: { code: 'cs' }, // czech
+  hrv: { code: 'hr', skipLight: true }, // croatian
   srp: { code: 'sr', skipLight: true }, // serbian
   ell: { code: 'el', alias: ['gr'], skipProb: true }, // greek
+  mkd: { code: 'mk', skipLight: true }, // macedonian
   slk: { code: 'sk', skipLight: true }, // slovak
   slv: { code: 'sl', skipLight: true }, // slovenian
 
@@ -102,22 +100,40 @@ const langMap: { [id: string]: LangOption } = {
 
   hun: { code: 'hu' }, // hungarian
   ron: { code: 'ro' }, // romanian
-  bul: { code: 'bg', skipLight: true }, // bulgarian
+  bul: { code: 'bg' }, // bulgarian
   bel: { code: 'be', skipLight: true }, // belarussian
   rus: { code: 'ru' }, // russian
   ukr: { code: 'uk' }, // ukrainian
   pol: { code: 'pl' }, // polish
-  lit: { code: 'lt' }, // lituanian
-  est: { code: 'et' }, // estonian
-  lvs: { code: 'lv' }, // latvian
+  lit: { code: 'lt', skipLight: true }, // lituanian
+  est: { code: 'et', skipLight: true }, // estonian
+  lvs: { code: 'lv', skipLight: true }, // latvian
+
+  // india
+  ben: { code: 'bn', skipProb: true }, // bengali
+  tam: { code: 'ta', skipLight: true, skipProb: true }, // tamil
+  mar: { code: 'mr', skipLight: true, skipProb: true }, // marathi
+  hin: { code: 'hi' }, // hindi
+  urd: { code: 'ur', skipLight: true, skipProb: true }, // urdu
+  guj: { code: 'gu', skipLight: true, skipProb: true }, // gujarati
+  kan: { code: 'kn', skipLight: true, skipProb: true }, // kannada
+  tel: { code: 'te', skipLight: true, skipProb: true }, // telugu
+
+  // africa
+  amh: { code: 'am', skipLight: true, skipProb: true }, // amharic
+  hau: { code: 'ha', skipLight: true }, // hausa
+  ber: { code: 'ber', skipLight: true }, // berber (no iso2)
+  swh: { code: 'sw', skipLight: true }, // swahili
 
   // midle east
   tur: { code: 'tr' }, // turkish
-  heb: { code: 'he', skipProb: true }, // hebrew
+  heb: { code: 'he' }, // hebrew
   ara: { code: 'ar', skipProb: true }, // arabic
   pes: { code: 'fa', skipProb: true }, // persian
   tat: { code: 'tt', skipLight: true, skipProb: true }, // tatar
-  tel: { code: 'te', skipLight: true } // telugu
+  kab: { code: 'kb', skipLight: true }, // kabyle
+  tuk: { code: 'tk', skipLight: true }, // turkmen
+  uzb: { code: 'uz', skipLight: true } // uzbek
 }
 
 export const langs = new Set(
