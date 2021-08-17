@@ -68,14 +68,31 @@ tinyld This is the text that I want to check
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| **TinyLD**     | `yarn bench:tinyld`         | **95.4801%%**       | **3.1420%**           | **1.3779%**    | 0.0918ms.          | 676KB     |
-| **TinyLD Web** | `yarn bench:tinyld-light`   | **91.4835%**        | 4.2282%               | 4.2883%        | **0.0605ms.**      | **90KB**  |
-| node-cld       | `yarn bench:cld`            | 87.1121%            | **1.8074%**           | 11.08%         | **0.0563ms.**      | > 10MB    |
-| franc          | `yarn bench:franc`          | 65.3913%            | 34.6087%              | **0%**         | 0.1325ms.          | 350KB     |
-| languagedetect | `yarn bench:languagedetect` | 58.0877%            | 13.4809%              | 28.4414%       | 0.1595ms.          | **240KB** |
+| **TinyLD**     | `yarn bench:tinyld`         | **95.4156%**        | **3.2471%**           | **1.3373%**    | **0.0918ms.**      | 676KB     |
+| **TinyLD Web** | `yarn bench:tinyld-light`   | **90.4754%**        | 5.0452%               | **4.4794%**    | **0.0605ms.**      | **90KB**  |
+| **node-cld**   | `yarn bench:cld`            | **86.7068%**        | **2.1064%**           | 11.1868%       | **0.0563ms.**      | > 10MB    |
+| node-lingua    | `yarn bench:lingua`         | 82.3157%            | **0.2158%**           | 17.4685%       | 0.7085ms.          | ~100MB    |
+| franc          | `yarn bench:franc`          | 64.7064%            | 35.2936%              | **0%**         | 0.1325ms.          | **350KB** |
+| languagedetect | `yarn bench:languagedetect` | 60.0853%            | 13.3216%              | 26.5931%       | 0.1595ms.          | **240KB** |
 
-**Remark**
+### **Remark**
 
-- For each category, Best result are mark in **Bold**
+- For each category, 3 Best results are mark in **Bold**
+- Language evaluated in this benchmark:
+  - Asia: `jpn`, `cmn`, `kor`, `hin`
+  - Europe: `fra`, `spa`, `por`, `ita`, `nld`, `eng`, `deu`, `fin`, `rus`
+  - Middle east: , `tur`, `heb`, `ara`
 - This benchmark is done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
+
+### **Conclusion**
+
+#### Recommanded
+
+- For **NodeJS**: `TinyLD` or `node-cld` (fast and accurate)
+- For **Browser**: `TinyLD Light` or `franc` (small and decent accuracy)
+
+#### Not recommended
+
+- `node-lingua` is just too massive and slow
+- `languagedetect` is light but just not accurate enough, really focused on indo-european languages (support kazakh but no chinese, korean or japanese)

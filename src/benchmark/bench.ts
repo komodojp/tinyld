@@ -10,7 +10,7 @@ const benchLangs = new Set([
   'cmn',
   'kor',
   'hin',
-  'jav',
+  'nld',
   'fra',
   'eng',
   'deu',

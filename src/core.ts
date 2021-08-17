@@ -84,7 +84,7 @@ const langMap: { [id: string]: LangOption } = {
   spa: { code: 'es' }, // spanish
   por: { code: 'pt', alias: ['po'] }, // portuguese
   ita: { code: 'it' }, // italian
-  nld: { code: 'nl', skipLight: true }, // dutch
+  nld: { code: 'nl' }, // dutch
   dan: { code: 'da', skipLight: true }, // danish
   gle: { code: 'ga', skipLight: true }, // irish
   lat: { code: 'la', skipLight: true }, // latin
@@ -102,7 +102,7 @@ const langMap: { [id: string]: LangOption } = {
 
   hun: { code: 'hu' }, // hungarian
   ron: { code: 'ro' }, // romanian
-  bul: { code: 'bg' }, // bulgarian
+  bul: { code: 'bg', skipLight: true }, // bulgarian
   bel: { code: 'be', skipLight: true }, // belarussian
   rus: { code: 'ru' }, // russian
   ukr: { code: 'uk' }, // ukrainian
