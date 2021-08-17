@@ -66,6 +66,8 @@ tinyld This is the text that I want to check
 
 ## Benchmark
 
+> Benchmark done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
+
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
 | **TinyLD**     | `yarn bench:tinyld`         | **95.4156%**        | **3.2471%**           | **1.3373%**    | **0.0918ms.**      | 676KB     |
@@ -77,12 +79,11 @@ tinyld This is the text that I want to check
 
 ### **Remark**
 
-- For each category, 3 Best results are mark in **Bold**
+- For each category, top3 results are in **Bold**
 - Language evaluated in this benchmark:
   - Asia: `jpn`, `cmn`, `kor`, `hin`
   - Europe: `fra`, `spa`, `por`, `ita`, `nld`, `eng`, `deu`, `fin`, `rus`
   - Middle east: , `tur`, `heb`, `ara`
-- This benchmark is done on tatoeba dataset (~9M sentences) on 16 of the most common languages.
 - This kind of benchmark is not perfect and % can vary over time, but it gives a good idea of overall performances
 
 ### **Conclusion**
