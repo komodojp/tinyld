@@ -71,12 +71,13 @@ tinyld This is the text that I want to check
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| **TinyLD**     | `yarn bench:tinyld`         | **95.4156%**        | **3.2471%**           | **1.3373%**    | **0.0918ms.**      | 676KB     |
-| **TinyLD Web** | `yarn bench:tinyld-light`   | **90.4754%**        | 5.0452%               | **4.4794%**    | **0.0605ms.**      | **90KB**  |
-| **node-cld**   | `yarn bench:cld`            | **86.7068%**        | **2.1064%**           | 11.1868%       | **0.0563ms.**      | > 10MB    |
+| **TinyLD**     | `yarn bench:tinyld`         | **96.1747%**        | **2.6938%**           | **1.1315%**    | 0.1315ms.          | 778KB     |
+| **TinyLD Web** | `yarn bench:tinyld-light`   | **92.1169%**        | 3.9536%               | **3.9295%**    | **0.0616ms.**      | **89KB**  |
+| **node-cld**   | `yarn bench:cld`            | **88.9148%**        | **1.7489%**           | 9.3363%        | **0.0612ms.**      | > 10MB    |
 | node-lingua    | `yarn bench:lingua`         | 82.3157%            | **0.2158%**           | 17.4685%       | 0.7085ms.          | ~100MB    |
-| franc-min      | `yarn bench:franc`          | 64.7064%            | 29.7064%              | **6.1258%**    | 0.1325ms.          | **105KB** |
-| languagedetect | `yarn bench:languagedetect` | 60.0853%            | 13.3216%              | 26.5931%       | 0.1595ms.          | **240KB** |
+| franc          | `yarn bench:franc`          | 68.7783%            | 26.3432%              | **4.8785%**    | 0.1381ms.          | 267KB     |
+| franc-min      | `yarn bench:franc-min`      | 65.5163%            | 23.5794%              | 10.9044%       | **0.0614ms.**      | **119KB** |
+| languagedetect | `yarn bench:languagedetect` | 61.6068%            | 12.295%               | 26.0982%       | 0.1585ms.          | **240KB** |
 
 ### **Remark**
 

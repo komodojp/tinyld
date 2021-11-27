@@ -1,5 +1,5 @@
 import fs from 'fs'
-import readline from "readline"
+import readline from 'readline'
 import { approximate, langs, toISO2 } from '../core'
 
 const readInterface = readline.createInterface({
