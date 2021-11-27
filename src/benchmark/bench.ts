@@ -1,7 +1,10 @@
 import fs from 'fs'
+import readline from "readline"
 import { approximate, langs, toISO2 } from '../core'
 
-const file = fs.readFileSync('data/tatoeba.csv', 'utf-8')
+const readInterface = readline.createInterface({
+  input: fs.createReadStream('data/tatoeba.csv')
+})
 
 type DetectMethod = (val: string) => Promise<string> | string
 
@@ -36,7 +39,7 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
   const countryCheck = new Map<string, number>()
   const errorMap = new Map<string, number>()
 
-  for (const line of file.split('\n').reverse()) {
+  for await (const line of readInterface) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [, country, text] = line.split('\t')
 
