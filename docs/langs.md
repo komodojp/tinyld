@@ -3,8 +3,8 @@
 ## Africa (4)
 
 - Amharic (code: `am`)
-- Berber (code: `ha`)
-- Hausa (code: `ber`)
+- Berber (code: `ber`)
+- Hausa (code: `ha`)
 - Swahili (code: `sw`)
 
 ---
@@ -60,9 +60,9 @@
 - Finnish (code: `fi`)
 - Icelandic (code: `is`)
 - Latvian (code: `lv`)
-- Lituanian (code: `lt`)
+- Lithuanian (code: `lt`)
 - Norwegian (code: `no`)
-- Swedish (code: `sw`)
+- Swedish (code: `sv`)
 
 ### Central Europe (9)
 
@@ -78,7 +78,7 @@
 
 ### East Europe (6)
 
-- Belarussian (code: `be`)
+- Belarusian (code: `be`)
 - Polish (code: `pl`)
 - Romanian (code: `ro`)
 - Russian (code: `ru`)

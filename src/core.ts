@@ -101,11 +101,11 @@ const langMap: { [id: string]: LangOption } = {
   hun: { code: 'hu' }, // hungarian
   ron: { code: 'ro' }, // romanian
   bul: { code: 'bg' }, // bulgarian
-  bel: { code: 'be', skipLight: true }, // belarussian
+  bel: { code: 'be', skipLight: true }, // belarusian
   rus: { code: 'ru' }, // russian
   ukr: { code: 'uk' }, // ukrainian
   pol: { code: 'pl' }, // polish
-  lit: { code: 'lt', skipLight: true }, // lituanian
+  lit: { code: 'lt', skipLight: true }, // lithuanian
   est: { code: 'et', skipLight: true }, // estonian
   lvs: { code: 'lv', skipLight: true }, // latvian
 
