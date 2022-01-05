@@ -12,7 +12,7 @@
 - pure javascript, no api call, and no dependency (node and browser compatible)
 - alternative to libraries like CLD
 - blazing fast and low memory footprint (unlike ML methods)
-- support 62 languages (30 for the web version)
+- support 64 languages (24 for the web version)
 - format ISO 639-1
 
 ## Extra
@@ -36,6 +36,8 @@
 yarn add tinyld # or npm install --save tinyld
 ```
 
+[Install Documentation](./docs/install.md)
+
 ### API
 
 ```js
@@ -50,7 +52,7 @@ detectAll('ceci est un text en francais.')
 // [ { lang: 'fr', accuracy: 0.5238 }, { lang: 'ro', accuracy: 0.3802 }, ... ]
 ```
 
-[More Information](./docs/install.md)
+[API Documentation](./docs/api.md)
 
 ---
 
@@ -71,8 +73,8 @@ tinyld This is the text that I want to check
 
 | Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| **TinyLD**     | `yarn bench:tinyld`         | **96.1747%**        | **2.6938%**           | **1.1315%**    | 0.1315ms.          | 778KB     |
-| **TinyLD Web** | `yarn bench:tinyld-light`   | **92.1169%**        | 3.9536%               | **3.9295%**    | **0.0616ms.**      | **89KB**  |
+| **TinyLD**     | `yarn bench:tinyld`         | **97.7311%**        | **1.9247%**           | **0.3441%**    | 0.0922ms.          | 930KB     |
+| **TinyLD Web** | `yarn bench:tinyld-light`   | **97.4512%**        | 2.1131%               | **0.4358%**    | **0.0672ms.**      | **110KB** |
 | **node-cld**   | `yarn bench:cld`            | **88.9148%**        | **1.7489%**           | 9.3363%        | **0.0612ms.**      | > 10MB    |
 | node-lingua    | `yarn bench:lingua`         | 82.3157%            | **0.2158%**           | 17.4685%       | 0.7085ms.          | ~100MB    |
 | franc          | `yarn bench:franc`          | 68.7783%            | 26.3432%              | **4.8785%**    | 0.1381ms.          | 267KB     |

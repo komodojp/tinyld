@@ -44,20 +44,7 @@ This identification is done on different sizes of grams (including 1-gram and 2-
 
 ---
 
-### **2) Second pass**: Word Detection
-
-More traditional method of statistical analysis on words.
-For each word, try to find languages that match and score them.
-
-**This pass is**:
-
-- probabilistic
-- return multiples locale and they have to be scored and sorted
-- remove words already covered by gram from step1 (to save space)
-
----
-
-### **3) Third pass**: Gram Detection (4-gram)
+### **2) Second pass**: Gram Detection (2-gram, 3-gram, ...)
 
 Most of the other libraries are only using this part.
 More traditional method of statistical analysis on grams.
@@ -67,7 +54,7 @@ Split each word in 4-gram and for each of them try to find languages that match 
 
 - probabilistic
 - return multiples locale and they have to be scored and sorted
-- remove grams already covered by step1 or step2 (to save space)
+- remove grams already covered by previous step (to save space)
 
 ---
 
@@ -76,8 +63,7 @@ Split each word in 4-gram and for each of them try to find languages that match 
 Individually, the accuracy of each method is not really high
 
 - Unique character detection: ~65%
-- Word detection: ~70%
-- Gram detection: ~20%
+- Gram detection: ~85%
 
 But what allows this library to be so good, is that those detection methods are complementary and work together.
 

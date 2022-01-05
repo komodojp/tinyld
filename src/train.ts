@@ -3,16 +3,12 @@ import readline from 'readline'
 import { ngramTokenizer } from './tokenizer'
 import { processTatoebaLineByLine } from './train/splitter'
 import pLimit from 'p-limit'
-import { normalize } from './clean'
 import {
   configSet,
+  getLangTopStatsGram,
   isSkipProba,
   langs,
-  TOP_GRAM,
-  TOP_GRAM_MAXLANG,
   TOP_LANGUAGE_UNIQUE_GRAMS,
-  TOP_WORD,
-  TOP_WORD_MAXLANG,
   TRAINING_UNIQUE_GRAMS
 } from './core'
 
@@ -24,11 +20,6 @@ async function processLang(lang: string) {
   if (!fs.existsSync(`data/tmp/${lang}`)) fs.mkdirSync(`data/tmp/${lang}`)
 
   if (!fs.existsSync(`data/tmp/${lang}/words.txt`)) {
-    // if (files[lang].freq) {
-    //   const res = await processFrequencyLineByLine(files[lang].freq as string)
-    //   res.forEach(x => wordRank.set(x.word, (wordRank.get(x.word) || 0) + x.count))
-    // }
-
     // parse tatoeba file
     const res = await processTatoebaLineByLine('data/tatoeba.csv', lang)
     res.forEach((x) => wordRank.set(x.word, (wordRank.get(x.word) || 0) + x.count))
@@ -45,7 +36,7 @@ async function processLang(lang: string) {
     })
     wordOutStream.close()
 
-    for (const gram of [1, 2, 3, 4]) {
+    for (const gram of [1, 2, 3, 4, 5]) {
       const gramRank = new Map<string, number>()
 
       for (const word of wordRank.keys()) {
@@ -70,7 +61,7 @@ async function processLang(lang: string) {
 }
 
 const checkNgramContains = (txt: string, gram: number, uniques: Set<string>) => {
-  for (let i = 1; i < gram - 1; i++) {
+  for (let i = 1; i < gram; i++) {
     const grams = ngramTokenizer(txt, i)
     if (grams.some((x) => uniques.has(x))) return true
   }
@@ -80,7 +71,7 @@ const checkNgramContains = (txt: string, gram: number, uniques: Set<string>) => 
 async function processUniqueGrams(langs: string[], gram: number, uniques: Set<string>) {
   const map = new Map<string, Map<string, { count: number; index: number }>>()
   for (const lang of langs) {
-    console.log('process Gram', lang, gram)
+    // console.log('process Gram', lang, gram)
     const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
     const rl = readline.createInterface({
       input: fileStream,
@@ -123,93 +114,68 @@ async function processUniqueGrams(langs: string[], gram: number, uniques: Set<st
   return result
 }
 
-async function processStatsWords(langs: string[], uniques: Set<string>) {
-  const map = new Map<string, Map<string, { count: number; index: number }>>()
+async function processLangGrams(langs: string[], gram: number, uniques: Set<string>) {
+  const allGrams = new Map<string, string[]>()
   for (const lang of langs) {
     if (isSkipProba(lang)) continue
-    console.log('process Words', lang)
-    const fileStream = fs.createReadStream(`data/tmp/${lang}/words.txt`)
-    const rl = readline.createInterface({
-      input: fileStream,
-      crlfDelay: Infinity
-    })
-    let index = 0
-    for await (const line of rl) {
-      const [text, usage] = line.split('\t')
-      const txt = normalize(text)
-      if (uniques.has(txt)) continue
-      if (banWordList.has(txt)) continue
-      if (checkNgramContains(txt, 4, uniques)) continue
-      if (!map.has(txt)) map.set(txt, new Map())
-      if (txt.length > 8) continue
-
-      const gramData = map.get(txt) as Map<string, { count: number; index: number }>
-      gramData.set(lang, { count: parseFloat(usage), index })
-      index++
-    }
-    fileStream.close()
-  }
-
-  const result: { [gram: string]: { [country: string]: number } } = {}
-
-  ;[...map.entries()].forEach((gram) => {
-    if (gram[1].size > TOP_WORD_MAXLANG) return
-
-    const txt = gram[0]
-    ;[...gram[1].entries()].forEach((entry) => {
-      if (entry[1].count * 100000 < 500) return
-      if (entry[1].index > TOP_WORD) return
-      if (!result[txt]) result[txt] = {}
-      const val = 1 - (1 - entry[1].count) * (1 - entry[1].count)
-      result[txt][entry[0]] = Math.round(val * 100000)
-    })
-  })
-
-  return result
-}
-
-async function processStatsGrams(langs: string[], gram: number, uniques: Set<string>) {
-  const map = new Map<string, Map<string, { count: number; index: number }>>()
-  for (const lang of langs) {
-    if (isSkipProba(lang)) continue
-    console.log('process Stats Gram', lang, gram)
     const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
     const rl = readline.createInterface({
       input: fileStream,
       crlfDelay: Infinity
     })
-    let index = 0
     for await (const line of rl) {
-      const [text, usage] = line.split('\t')
-      const txt = normalize(text)
-      if (banWordList.has(txt)) continue
-      if (checkNgramContains(txt, gram, uniques)) continue
-      if (uniques.has(txt)) continue
-      if (!map.has(txt)) map.set(txt, new Map())
-
-      const gramData = map.get(txt) as Map<string, { count: number; index: number }>
-      gramData.set(lang, { count: parseFloat(usage), index })
-      index++
+      const [txt] = line.split('\t')
+      if (txt in uniques) continue
+      allGrams.set(txt, [...(allGrams.get(txt) || []), txt])
     }
     fileStream.close()
   }
 
-  const result: { [gram: string]: { [country: string]: number } } = {}
-
-  ;[...map.entries()].forEach((gram) => {
-    if (gram[1].size > TOP_GRAM_MAXLANG) return
-
-    const txt = gram[0]
-    ;[...gram[1].entries()].forEach((entry) => {
-      if (entry[1].count * 100000 < 500) return
-      if (entry[1].index > TOP_GRAM) return
-      if (!result[txt]) result[txt] = {}
-      const val = 1 - (1 - entry[1].count) * (1 - entry[1].count)
-      result[txt][entry[0]] = Math.round(val * 100000)
+  const grams = new Set()
+  for (const lang of langs) {
+    if (isSkipProba(lang)) continue
+    const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
     })
-  })
 
-  return result
+    let normal = getLangTopStatsGram(lang)
+    for await (const line of rl) {
+      const [txt] = line.split('\t')
+      if (txt in uniques) continue
+      if ((allGrams.get(txt)?.length || 0) > 12) continue
+
+      grams.add(txt)
+      normal--
+      if (normal <= 0) break
+    }
+    fileStream.close()
+  }
+
+  const langGrams = new Map<string, Record<string, number>>()
+  for (const lang of langs) {
+    if (isSkipProba(lang)) continue
+    const fileStream = fs.createReadStream(`data/tmp/${lang}/${gram}-gram.txt`)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+
+    for await (const line of rl) {
+      const [txt, usage] = line.split('\t')
+      const value = parseFloat(usage)
+      if (!grams.has(txt)) continue
+      const data = langGrams.get(txt) || {}
+      const rnd = Math.round(1024 * (1 - (1 - value) * (1 - value)))
+      if (rnd <= 1) break
+      data[lang] = rnd
+      langGrams.set(txt, data)
+    }
+    fileStream.close()
+  }
+
+  return Object.fromEntries(langGrams.entries())
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -230,35 +196,26 @@ function sortKeys(key: string, value: any) {
 }
 
 async function processFiles() {
-  console.log('Start')
   const processLangs = [...langs.values()]
 
-  const limit = pLimit(4)
+  const limit = pLimit(8)
 
   await Promise.all(
     processLangs.map((lang) => {
-      return limit(() => {
-        console.log('Extract', lang)
-        return processLang(lang)
-      })
+      return limit(() => processLang(lang))
     })
   )
 
   let uniques = {}
   for (const gram of TRAINING_UNIQUE_GRAMS) {
-    uniques = { ...uniques, ...(await processUniqueGrams(processLangs, gram, new Set([...Object.keys(uniques)]))) }
-  }
-
-  const words = {
-    ...(await processStatsWords(processLangs, new Set(Object.keys(uniques))))
+    const un = new Set([...Object.keys(uniques)])
+    uniques = { ...uniques, ...(await processUniqueGrams(processLangs, gram, un)) }
   }
 
   let multiples = {}
-  for (const gram of [4]) {
-    multiples = {
-      ...multiples,
-      ...(await processStatsGrams(processLangs, gram, new Set([...Object.keys(uniques), ...Object.keys(words)])))
-    }
+  for (const gram of TRAINING_UNIQUE_GRAMS) {
+    const un = new Set([...Object.keys(uniques)])
+    multiples = { ...multiples, ...(await processLangGrams(processLangs, gram, un)) }
   }
 
   fs.writeFileSync(
@@ -267,8 +224,7 @@ async function processFiles() {
       {
         id: 'tinyld-dict',
         uniques,
-        multiples,
-        words
+        multiples
       },
       sortKeys,
       2

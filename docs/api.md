@@ -40,9 +40,26 @@ detectAll('this is the text')
 This library also expose some language code conversion functions, to switch between iso2 (`ISO 639-1`) and iso3 (`ISO 639-3`) and get compatible with a range of API/Tools.
 
 ```js
+import { toISO2, toISO3 } from 'tinyld'
+
 toISO2('jpn') // ja
 toISO3('jp') // jpn
 toISO3('ja') // jpn
 ```
 
 Also contains some alias for deprecated or common mistakes (`jp` is an alias of `ja`, `cn` is an alias of `zh`, ...)
+
+---
+
+## Language Helpers
+
+```js
+import { supportedLanguages, langName, langRegion } from 'tinyld'
+
+// all supported languages (ISO3 format)
+supportedLanguages // ['jpn', 'cmn', ...]
+
+// and few utils about langs
+langName('jpn') // Japanese
+langRegion('jpn') // east-asia
+```

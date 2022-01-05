@@ -19,4 +19,4 @@ export function detectAll(text: string, opts?: Partial<DetectOption>): { lang: s
 }
 
 export { cleanString } from './clean'
-export { toISO2, toISO3, validateISO2 } from './core'
+export { toISO2, toISO3, langName, langRegion, validateISO2, supportedLanguages } from './core'

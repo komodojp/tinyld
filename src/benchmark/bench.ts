@@ -1,6 +1,7 @@
 import fs from 'fs'
 import readline from 'readline'
-import { approximate, langs, toISO2 } from '../core'
+import { langName } from '..'
+import { approximate, getCoef, langs, toISO2 } from '../core'
 
 const readInterface = readline.createInterface({
   input: fs.createReadStream('data/tatoeba.csv')
@@ -8,7 +9,7 @@ const readInterface = readline.createInterface({
 
 type DetectMethod = (val: string) => Promise<string> | string
 
-const benchLangs = new Set([
+const benchLangs = /* langs */ new Set([
   'jpn',
   'cmn',
   'kor',
@@ -69,11 +70,14 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
   }
 
   console.log(`--- Per language Accuracy ---`)
+  const acc: [number, string][] = []
   for (const lang of total.keys()) {
     const s = success.get(lang) || 1
     const t = total.get(lang) || 1
-    console.log(` - ${lang} - ${approximate((s / t) * 100)}%`)
+    acc.push([s / t, ` - ${langName(lang)} (${lang}) - ${approximate((s / t) * 100)}% (coef: ${getCoef(lang)})`])
   }
+  acc.sort((a, b) => b[0] - a[0])
+  acc.forEach((x) => console.log(x[1]))
 
   const errors = [...errorMap.entries()]
   errors.sort((a, b) => b[1] - a[1])

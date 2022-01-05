@@ -70,7 +70,7 @@ export function detectStatsGrams(
 ): { lang: string; accuracy: number }[] {
   const langScores = new Map<string, number>()
 
-  const grams = [...ngramTokenizer(text, 4)]
+  const grams = TRAINING_UNIQUE_GRAMS.map((x) => ngramTokenizer(text, x)).flat()
   if (options.verbose) console.log('[Pass 2] DetectPotentialGrams', text, grams)
   const langSet = new Set(
     [...langs.values()].filter((x) => {
@@ -90,57 +90,10 @@ export function detectStatsGrams(
     for (const lang of langSet) {
       if (gramLangs.has(lang)) {
         langScores.set(lang, (langScores.get(lang) || 0) + (gramStat[lang] * gram.length) / 4)
-        debug.push(`${lang} = ${(gramStat[lang] / 100000) * 100}%`)
+        debug.push(`${lang} = ${(gramStat[lang] / 1024) * 100}%`)
       }
     }
     if (options.verbose && debug.length > 0) console.log(`Gram '${gram}'`, debug)
-  }
-
-  const entries = [...langScores.entries()]
-  entries.sort((a, b) => b[1] - a[1])
-  const max = Math.max(...entries.map((x) => x[1])) || 1
-  const result = entries.slice(0, 8).map((x) => {
-    return {
-      lang: toISO2(x[0]),
-      accuracy: 1 - approximate((max - x[1]) / max),
-      score: approximate(x[1])
-    }
-  })
-  if (options.verbose) console.log(`Result`, text, result)
-  return result
-}
-
-export function detectStatsWords(
-  text: string,
-  profiles: ILangProfiles,
-  options: DetectOption
-): { lang: string; accuracy: number }[] {
-  if (!profiles.words) return []
-  const langScores = new Map<string, number>()
-
-  const grams = [normalize(text)]
-  if (options.verbose) console.log('[Pass 2] DetectStatsWords', text, grams)
-  const langSet = new Set(
-    [...langs.values()].filter((x) => {
-      if (options.only.length > 0) return options.only.includes(x) || options.only.includes(toISO2(x))
-      return true
-    })
-  )
-
-  langSet.forEach((x) => langScores.set(x, 0))
-  for (const gram of grams) {
-    const gramStat = profiles.words[gram]
-    if (!gramStat) continue
-
-    const gramLangs = new Set(Object.keys(gramStat))
-    const debug: string[] = []
-    for (const lang of langSet) {
-      if (gramLangs.has(lang)) {
-        langScores.set(lang, (langScores.get(lang) || 0) + gramStat[lang])
-        debug.push(`${lang} = ${(gramStat[lang] / 100000) * 100}%`)
-      }
-    }
-    if (options.verbose && debug.length > 0) console.log(`Word '${gram}'`, debug)
   }
 
   const entries = [...langScores.entries()]
@@ -181,16 +134,10 @@ export function detectAllStats(
 
     const words = wordTokenizer(chunk)
     for (const word of words) {
-      // pass 2 - statistical word analysis
-      const res2 = detectStatsWords(word, profiles, options)
+      // pass 2 - statistical 3-gram analysis
+      const res2 = detectStatsGrams(word, profiles, options)
       res2.forEach((x) => {
-        results[x.lang] = (results[x.lang] || 0) + x.accuracy * word.length
-      })
-
-      // pass 3 - statistical 3-gram analysis
-      const res3 = detectStatsGrams(word, profiles, options)
-      res3.forEach((x) => {
-        results[x.lang] = (results[x.lang] || 0) + x.accuracy * word.length
+        results[x.lang] = (results[x.lang] || 0) + x.accuracy
       })
       size += word.length
     }

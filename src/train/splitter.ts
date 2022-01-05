@@ -8,23 +8,6 @@ export interface FreqWord {
   count: number
 }
 
-// （
-// ·
-// 《
-// 》
-// ⋯
-// [
-// ]
-// ­­=
-// ﹣
-// ＂
-// *
-// +
-// ­°
-// +
-// #
-// >
-// <
 export async function processTatoebaLineByLine(fileIn: string, lang: string): Promise<FreqWord[]> {
   const wordRank = new Map<string, number>()
   const fileStream = fs.createReadStream(fileIn)
