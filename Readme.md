@@ -9,11 +9,12 @@
 
 **Tiny** **L**anguage **D**etector, simply detect the language of a unicode UTF-8 text:
 
-- pure javascript, no api call, and no dependency (node and browser compatible)
-- alternative to libraries like CLD
-- blazing fast and low memory footprint (unlike ML methods)
-- support [64 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
-- format ISO 639-1 & ISO 639-2
+- Alternative to libraries like `CLD` or `Franc`
+- Pure JS, No api call, No dependencies (Node and Browser compatible)
+- Blazing fast and low memory footprint (unlike ML methods)
+- Available for both `CommonJS` and `ESM`
+- Support [64 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
+- Support both ISO-639-1 & ISO-639-2
 
 ## Links
 
