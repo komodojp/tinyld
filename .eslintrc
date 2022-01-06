@@ -9,7 +9,7 @@
   },
   "parserOptions": {
     "ecmaVersion": 12,
-    "sourceType": "module",
+    "sourceType": "module"
   },
   "overrides": [
     {
@@ -25,7 +25,13 @@
       ],
       "parserOptions": {
         "project": ["./tsconfig.json"]
+      },
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "no-extra-semi": "off"
+  }
 }
