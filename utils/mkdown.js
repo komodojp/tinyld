@@ -35,6 +35,7 @@ async function generateDocBenchmark() {
   const data = {
     tinyld: getJSON('./data/bench/tinyld.json'),
     'tinyld-light': getJSON('./data/bench/tinyld-light.json'),
+    langdetect: getJSON('./data/bench/langdetect.json'),
     cld: getJSON('./data/bench/cld.json'),
     lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
@@ -63,11 +64,12 @@ async function generateDocBenchmark() {
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
 | **TinyLD**     | \`yarn bench:tinyld\`       | ${stats('tinyld')} | 930KB     |
 | **TinyLD Web** | \`yarn bench:tinyld-light\` | ${stats('tinyld-light')} | **110KB** |
-| **node-cld**   | \`yarn bench:cld\`            | ${stats('cld')} |  > 10MB    |
+| **langdetect** | \`yarn bench:langdetect\`     | ${stats('langdetect')} |  1.8MB    |
+| node-cld       | \`yarn bench:cld\`            | ${stats('cld')} |  > 10MB    |
 | node-lingua    | \`yarn bench:lingua\`         | ${stats('lingua')} | ~100MB     |
 | franc          | \`yarn bench:franc\`          | ${stats('franc')} |  267KB     |
-| franc-all      | \`yarn bench:franc-all\`      | ${stats('franc-all')} |  509KB     |
 | franc-min      | \`yarn bench:franc-min\`      | ${stats('franc-min')} |  **119KB** |
+| franc-all      | \`yarn bench:franc-all\`      | ${stats('franc-all')} |  509KB     |
 | languagedetect | \`yarn bench:languagedetect\` | ${stats('languagedetect')} |  **240KB** |
 
 which gives us the following graph
@@ -81,13 +83,13 @@ Let's now compare those libraries per language
 
 #### Recommended
 
-- For **NodeJS**: \`TinyLD\` or \`node-cld\` (fast and accurate)
+- For **NodeJS**: \`TinyLD\`, \`langdetect\` or \`node-cld\` (fast and accurate)
 - For **Browser**: \`TinyLD Light\` or \`franc-min\` (small, decent accuracy, franc is less accurate but support more languages)
 
 #### Not recommended
 
 - \`node-lingua\` has a quite good accuracy but is just too big and slow
-- \`franc-all\` is the worse in term of accuracy, not a surprise because it tries to detect 400+ languages. A technical demo to put big numbers but useless for real usage, even a language like english barely reach ~45% detection rate.
+- \`franc-all\` is the worse in term of accuracy, not a surprise because it tries to detect 400+ languages with only 3-grams. A technical demo to put big numbers but useless for real usage, even a language like english barely reach ~45% detection rate.
 - \`languagedetect\` is light but just not accurate enough, really focused on indo-european languages (support kazakh but not chinese, korean or japanese). Interesting fact, it's more accurate than franc on west european languages.
 `
   )

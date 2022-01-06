@@ -16,11 +16,12 @@
 | -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
 | **TinyLD**     | `yarn bench:tinyld`         | 97.7311%            | 1.9247%               | 0.3441%        | 0.0966ms.          | 930KB     |
 | **TinyLD Web** | `yarn bench:tinyld-light`   | 97.4512%            | 2.1131%               | 0.4358%        | 0.0802ms.          | **110KB** |
-| **node-cld**   | `yarn bench:cld`            | 88.9148%            | 1.7489%               | 9.3363%        | 0.0477ms.          | > 10MB    |
+| **langdetect** | `yarn bench:langdetect`     | 94.879%             | 5.1093%               | 0.0117%        | 0.4631ms.          | 1.8MB     |
+| node-cld       | `yarn bench:cld`            | 88.9148%            | 1.7489%               | 9.3363%        | 0.0477ms.          | > 10MB    |
 | node-lingua    | `yarn bench:lingua`         | 86.3093%            | 0.13%                 | 13.5607%       | 1.5695ms.          | ~100MB    |
 | franc          | `yarn bench:franc`          | 68.7783%            | 26.3432%              | 4.8785%        | 0.1626ms.          | 267KB     |
-| franc-all      | `yarn bench:franc-all`      | 61.7893%            | 33.3322%              | 4.8785%        | 0.3688ms.          | 509KB     |
 | franc-min      | `yarn bench:franc-min`      | 65.5163%            | 23.5794%              | 10.9044%       | 0.0734ms.          | **119KB** |
+| franc-all      | `yarn bench:franc-all`      | 61.7893%            | 33.3322%              | 4.8785%        | 0.3688ms.          | 509KB     |
 | languagedetect | `yarn bench:languagedetect` | 61.6068%            | 12.295%               | 26.0982%       | 0.212ms.           | **240KB** |
 
 which gives us the following graph
@@ -35,11 +36,11 @@ Let's now compare those libraries per language
 
 #### Recommended
 
-- For **NodeJS**: `TinyLD` or `node-cld` (fast and accurate)
+- For **NodeJS**: `TinyLD`, `langdetect` or `node-cld` (fast and accurate)
 - For **Browser**: `TinyLD Light` or `franc-min` (small, decent accuracy, franc is less accurate but support more languages)
 
 #### Not recommended
 
 - `node-lingua` has a quite good accuracy but is just too big and slow
-- `franc-all` is the worse in term of accuracy, not a surprise because it tries to detect 400+ languages. A technical demo to put big numbers but useless for real usage, even a language like english is barely at ~45% detection rate.
+- `franc-all` is the worse in term of accuracy, not a surprise because it tries to detect 400+ languages with only 3-grams. A technical demo to put big numbers but useless for real usage, even a language like english barely reach ~45% detection rate.
 - `languagedetect` is light but just not accurate enough, really focused on indo-european languages (support kazakh but not chinese, korean or japanese). Interesting fact, it's more accurate than franc on west european languages.

@@ -10,6 +10,7 @@ function getJSON(filepath) {
   const data = {
     tinyld: getJSON('./data/bench/tinyld.json'),
     'tinyld-light': getJSON('./data/bench/tinyld-light.json'),
+    langdetect: getJSON('./data/bench/langdetect.json'),
     cld: getJSON('./data/bench/cld.json'),
     lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
