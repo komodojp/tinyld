@@ -1,4 +1,5 @@
 import { benchmark } from './bench'
+import fs from 'fs'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const languageDetect = require('languagedetect')
@@ -11,4 +12,8 @@ function detect(val: string): string {
   return ''
 }
 
-benchmark(detect)
+;(async () => {
+  const res = await benchmark(detect)
+  if (!fs.existsSync('./data/bench')) fs.mkdirSync('./data/bench')
+  fs.writeFileSync('./data/bench/languagedetect.json', JSON.stringify(res, null, 2))
+})()

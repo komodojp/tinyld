@@ -9,7 +9,19 @@ const readInterface = readline.createInterface({
 
 type DetectMethod = (val: string) => Promise<string> | string
 
-const benchLangs = /* langs */ new Set([
+export type BenchmarkResult = {
+  stats: {
+    min: number
+    max: number
+    success_rate: number
+    error_rate: number
+    unindentified_rate: number
+    execution_time: number
+  }
+  languages: Record<string, number>
+}
+
+const benchLangs = new Set([
   'jpn',
   'cmn',
   'kor',
@@ -28,7 +40,7 @@ const benchLangs = /* langs */ new Set([
   'ara'
 ])
 
-export async function benchmark(detect: DetectMethod): Promise<void> {
+export async function benchmark(detect: DetectMethod): Promise<BenchmarkResult> {
   const total = new Map<string, number>()
   const success = new Map<string, number>()
   let detectTotal = 0
@@ -70,13 +82,16 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
   }
 
   console.log(`--- Per language Accuracy ---`)
+  const languageAccuracy: [string, number][] = []
   const acc: [number, string][] = []
   for (const lang of total.keys()) {
     const s = success.get(lang) || 1
     const t = total.get(lang) || 1
     acc.push([s / t, ` - ${langName(lang)} (${lang}) - ${approximate((s / t) * 100)}% (coef: ${getCoef(lang)})`])
+    languageAccuracy.push([lang, approximate((s / t) * 100)])
   }
   acc.sort((a, b) => b[0] - a[0])
+  languageAccuracy.sort((a, b) => b[1] - a[1])
   acc.forEach((x) => console.log(x[1]))
 
   const errors = [...errorMap.entries()]
@@ -98,4 +113,16 @@ export async function benchmark(detect: DetectMethod): Promise<void> {
   console.log(` - Improperly identified: ${approximate((detectMistake / detectTotal) * 100)}%`)
   console.log(` - Unidentified: ${approximate((detectUnidentified / detectTotal) * 100)}%`)
   console.log(` - Avg exec time: ${approximate(executionTime / detectTotal)}ms.`)
+
+  return {
+    stats: {
+      min: Math.min(...languageAccuracy.map((x) => x[1])),
+      max: Math.max(...languageAccuracy.map((x) => x[1])),
+      success_rate: approximate((detectIdentified / detectTotal) * 100),
+      error_rate: approximate((detectMistake / detectTotal) * 100),
+      unindentified_rate: approximate((detectUnidentified / detectTotal) * 100),
+      execution_time: approximate(executionTime / detectTotal)
+    },
+    languages: Object.fromEntries(languageAccuracy)
+  }
 }

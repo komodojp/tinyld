@@ -1,5 +1,6 @@
 import { toISO2 } from '../core'
 import { benchmark } from './bench'
+import fs from 'fs'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const franc = require('franc-min')
 
@@ -17,4 +18,8 @@ function detect(val: string): string {
   return res ? toISO2(res) : ''
 }
 
-benchmark(detect)
+;(async () => {
+  const res = await benchmark(detect)
+  if (!fs.existsSync('./data/bench')) fs.mkdirSync('./data/bench')
+  fs.writeFileSync('./data/bench/franc-min.json', JSON.stringify(res, null, 2))
+})()

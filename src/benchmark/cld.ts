@@ -1,4 +1,5 @@
 import { benchmark } from './bench'
+import fs from 'fs'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const cld = require('cld')
 
@@ -22,7 +23,8 @@ async function detect(val: string) {
   return ''
 }
 
-const hrstart = process.hrtime()
-benchmark(detect)
-const hrend = process.hrtime(hrstart)
-console.info('Execution time (hr): %ds %dms', hrend[0], hrend[1] / 1000000)
+;(async () => {
+  const res = await benchmark(detect)
+  if (!fs.existsSync('./data/bench')) fs.mkdirSync('./data/bench')
+  fs.writeFileSync('./data/bench/cld.json', JSON.stringify(res, null, 2))
+})()
