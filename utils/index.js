@@ -14,6 +14,7 @@ function getJSON(filepath) {
     lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
     'franc-min': getJSON('./data/bench/franc-min.json'),
+    'franc-all': getJSON('./data/bench/franc-all.json'),
     languagedetect: getJSON('./data/bench/languagedetect.json')
   }
 

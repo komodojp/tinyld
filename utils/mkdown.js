@@ -39,6 +39,7 @@ async function generateDocBenchmark() {
     lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
     'franc-min': getJSON('./data/bench/franc-min.json'),
+    'franc-all': getJSON('./data/bench/franc-all.json'),
     languagedetect: getJSON('./data/bench/languagedetect.json')
   }
 
@@ -65,6 +66,7 @@ async function generateDocBenchmark() {
 | **node-cld**   | \`yarn bench:cld\`            | ${stats('cld')} |  > 10MB    |
 | node-lingua    | \`yarn bench:lingua\`         | ${stats('lingua')} | ~100MB     |
 | franc          | \`yarn bench:franc\`          | ${stats('franc')} |  267KB     |
+| franc-all      | \`yarn bench:franc-all\`      | ${stats('franc-all')} |  509KB     |
 | franc-min      | \`yarn bench:franc-min\`      | ${stats('franc-min')} |  **119KB** |
 | languagedetect | \`yarn bench:languagedetect\` | ${stats('languagedetect')} |  **240KB** |
 
@@ -85,6 +87,7 @@ Let's now compare those libraries per language
 #### Not recommended
 
 - \`node-lingua\` has a quite good accuracy but is just too big and slow
+- \`franc-all\` is the worse in term of accuracy, not a surprise because it tries to detect 400+ languages. A technical demo to put big numbers but useless for real usage, even a language like english barely reach ~45% detection rate.
 - \`languagedetect\` is light but just not accurate enough, really focused on indo-european languages (support kazakh but not chinese, korean or japanese). Interesting fact, it's more accurate than franc on west european languages.
 `
   )

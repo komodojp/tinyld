@@ -1185,6 +1185,13 @@ fontkit@^1.8.1:
     unicode-properties "^1.2.2"
     unicode-trie "^0.3.0"
 
+franc-all@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/franc-all/-/franc-all-5.1.1.tgz#ff7914b26b8ac7b115e73f8c4403e61979789c72"
+  integrity sha512-QiFW7PxkP290Rf4OLPXdHZixA5XdUZkm0MRh82OP2HEwy7YZfIMQJqJcKEyw2tspeg8Ss19+5CmsBhlydZWhmQ==
+  dependencies:
+    trigram-utils "^1.0.0"
+
 franc-min@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/franc-min/-/franc-min-5.0.0.tgz#5625d0570a18564dcbbfa8330254d23549294d9a"
