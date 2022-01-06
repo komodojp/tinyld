@@ -1,9 +1,19 @@
 {
   "name": "tinyld",
   "description": "Simple and Performant Language detection library (pure JS and zero dependencies)",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
+  "exports": {
+    ".": {
+      "require": "./dist/tinyld.cjs.js",
+      "import": "./dist/tinyld.esm.js"
+    },
+    "./light": {
+      "require": "./dist/tinyld.light.cjs.js",
+      "import": "./dist/tinyld.light.esm.js"
+    }
+  },
   "license": "MIT",
   "types": "./src/index.ts",
   "bin": {
