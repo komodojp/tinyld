@@ -81,6 +81,10 @@ Let's now compare those libraries per language
 
 ### **Conclusion**
 
+#### Popular != Performant
+* It's quite funny to notice the two most popular nodejs libs \`languagedetect\` (really high in google) and \`franc\` (over 4k stars on github) are both at the bottom of the charts.
+* At the opposite \`langdetect\` which is quite unknown performs really well and is the only one to come close to \`tinyld\`.
+
 #### Recommended
 
 - For **NodeJS**: \`TinyLD\`, \`langdetect\` or \`node-cld\` (fast and accurate)
