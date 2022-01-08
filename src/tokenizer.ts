@@ -119,7 +119,7 @@ export function detectAllStats(
   let chunks = chunkTokenizer(text)
   chunks = chunks.map((x) => cleanString(x)).filter((x) => !!x)
   chunks.sort((a, b) => b.length - a.length)
-  chunks = chunks.slice(0, 7)
+  chunks = chunks.slice(0, 3)
 
   let size = 0
   const results: { [lang: string]: number } = {}

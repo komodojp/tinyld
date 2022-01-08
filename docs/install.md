@@ -25,3 +25,7 @@ detect('and this is english.') // en
 detectAll('ceci est un text en francais.')
 // [ { lang: 'fr', accuracy: 0.5238 }, { lang: 'ro', accuracy: 0.3802 }, ... ]
 ```
+
+---
+
+[More about the API Documentation](./api.md)

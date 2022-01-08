@@ -1,6 +1,8 @@
 const fs = require('fs')
 const graphOverall = require('./overall')
 const graphLanguage = require('./language')
+const graphLength = require('./length')
+const graphExecution = require('./exectime')
 
 function getJSON(filepath) {
   return JSON.parse(fs.readFileSync(filepath))
@@ -22,6 +24,12 @@ function getJSON(filepath) {
   const overall = await graphOverall(data)
   fs.writeFileSync('./docs/overall.svg', overall.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
 
-  const lang = await graphLanguage(data, ['jpn', 'ara', 'eng', 'fra', 'spa', 'fin', 'rus', 'cmn', 'kor'])
+  const lang = await graphLanguage(data, ['jpn', 'kor', 'cmn', 'ara', 'fin', 'rus', 'fra', 'spa', 'por', 'eng'])
   fs.writeFileSync('./docs/language.svg', lang.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
+
+  const len = await graphLength(data)
+  fs.writeFileSync('./docs/length.svg', len.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
+
+  const exe = await graphExecution(data)
+  fs.writeFileSync('./docs/exec_time.svg', exe.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
 })()

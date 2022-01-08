@@ -4,6 +4,8 @@ This library uses a variant of the usual N-gram algorithm, which gives fast and 
 
 Most libraries are directly using a bayesian scoring algorithm to identify a text language. But TinyLD, decided to add few steps before and after, trying to mimic human logic and identify language with their unique character patterns or word usage.
 
+This is similar to what ML methods use, that's why this library has a training phase too. The goal is to find which "features" or "n-gram" are the more useful for detection without hardcoding any language specific rules. The heavy lifting is done during build time, so at runtime it can be fast and efficient.
+
 ## How it works ?
 
 The string will be split into chunks based on punctuation. Each chunk will be evaluated separately and results merged later weighted with the chunk size.
@@ -73,35 +75,3 @@ For example:
 - English accuracy is good thanks to word detection (JA ~1.5% but EN ~98%)
 
 Which is why together those methods get an overall accuracy > 95%
-
-```
---- Per language Accuracy ---
- - fra - 91.1079%
- - deu - 98.5069%
- - eng - 97.507%
- - rus - 92.241%
- - jpn - 99.96%
- - spa - 88.2282%
- - por - 94.2674%
- - ita - 92.3744%
- - cmn - 97.4537%
- - ara - 98.9468%
- - heb - 100%
- - fin - 92.7743%
- - tur - 96.0139%
- - kor - 99.8933%
- - jav - 74.2857%
- - hin - 95.8406%
-```
-
----
-
-## How the library can be so small ? (~700KB for node, ~90KB for web)
-
-In a normal n-gram algorithm, between languages there are lot of overlap, duplicates or non specific grams (which match more than 15 languages). Gram are just downloaded and check at runtime, which is not really optimized.
-
-Our multi-pass model allow us to have a really compact language profile file.
-
-- **AOT Logic**: the language profiles are pre-compiled ahead of time (avoid duplicates and not relevant gram/words)
-- **Per Language logic**: language really well detected in one method >98% are removed from other methods (with their data)
-- **Pass Exclusion**: gram detected in one pass are automatically ignored by later pass, this allow us to greatly reduce the size of n-gram (or words) to store and check

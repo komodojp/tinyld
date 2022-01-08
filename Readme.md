@@ -7,27 +7,28 @@
 
 ![logo](./banner.png)
 
+## :tada: Description
+
 **Tiny** **L**anguage **D**etector, simply detect the language of a unicode UTF-8 text:
 
-- Alternative to libraries like `CLD` or `Franc`
 - Pure JS, No api call, No dependencies (Node and Browser compatible)
 - Blazing fast and low memory footprint (unlike ML methods)
-- Available for both `CommonJS` and `ESM`
+- Train with dataset from [Tatoeba](https://tatoeba.org/en/) and [UDHR](https://unicode.org/udhr/)
 - Support [64 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
+- Reliable even for really short texts (chatbot, keywords, ...)
 - Support both ISO-639-1 & ISO-639-2
+- Available for both `CommonJS` and `ESM`
 
 ## Links
 
 - [**Playground** - Try the library](https://runkit.com/kefniark/tinyld)
 - [Getting Started](./docs/install.md)
-- [API](./docs/api.md)
-- [CLI](./docs/cli.md)
 - [Supported Languages](./docs/langs.md)
 - [Algorithm](./docs/algorithm.md)
 
 ---
 
-## Getting Started
+## :floppy_disk: Getting Started
 
 ### Install
 
@@ -39,7 +40,7 @@ yarn add tinyld # or npm install --save tinyld
 
 ---
 
-### **TinyLD API**
+### :page_facing_up: **TinyLD API**
 
 ```js
 import { detect, detectAll } from 'tinyld'
@@ -57,7 +58,7 @@ detectAll('ceci est un text en francais.')
 
 ---
 
-### **TinyLD CLI**
+### :paperclip: **TinyLD CLI**
 
 ```bash
 tinyld This is the text that I want to check
@@ -68,7 +69,7 @@ tinyld This is the text that I want to check
 
 ---
 
-## Performance
+## :chart_with_upwards_trend: Performance
 
 Here is a comparison of **Tinyld** against other popular libraries.
 
@@ -78,4 +79,4 @@ To summary in one sentence:
 
 > Better, Faster, Smaller
 
-[More Information](./docs/benchmark.md)
+[More Benchmark Information](./docs/benchmark.md)

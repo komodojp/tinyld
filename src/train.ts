@@ -1,7 +1,7 @@
 import fs from 'fs'
 import readline from 'readline'
 import { ngramTokenizer } from './tokenizer'
-import { processTatoebaLineByLine } from './train/splitter'
+import { processSentencesLineByLine } from './train/splitter'
 import pLimit from 'p-limit'
 import {
   configSet,
@@ -19,9 +19,48 @@ async function processLang(lang: string) {
   if (!fs.existsSync(`data/tmp`)) fs.mkdirSync(`data/tmp`)
   if (!fs.existsSync(`data/tmp/${lang}`)) fs.mkdirSync(`data/tmp/${lang}`)
 
+  if (!fs.existsSync(`data/tmp/${lang}/sentences.txt`)) {
+    console.log(`Create ${lang} sentences.txt`)
+    const fileStream = fs.createReadStream('data/tatoeba.csv')
+    const writeStream = fs.createWriteStream(`data/tmp/${lang}/sentences.txt`, { flags: 'a' })
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+
+    for await (const line of rl) {
+      const [, country, text] = line.split('\t')
+      if (country != lang) continue
+      writeStream.write(`${text}\n`)
+    }
+
+    if (fs.existsSync(`data/udhr/udhr_${lang}.txt`)) {
+      const udhrFileStream = fs.createReadStream(`data/udhr/udhr_${lang}.txt`)
+      const rl2 = readline.createInterface({
+        input: udhrFileStream,
+        crlfDelay: Infinity
+      })
+      let useLine = false
+      for await (const line of rl2) {
+        if (line === '---') {
+          useLine = true
+          continue
+        }
+        if (!useLine) continue
+        if (!line.trim() || line.length < 24) continue
+        writeStream.write(`${line.trim()}\n`)
+      }
+    }
+
+    writeStream.close()
+    rl.close()
+  }
+
   if (!fs.existsSync(`data/tmp/${lang}/words.txt`)) {
-    // parse tatoeba file
-    const res = await processTatoebaLineByLine('data/tatoeba.csv', lang)
+    console.log(`Create ${lang} words.txt`)
+
+    // parse sentences file
+    const res = await processSentencesLineByLine(`data/tmp/${lang}/sentences.txt`)
     res.forEach((x) => wordRank.set(x.word, (wordRank.get(x.word) || 0) + x.count))
 
     // words
@@ -198,7 +237,7 @@ function sortKeys(key: string, value: any) {
 async function processFiles() {
   const processLangs = [...langs.values()]
 
-  const limit = pLimit(8)
+  const limit = pLimit(4)
 
   await Promise.all(
     processLangs.map((lang) => {
