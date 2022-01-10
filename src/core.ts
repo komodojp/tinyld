@@ -3,6 +3,11 @@ export interface ILangProfiles {
   multiples: { [gram: string]: { [country: string]: number } }
 }
 
+export interface ILangCompressedProfiles {
+  uniques: { [id: string]: string | number }
+  multiples: { [gram: string]: string }
+}
+
 // different config profiles
 const config = {
   light: {
@@ -154,6 +159,8 @@ export const langs = new Set(
     .map((x) => x[0])
 )
 export const supportedLanguages = [...langs.values()]
+export const langToId = Object.fromEntries(supportedLanguages.map((x, i) => [x, i + 1]))
+export const langFromId = Object.fromEntries(supportedLanguages.map((x, i) => [i + 1, x]))
 
 export function langRegion(iso3: string): string {
   if (iso3 in langMap) return langMap[iso3].region

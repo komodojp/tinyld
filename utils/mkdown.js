@@ -63,17 +63,17 @@ async function generateDocBenchmark() {
 
 Here is the list of libraries in this benchmark
 
-| Library        | Script                      | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
-| -------------- | --------------------------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| **TinyLD**     | \`yarn bench:tinyld\`       | ${stats('tinyld')} | 930KB     |
-| **TinyLD Web** | \`yarn bench:tinyld-light\` | ${stats('tinyld-light')} | **110KB** |
-| **langdetect** | \`yarn bench:langdetect\`     | ${stats('langdetect')} |  1.8MB    |
-| node-cld       | \`yarn bench:cld\`            | ${stats('cld')} |  > 10MB    |
-| node-lingua    | \`yarn bench:lingua\`         | ${stats('lingua')} | ~100MB     |
-| franc          | \`yarn bench:franc\`          | ${stats('franc')} |  267KB     |
-| franc-min      | \`yarn bench:franc-min\`      | ${stats('franc-min')} |  **119KB** |
-| franc-all      | \`yarn bench:franc-all\`      | ${stats('franc-all')} |  509KB     |
-| languagedetect | \`yarn bench:languagedetect\` | ${stats('languagedetect')} |  **240KB** |
+| Library        | Script                      | Language | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
+| -------------- | --------------------------- | -------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
+| **TinyLD**     | \`yarn bench:tinyld\`       | 64 | ${stats('tinyld')} | 580KB     |
+| **TinyLD Web** | \`yarn bench:tinyld-light\` | 24 | ${stats('tinyld-light')} | **68KB** |
+| **langdetect** | \`yarn bench:langdetect\`     | 53 | ${stats('langdetect')} |  1.8MB    |
+| node-cld       | \`yarn bench:cld\`            | 160 | ${stats('cld')} |  > 10MB    |
+| node-lingua    | \`yarn bench:lingua\`         | 75 | ${stats('lingua')} | ~100MB     |
+| franc          | \`yarn bench:franc\`          | 187 | ${stats('franc')} |  267KB     |
+| franc-min      | \`yarn bench:franc-min\`      | 82 | ${stats('franc-min')} |  119KB |
+| franc-all      | \`yarn bench:franc-all\`      | 403 | ${stats('franc-all')} |  509KB     |
+| languagedetect | \`yarn bench:languagedetect\` | 52 | ${stats('languagedetect')} |  240KB |
 
 ---
 

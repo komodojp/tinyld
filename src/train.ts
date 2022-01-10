@@ -8,6 +8,8 @@ import {
   getLangTopStatsGram,
   isSkipProba,
   langs,
+  langToId,
+  supportedLanguages,
   TOP_LANGUAGE_UNIQUE_GRAMS,
   TRAINING_UNIQUE_GRAMS
 } from './core'
@@ -245,13 +247,13 @@ async function processFiles() {
     })
   )
 
-  let uniques = {}
+  let uniques: Record<string, string> = {}
   for (const gram of TRAINING_UNIQUE_GRAMS) {
     const un = new Set([...Object.keys(uniques)])
     uniques = { ...uniques, ...(await processUniqueGrams(processLangs, gram, un)) }
   }
 
-  let multiples = {}
+  let multiples: Record<string, Record<string, number>> = {}
   for (const gram of TRAINING_UNIQUE_GRAMS) {
     const un = new Set([...Object.keys(uniques)])
     multiples = { ...multiples, ...(await processLangGrams(processLangs, gram, un)) }
@@ -262,8 +264,23 @@ async function processFiles() {
     JSON.stringify(
       {
         id: 'tinyld-dict',
-        uniques,
-        multiples
+        uniques: Object.fromEntries(
+          Object.entries(uniques).map((x) => {
+            const val = langToId[x[1]].toString(36)
+            return [x[0], isNaN(val as unknown as number) ? val : parseInt(val)]
+          })
+        ),
+        multiples: Object.fromEntries(
+          Object.entries(multiples).map((x) => {
+            let str = ''
+            Object.entries(x[1]).forEach((y) => {
+              const country = langToId[y[0]].toString(36).padStart(supportedLanguages.length > 36 ? 2 : 1, '0')
+              const value = y[1].toString(36).padStart(2, '0')
+              str += `${country.toUpperCase()}${value.toUpperCase()}`
+            })
+            return [x[0], str]
+          })
+        )
       },
       sortKeys,
       2

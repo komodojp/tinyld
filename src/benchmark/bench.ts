@@ -1,7 +1,6 @@
 import fs from 'fs'
 import readline from 'readline'
-import { langName } from '..'
-import { approximate, getCoef, langs, toISO2 } from '../core'
+import { approximate, getCoef, langs, langName, toISO2 } from '../core'
 
 type DetectMethod = (val: string) => Promise<string> | string
 

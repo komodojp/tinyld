@@ -1,9 +1,28 @@
 import { isString } from './clean'
-import { DetectOption, ILangProfiles, parseDetectOption } from './core'
+import { DetectOption, ILangProfiles, parseDetectOption, ILangCompressedProfiles, langFromId } from './core'
 import data from './profiles/light.json'
 import { detectAllStats } from './tokenizer'
 
-const profiles = data as ILangProfiles
+const compressed = data as ILangCompressedProfiles
+const profiles: ILangProfiles = {
+  uniques: Object.fromEntries(
+    Object.entries(compressed.uniques).map((x) => {
+      return [x[0], langFromId[parseInt(x[1].toString(), 36)]]
+    })
+  ),
+  multiples: Object.fromEntries(
+    Object.entries(compressed.multiples).map((x) => {
+      const entry = Object.fromEntries(
+        x[1].match(/(.{1,3})/g)?.map((y) => {
+          const country = y.slice(0, 1)
+          const val = y.slice(1)
+          return [langFromId[parseInt(country, 36)], parseInt(val, 36)]
+        }) || []
+      )
+      return [x[0], entry]
+    })
+  )
+}
 const uniqueKeys = new Set(Object.keys(data.uniques))
 
 export function detect(text: string, opts?: Partial<DetectOption>): string {
