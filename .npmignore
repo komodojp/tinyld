@@ -2,6 +2,12 @@
 .github
 data
 docs
-tests
 src
+tests
 utils
+
+.editorconfig
+.eslintignore
+.eslintrc
+.prettierignore
+.prettierrc
