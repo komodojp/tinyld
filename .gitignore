@@ -1,3 +1,5 @@
 dist
-data
+data/tmp
+data/udhr
+data/tatoeba.csv
 node_modules

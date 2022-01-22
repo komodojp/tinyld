@@ -1,0 +1,84 @@
+{
+  "size": {
+    "12": {
+      "success_rate": 20.6875,
+      "error_rate": 32.8438,
+      "unindentified_rate": 46.4688,
+      "execution_time": 0.0431
+    },
+    "24": {
+      "success_rate": 54.6875,
+      "error_rate": 45.3125,
+      "unindentified_rate": 0,
+      "execution_time": 0.0943
+    },
+    "36": {
+      "success_rate": 69.125,
+      "error_rate": 30.875,
+      "unindentified_rate": 0,
+      "execution_time": 0.1228
+    },
+    "48": {
+      "success_rate": 77.0938,
+      "error_rate": 22.9063,
+      "unindentified_rate": 0,
+      "execution_time": 0.1526
+    },
+    "64": {
+      "success_rate": 80.9375,
+      "error_rate": 19.0625,
+      "unindentified_rate": 0,
+      "execution_time": 0.1831
+    },
+    "128": {
+      "success_rate": 91.1875,
+      "error_rate": 8.8125,
+      "unindentified_rate": 0,
+      "execution_time": 0.2902
+    },
+    "256": {
+      "success_rate": 96.7188,
+      "error_rate": 3.2813,
+      "unindentified_rate": 0,
+      "execution_time": 0.5402
+    },
+    "512": {
+      "success_rate": 98.9375,
+      "error_rate": 1.0625,
+      "unindentified_rate": 0,
+      "execution_time": 0.971
+    },
+    "1024": {
+      "success_rate": 99.6825,
+      "error_rate": 0.3175,
+      "unindentified_rate": 0,
+      "execution_time": 1.6949
+    }
+  },
+  "stats": {
+    "min": 48.96,
+    "max": 99.93,
+    "success_rate": 74.0726,
+    "error_rate": 25.9274,
+    "unindentified_rate": 0,
+    "execution_time": 0.1482
+  },
+  "languages": {
+    "jpn": 99.93,
+    "kor": 99.8261,
+    "cmn": 99.35,
+    "heb": 98.23,
+    "ara": 91.85,
+    "deu": 83.87,
+    "fra": 79.36,
+    "fin": 78.53,
+    "hin": 68.22,
+    "ita": 64.19,
+    "por": 62.29,
+    "nld": 62.01,
+    "eng": 60.38,
+    "rus": 52.3,
+    "spa": 51.25,
+    "tur": 48.96
+  }
+}

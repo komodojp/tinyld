@@ -1707,13 +1707,13 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lingua-node@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/lingua-node/-/lingua-node-0.3.0.tgz#8112a348132458b3df600bb146b00addc40f43a8"
-  integrity sha512-jy6f9SPFijlDOdJ+cPYy9YDDlKmDKz0j5DL074qNcvwI24uP74QrCB2wMWph+wz1d+W5LvLfn/DmDXz+vfRfBA==
+lingua-node@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/lingua-node/-/lingua-node-0.4.1.tgz#b0c9f1ec4035928a27f7716c2a6103258f876bf2"
+  integrity sha512-M255838T3jKpc6DOjrYWXlAyR6aTpbdpLNv6Eh8IraPkbuHaZdL43lI0LaS/uc61BZdqvjt3Dop7Y88NRmWJBw==
   dependencies:
     debug "^4.3.1"
-    neon-cli "^0.5.3"
+    neon-cli "^0.9.1"
     node-pre-gyp "^0.17.0"
     patch-package "^6.2.2"
     threads "^1.6.3"
@@ -1885,10 +1885,10 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-neon-cli@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/neon-cli/-/neon-cli-0.5.3.tgz#1fa8f64d6323785d6b2a7c0443ebf36942a8e434"
-  integrity sha512-eQYVVT+sfNGptOLi0Ah5QDM6kH+t8c5sBCX2EHiO7P/LtddRIFKdD8nfT7Kkm2c3pdh9nCrvEMTKQAIj7oKfXA==
+neon-cli@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/neon-cli/-/neon-cli-0.9.1.tgz#e62527be988e5854d6e342d28365d2eb6dbb28db"
+  integrity sha512-iWwKjI1Q4o1lWVc4vkr59BXEYlBl5HggKx5ETw5kStpuvT1nVcolPtTdydisx8pLRRxN+gjER571DOGnA0Yxcg==
   dependencies:
     chalk "^4.1.0"
     command-line-args "^5.1.1"

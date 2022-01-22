@@ -56,7 +56,7 @@ type LangOption = {
 }
 
 export const parseDetectOption = (options?: Partial<DetectOption>): DetectOption => {
-  const data = { only: [], verbose: false }
+  const data = { only: [], verbose: false } as DetectOption
   if (!options) return data
   return Object.assign(data, options)
 }
