@@ -80,3 +80,28 @@ To summary in one sentence:
 > Better, Faster, Smaller
 
 [More Benchmark Information](./docs/benchmark.md)
+
+--
+
+## Developer
+
+```sh
+# Install
+yarn
+
+# Build
+yarn build
+
+# Test
+yarn test
+
+# Lint / Auto-fix code style problems
+yarn lint
+
+# Optional, used to generate src/profiles/* data from language dataset
+# Warning: This step is time consuming and require to install big datasets (described in ./docs/dev.md)
+yarn train
+
+# Optional, used to generate benchmark data/bench/*
+yarn bench
+```

@@ -1,7 +1,7 @@
 {
   "name": "tinyld",
   "description": "Simple and Performant Language detection library (pure JS and zero dependencies)",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "./dist/tinyld.cjs.js",
   "module": "./dist/tinyld.esm.js",
   "exports": {
@@ -15,7 +15,7 @@
     }
   },
   "license": "MIT",
-  "types": "./src/index.ts",
+  "types": "./dist/tinyld.cjs.d.ts",
   "bin": {
     "tinyld": "./bin/tinyld.js"
   },
@@ -40,7 +40,6 @@
     "train": "run-p train:*",
     "train:normal": "cross-env TINYLD_CONFIG=normal ts-node src/train.ts",
     "train:light": "cross-env TINYLD_CONFIG=light ts-node src/train.ts",
-    "dev": "ts-node src/dev.ts",
     "bench": "run-s bench:*",
     "bench:tinyld": "cross-env TINYLD_CONFIG=normal ts-node src/benchmark/tinyld.ts",
     "bench:tinyld-light": "cross-env TINYLD_CONFIG=light ts-node src/benchmark/tinyld_light.ts",
@@ -56,6 +55,10 @@
     "build:normal-web": "esbuild src/index.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"normal\\\"} --bundle --charset=utf8 --minify --platform=browser --format=esm --outfile=dist/tinyld.esm.js",
     "build:light-node": "esbuild src/index_light.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"light\\\"} --bundle --charset=utf8 --minify --platform=node --outfile=dist/tinyld.light.cjs.js",
     "build:light-web": "esbuild src/index_light.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"light\\\"} --bundle --charset=utf8 --minify --platform=browser --format=esm --outfile=dist/tinyld.light.esm.js",
+    "build:type": "run-s build:type:*",
+    "build:type:build": "tsc --emitDeclarationOnly --declaration --project tsconfig.json --outDir dist",
+    "build:type:normal": "mv ./dist/index.d.ts ./dist/tinyld.cjs.d.ts && cp ./dist/tinyld.cjs.d.ts ./dist/tinyld.esm.d.ts",
+    "build:type:light": "mv ./dist/index_light.d.ts ./dist/tinyld.light.cjs.d.ts && cp ./dist/tinyld.light.cjs.d.ts ./dist/tinyld.light.esm.d.ts",
     "build:post": "yarn gen:svg && yarn gen:mkd && yarn lint",
     "gen:mkd": "node ./utils/mkdown.js",
     "gen:svg": "node ./utils/index.js",

@@ -220,7 +220,7 @@ async function processLangGrams(langs: string[], gram: number, uniques: Set<stri
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function sortKeys(key: string, value: any) {
+function sortKeys(_key: string, value: any) {
   if (value == null || value.constructor != Object) {
     return value
   }
