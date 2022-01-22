@@ -67,8 +67,7 @@
     "test:unit": "uvu tests",
     "test:dependencies": "yarn audit --level high || echo \"Run 'yarn update' to interactively update dependencies for this project\"",
     "test:lint": "eslint --ext .js,.ts ./ && prettier --config .prettierrc --ignore-path .prettierignore --check \"**/*.{ts,js}\"",
-    "test:types": "tsc --noEmit",
-    "update": "yarn upgrade-interactive"
+    "test:types": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^16.4.13",

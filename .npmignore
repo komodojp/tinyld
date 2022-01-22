@@ -11,3 +11,6 @@ utils
 .eslintrc
 .prettierignore
 .prettierrc
+
+tsconfig.json
+.gitattributes
