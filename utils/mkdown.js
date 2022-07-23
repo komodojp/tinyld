@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { langRegion, langName, supportedLanguages, toISO2 } = require('../dist/tinyld.cjs')
+const { langRegion, langName, supportedLanguages, toISO2 } = require('../dist/tinyld.normal.node.js')
 
 function getJSON(filepath) {
   return JSON.parse(fs.readFileSync(filepath))
@@ -37,7 +37,6 @@ async function generateDocBenchmark() {
     'tinyld-light': getJSON('./data/bench/tinyld-light.json'),
     langdetect: getJSON('./data/bench/langdetect.json'),
     cld: getJSON('./data/bench/cld.json'),
-    lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
     'franc-min': getJSON('./data/bench/franc-min.json'),
     'franc-all': getJSON('./data/bench/franc-all.json'),
@@ -69,7 +68,6 @@ Here is the list of libraries in this benchmark
 | **TinyLD Web** | \`yarn bench:tinyld-light\` | 24 | ${stats('tinyld-light')} | **68KB** |
 | **langdetect** | \`yarn bench:langdetect\`     | 53 | ${stats('langdetect')} |  1.8MB    |
 | node-cld       | \`yarn bench:cld\`            | 160 | ${stats('cld')} |  > 10MB    |
-| node-lingua    | \`yarn bench:lingua\`         | 75 | ${stats('lingua')} | ~100MB     |
 | franc          | \`yarn bench:franc\`          | 187 | ${stats('franc')} |  267KB     |
 | franc-min      | \`yarn bench:franc-min\`      | 82 | ${stats('franc-min')} |  119KB |
 | franc-all      | \`yarn bench:franc-all\`      | 403 | ${stats('franc-all')} |  509KB     |
@@ -80,7 +78,7 @@ Here is the list of libraries in this benchmark
 ## Global Accuracy
 ![Benchmark](./overall.svg)
 
-We see two group of libraries (separated by \`node-lingua\` in the middle)
+We see two group of libraries
 - \`tinyld\`, \`langdetect\` and \`cld\` over 90% accuracy
 - \`franc\` and \`languagedetect\` under 75% accuracy
 
@@ -104,13 +102,11 @@ So the previous quote is right, over 512 characters all the libs become accurate
 But for a ~95% accuracy threshold:
 * \`tinyld\` (green) reaches it around 24 characters
 * \`langdetect\` (cyan) and \`cld\` (orange) reach it around 48 characters
-* \`lingua\` (red) and \`franc\` (pink) need more than 256 characters to reach it
 
 ## Execution Time
 ![Size](./exec_time.svg)
 
 Here we can notice few things about performance:
-* \`node-lingua\` (red) collapse at a scary rate
 * \`langdetect\` (cyan) and \`franc\` (pink) seems to slow down at a similar rate
 * \`tinyld\` (green) slow down but at a really flat rate
 * \`cld\` (orange) is definitely the fastest and doesn't show any apparent slow down
@@ -134,9 +130,8 @@ It means they start to slow down at the same time they start to give decent resu
 - Short text (chatbot, keywords, database, ...): \`TinyLD\` or \`langdetect\`
 - Long text (documents, webpage): \`node-cld\` or \`TinyLD\`
 
-### Not recommended :thumbsdown: 
+### Not recommended :thumbsdown:
 
-- \`node-lingua\` has decent accuracy but is just too big and slow
 - \`franc-all\` is the worst in terms of accuracy, not a surprise because it tries to detect 400+ languages with only 3-grams. A technical demo to put big numbers but useless for real usage, even a language like english barely reaches ~45% detection rate.
 - \`languagedetect\` is light but just not accurate enough
 

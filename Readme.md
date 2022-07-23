@@ -14,7 +14,7 @@
 - Pure JS, No api call, No dependencies (Node and Browser compatible)
 - Blazing fast and low memory footprint (unlike ML methods)
 - Train with dataset from [Tatoeba](https://tatoeba.org/en/) and [UDHR](https://unicode.org/udhr/)
-- Support [64 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
+- Support [62 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
 - Reliable even for really short texts (chatbot, keywords, ...)
 - Support both ISO-639-1 & ISO-639-2
 - Available for both `CommonJS` and `ESM`

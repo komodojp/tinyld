@@ -1,7 +1,7 @@
 import { cleanString, normalize } from './clean'
 import { approximate, DetectOption, ILangProfiles, langs, toISO2, TRAINING_UNIQUE_GRAMS } from './core'
 
-const chunk_regexp = /[.,，、。!¿?！？":;()「」{}„“«»”"“<>⋯《》*]+/
+const chunk_regexp = /([,，、。!¿?！？":;()「」{}„“«»”"“<>⋯《》*]|[.[\]\\])+/
 const word_regexp = /[ ]+/
 
 export function chunkTokenizer(text: string): string[] {
@@ -42,7 +42,6 @@ export function detectUniqueGrams(
 ): string {
   for (const rank of TRAINING_UNIQUE_GRAMS) {
     const grams = ngramTokenizer(text, rank)
-    if (options.verbose) console.log(`[Pass 1] detectUniqueGrams of ${rank}-grams`, grams)
     for (const gram of grams) {
       if (!keys.has(gram)) continue
 
@@ -50,7 +49,7 @@ export function detectUniqueGrams(
       if (options.only.length > 0) {
         if (!options.only.includes(country)) continue
       }
-      if (options.verbose) console.log(`- match '${gram}' to ${country}`)
+      if (options.verbose) console.log(`[Pass 1] detectUniqueGrams ${rank}-grams - match '${gram}' to ${country}`)
       return country
     }
   }
@@ -119,7 +118,8 @@ export function detectAllStats(
   let chunks = chunkTokenizer(text)
   chunks = chunks.map((x) => cleanString(x)).filter((x) => !!x)
   chunks.sort((a, b) => b.length - a.length)
-  chunks = chunks.slice(0, 3)
+  chunks = chunks.slice(0, 7)
+  if (options.verbose) console.log('Analize chunks', chunks)
 
   let size = 0
   const results: { [lang: string]: number } = {}

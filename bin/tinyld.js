@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const { detectAll } = require('../dist/tinyld.cjs')
+const { detectAll } = require('../dist/tinyld.normal.node.js')
 
 function main() {
   const [, , ...args] = process.argv

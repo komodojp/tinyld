@@ -1,6 +1,6 @@
 const { test } = require('uvu')
 const assert = require('uvu/assert')
-const { cleanString } = require('../dist/tinyld.cjs')
+const { cleanString } = require('../dist/tinyld.normal.node.js')
 
 function check(str, expected) {
   assert.is(cleanString(str), expected, `Clean ${str}`)
