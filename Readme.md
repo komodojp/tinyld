@@ -17,7 +17,7 @@
 - Support [62 languages](./docs/langs.md) (24 for [the web version](./docs/light.md))
 - Reliable even for really short texts (chatbot, keywords, ...)
 - Support both ISO-639-1 & ISO-639-2
-- Available for both `CommonJS` and `ESM`
+- Available for NodeJS (`CommonJS` and `ESM`), Deno and Browser
 
 ## Links
 
