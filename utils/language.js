@@ -3,9 +3,9 @@ const chartistSvg = require('chartist-svg')
 module.exports = (data, langs) => {
   var graph = {
     title: 'NodeJS Language Detection - Per Language',
-    subtitle: 'Tinyld vs Langdetect vs Cld vs Lingua vs Franc',
+    subtitle: 'Tinyld vs Langdetect vs Cld vs Franc',
     labels: langs.map((x) => x.toUpperCase()),
-    series: ['tinyld', 'langdetect', 'cld', 'lingua', 'franc'].map((lib) => {
+    series: ['tinyld', 'langdetect', 'cld', 'franc'].map((lib) => {
       return langs.map((lang) => {
         return data[lib].languages[lang]
       })

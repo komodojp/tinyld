@@ -103,7 +103,7 @@ const langMap: { [id: string]: LangOption } = {
   eng: { code: 'en', region: 'europe-west', name: 'English', alias: ['us', 'gb'] },
   deu: { code: 'de', region: 'europe-west', name: 'German', coefProb: 0.5 },
   spa: { code: 'es', region: 'europe-west', name: 'Spanish' },
-  cat: { code: 'ca', region: 'europe-west', name: 'Catalan', skipLight: true },
+  // cat: { code: 'ca', region: 'europe-west', name: 'Catalan', skipLight: true },
   por: { code: 'pt', region: 'europe-west', name: 'Portuguese', alias: ['po'] },
   ita: { code: 'it', region: 'europe-west', name: 'Italian' },
   nld: { code: 'nl', region: 'europe-west', name: 'Dutch' },
@@ -149,7 +149,7 @@ const langMap: { [id: string]: LangOption } = {
   // other
   epo: { code: 'eo', region: 'other', name: 'Esperanto', skipLight: true, coefProb: 0.5 },
   vol: { code: 'vo', region: 'other', name: 'Volapuk', skipLight: true, coefProb: 0.5 },
-  toki: { code: 'toki', region: 'other', name: 'Toki Pona', skipLight: true, coefProb: 0.1 },
+  // toki: { code: 'toki', region: 'other', name: 'Toki Pona', skipLight: true, coefProb: 0.1 },
   tlh: { code: 'tlh', region: 'other', name: 'Klingon', skipLight: true, coefProb: 0.25 }
 }
 

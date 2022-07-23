@@ -1,4 +1,4 @@
-# 64 Supported Languages
+# 62 Supported Languages
 
 This list is auto-generated from the code and up-to-date.
 
@@ -64,9 +64,8 @@ This list is auto-generated from the code and up-to-date.
 - **Norwegian** (ISO Codes: `no` `nob`)
 - **Swedish** (ISO Codes: `sv` `swe`)
 
-## Europe-west (9)
+## Europe-west (8)
 
-- **Catalan** (ISO Codes: `ca` `cat`)
 - **Dutch** (ISO Codes: `nl` `nld`)
 - **English** (ISO Codes: `en` `eng`)
 - **French** (ISO Codes: `fr` `fra`)
@@ -89,9 +88,8 @@ This list is auto-generated from the code and up-to-date.
 - **Turkmen** (ISO Codes: `tk` `tuk`)
 - **Yiddish** (ISO Codes: `yi` `yid`)
 
-## Other (4)
+## Other (3)
 
 - **Esperanto** (ISO Codes: `eo` `epo`)
 - **Klingon** (ISO Codes: `tlh` `tlh`)
-- **Toki Pona** (ISO Codes: `toki` `toki`)
 - **Volapuk** (ISO Codes: `vo` `vol`)

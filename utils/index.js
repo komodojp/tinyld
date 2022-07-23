@@ -14,7 +14,6 @@ function getJSON(filepath) {
     'tinyld-light': getJSON('./data/bench/tinyld-light.json'),
     langdetect: getJSON('./data/bench/langdetect.json'),
     cld: getJSON('./data/bench/cld.json'),
-    lingua: getJSON('./data/bench/lingua.json'),
     franc: getJSON('./data/bench/franc.json'),
     'franc-min': getJSON('./data/bench/franc-min.json'),
     'franc-all': getJSON('./data/bench/franc-all.json'),

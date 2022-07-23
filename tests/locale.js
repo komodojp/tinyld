@@ -1,9 +1,9 @@
 const { test } = require('uvu')
 const assert = require('uvu/assert')
-const { supportedLanguages, validateISO2, toISO3, toISO2 } = require('../dist/tinyld.cjs')
+const { supportedLanguages, validateISO2, toISO3, toISO2 } = require('../dist/tinyld.normal.node.js')
 
 test('Supported Language', () => {
-  assert.is(supportedLanguages.length, 64)
+  assert.is(supportedLanguages.length, 62)
 })
 
 test('Validate Locale', () => {

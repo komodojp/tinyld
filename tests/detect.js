@@ -1,6 +1,6 @@
 const { test } = require('uvu')
 const assert = require('uvu/assert')
-const { detect, detectAll } = require('../dist/tinyld.cjs')
+const { detect, detectAll } = require('../dist/tinyld.normal.node.js')
 
 function assertLocale(locale, val) {
   const res = detectAll(val)
