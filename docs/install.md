@@ -1,6 +1,6 @@
 # Getting Started
 
-## Install
+## NodeJS
 
 ```sh
 # for npm users
@@ -9,6 +9,31 @@ npm install --save tinyld
 # for yarn users
 yarn add tinyld
 ```
+
+Then usage
+
+```ts
+const { detect } = require('tinyld')
+// or ESM
+import { detect } from 'tinyld'
+```
+
+## Browser Usage (CDN)
+
+```html
+<script type="module">
+  import { detect } from 'https://cdn.jsdelivr.net/npm/tinyld@1.3.0/dist/tinyld.normal.browser.js'
+  // ...
+</script>
+```
+
+## Deno (Pika CDN)
+
+```ts
+import { detect } from 'https://cdn.skypack.dev/tinyld'
+```
+
+---
 
 ## API
 
