@@ -15,14 +15,14 @@ Here is the list of libraries in this benchmark
 
 | Library        | Script                      | Language | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | -------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
-| **TinyLD**     | `yarn bench:tinyld`         | 64       | 98.252%             | 1.556%                | 0.1921%        | 0.066ms.           | 580KB     |
-| **TinyLD Web** | `yarn bench:tinyld-light`   | 24       | 97.0769%            | 2.0718%               | 0.8513%        | 0.051ms.           | **68KB**  |
-| **langdetect** | `yarn bench:langdetect`     | 53       | 95.6404%            | 4.3596%               | 0%             | 0.2874ms.          | 1.8MB     |
-| node-cld       | `yarn bench:cld`            | 160      | 92.315%             | 1.6319%               | 6.0532%        | 0.0564ms.          | > 10MB    |
-| franc          | `yarn bench:franc`          | 187      | 74.088%             | 25.912%               | 0%             | 0.151ms.           | 267KB     |
-| franc-min      | `yarn bench:franc-min`      | 82       | 70.193%             | 23.3432%              | 6.4639%        | 0.0682ms.          | 119KB     |
-| franc-all      | `yarn bench:franc-all`      | 403      | 66.4893%            | 33.5107%              | 0%             | 0.3486ms.          | 509KB     |
-| languagedetect | `yarn bench:languagedetect` | 52       | 65.7081%            | 11.3484%              | 22.9435%       | 0.1808ms.          | 240KB     |
+| **TinyLD**     | `yarn bench:tinyld`         | 64       | 98.2585%            | 1.5495%               | 0.1921%        | 0.0661ms.          | 580KB     |
+| **TinyLD Web** | `yarn bench:tinyld-light`   | 24       | 97.0834%            | 2.0672%               | 0.8493%        | 0.0508ms.          | **68KB**  |
+| **langdetect** | `yarn bench:langdetect`     | 53       | 95.6754%            | 4.3246%               | 0%             | 0.2827ms.          | 1.8MB     |
+| node-cld       | `yarn bench:cld`            | 160      | 92.315%             | 1.6319%               | 6.0532%        | 0.0565ms.          | > 10MB    |
+| franc          | `yarn bench:franc`          | 187      | 74.088%             | 25.912%               | 0%             | 0.1488ms.          | 267KB     |
+| franc-min      | `yarn bench:franc-min`      | 82       | 70.193%             | 23.3432%              | 6.4639%        | 0.0668ms.          | 119KB     |
+| franc-all      | `yarn bench:franc-all`      | 403      | 66.4893%            | 33.5107%              | 0%             | 0.3376ms.          | 509KB     |
+| languagedetect | `yarn bench:languagedetect` | 52       | 65.7081%            | 11.3484%              | 22.9435%       | 0.1698ms.          | 240KB     |
 
 ---
 
