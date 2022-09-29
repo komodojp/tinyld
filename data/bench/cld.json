@@ -4,64 +4,64 @@
       "success_rate": 36.375,
       "error_rate": 3.25,
       "unindentified_rate": 60.375,
-      "execution_time": 0.0794
+      "execution_time": 0.0773
     },
     "24": {
       "success_rate": 77.7188,
       "error_rate": 3.0313,
       "unindentified_rate": 19.25,
-      "execution_time": 0.0572
+      "execution_time": 0.0587
     },
     "36": {
       "success_rate": 92.8125,
       "error_rate": 1.75,
       "unindentified_rate": 5.4375,
-      "execution_time": 0.0577
+      "execution_time": 0.0581
     },
     "48": {
       "success_rate": 96.75,
       "error_rate": 1.0938,
       "unindentified_rate": 2.1563,
-      "execution_time": 0.0579
+      "execution_time": 0.0585
     },
     "64": {
       "success_rate": 98.3125,
       "error_rate": 0.5,
       "unindentified_rate": 1.1875,
-      "execution_time": 0.0586
+      "execution_time": 0.0595
     },
     "128": {
       "success_rate": 99.5625,
       "error_rate": 0.0938,
       "unindentified_rate": 0.3438,
-      "execution_time": 0.0629
+      "execution_time": 0.063
     },
     "256": {
       "success_rate": 99.9375,
       "error_rate": 0.0313,
       "unindentified_rate": 0.0313,
-      "execution_time": 0.0688
+      "execution_time": 0.07
     },
     "512": {
       "success_rate": 99.9688,
       "error_rate": 0,
       "unindentified_rate": 0.0313,
-      "execution_time": 0.0827
+      "execution_time": 0.084
     },
     "1024": {
       "success_rate": 100,
       "error_rate": 0,
       "unindentified_rate": 0,
-      "execution_time": 0.1096
+      "execution_time": 0.1119
     }
   },
   "stats": {
-    "min": 78.39,
+    "min": 78.4,
     "max": 100,
-    "success_rate": 92.315,
-    "error_rate": 1.6319,
-    "unindentified_rate": 6.0532,
-    "execution_time": 0.0565
+    "success_rate": 92.3628,
+    "error_rate": 1.6212,
+    "unindentified_rate": 6.016,
+    "execution_time": 0.0588
   },
   "languages": {
     "jpn": 100,
@@ -79,6 +79,6 @@
     "spa": 87.79,
     "ita": 85.9,
     "heb": 84.06,
-    "ara": 78.39
+    "ara": 78.4
   }
 }

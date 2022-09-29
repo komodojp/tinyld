@@ -4,68 +4,68 @@
       "success_rate": 20.6875,
       "error_rate": 32.8438,
       "unindentified_rate": 46.4688,
-      "execution_time": 0.0406
+      "execution_time": 0.0465
     },
     "24": {
       "success_rate": 54.6562,
       "error_rate": 45.3438,
       "unindentified_rate": 0,
-      "execution_time": 0.0895
+      "execution_time": 0.0975
     },
     "36": {
       "success_rate": 69.0938,
       "error_rate": 30.9063,
       "unindentified_rate": 0,
-      "execution_time": 0.1221
+      "execution_time": 0.13
     },
     "48": {
       "success_rate": 77.0625,
       "error_rate": 22.9375,
       "unindentified_rate": 0,
-      "execution_time": 0.1512
+      "execution_time": 0.1599
     },
     "64": {
       "success_rate": 80.9688,
       "error_rate": 19.0313,
       "unindentified_rate": 0,
-      "execution_time": 0.1813
+      "execution_time": 0.1949
     },
     "128": {
       "success_rate": 91.2813,
       "error_rate": 8.7188,
       "unindentified_rate": 0,
-      "execution_time": 0.2923
+      "execution_time": 0.3045
     },
     "256": {
       "success_rate": 96.7188,
       "error_rate": 3.2813,
       "unindentified_rate": 0,
-      "execution_time": 0.533
+      "execution_time": 0.5557
     },
     "512": {
       "success_rate": 98.9063,
       "error_rate": 1.0938,
       "unindentified_rate": 0,
-      "execution_time": 0.9421
+      "execution_time": 0.9774
     },
     "1024": {
-      "success_rate": 99.6829,
-      "error_rate": 0.3171,
+      "success_rate": 99.6861,
+      "error_rate": 0.3139,
       "unindentified_rate": 0,
-      "execution_time": 1.6453
+      "execution_time": 1.7506
     }
   },
   "stats": {
     "min": 48.96,
     "max": 99.93,
-    "success_rate": 74.088,
-    "error_rate": 25.912,
+    "success_rate": 74.2478,
+    "error_rate": 25.7522,
     "unindentified_rate": 0,
-    "execution_time": 0.1488
+    "execution_time": 0.1567
   },
   "languages": {
     "jpn": 99.93,
-    "kor": 99.83,
+    "kor": 99.8619,
     "cmn": 99.35,
     "heb": 98.23,
     "ara": 91.85,
@@ -76,7 +76,7 @@
     "ita": 64.19,
     "por": 62.29,
     "nld": 62,
-    "eng": 60.37,
+    "eng": 60.38,
     "rus": 52.3,
     "spa": 51.24,
     "tur": 48.96

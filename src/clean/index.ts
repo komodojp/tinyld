@@ -1,4 +1,4 @@
-const REGEXP_PUNCTUATIONS = /[,.。，、#%&/\\+*!¿?[\]！？;:…„“«»”"“_–—~]/gi
+const REGEXP_PUNCTUATIONS = /[,.。，、#%&/\\+*¡!¿?[\]！？;:…„“«»”"“_–—~]/gi
 const REGEXP_NUMBERS = /[0-9]/g
 const REGEXP_FULLWIDTH_NUMBERS = /[\uFF10-\uFF19]/g
 const REGEXP_SPACES = /\s\s+/g

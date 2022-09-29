@@ -4,74 +4,74 @@
       "success_rate": 21.4375,
       "error_rate": 29.375,
       "unindentified_rate": 49.1875,
-      "execution_time": 0.0171
+      "execution_time": 0.0188
     },
     "24": {
       "success_rate": 53.2188,
       "error_rate": 40.5313,
       "unindentified_rate": 6.25,
-      "execution_time": 0.0387
+      "execution_time": 0.0397
     },
     "36": {
       "success_rate": 66.9375,
       "error_rate": 26.8125,
       "unindentified_rate": 6.25,
-      "execution_time": 0.0525
+      "execution_time": 0.0542
     },
     "48": {
       "success_rate": 73.375,
       "error_rate": 20.375,
       "unindentified_rate": 6.25,
-      "execution_time": 0.0644
+      "execution_time": 0.0671
     },
     "64": {
       "success_rate": 75.9063,
       "error_rate": 17.875,
       "unindentified_rate": 6.2188,
-      "execution_time": 0.078
+      "execution_time": 0.08
     },
     "128": {
       "success_rate": 82.5625,
       "error_rate": 11.25,
       "unindentified_rate": 6.1875,
-      "execution_time": 0.1275
+      "execution_time": 0.1292
     },
     "256": {
       "success_rate": 85.1563,
       "error_rate": 8.6875,
       "unindentified_rate": 6.1563,
-      "execution_time": 0.2363
+      "execution_time": 0.2396
     },
     "512": {
       "success_rate": 86.5313,
       "error_rate": 7.4375,
       "unindentified_rate": 6.0313,
-      "execution_time": 0.4234
+      "execution_time": 0.4312
     },
     "1024": {
-      "success_rate": 87.0006,
-      "error_rate": 7.007,
-      "unindentified_rate": 5.9924,
-      "execution_time": 0.7489
+      "success_rate": 87.1312,
+      "error_rate": 6.9366,
+      "unindentified_rate": 5.9322,
+      "execution_time": 0.7717
     }
   },
   "stats": {
     "min": 0.01,
     "max": 99.93,
-    "success_rate": 70.193,
-    "error_rate": 23.3432,
-    "unindentified_rate": 6.4639,
-    "execution_time": 0.0668
+    "success_rate": 70.3772,
+    "error_rate": 23.1986,
+    "unindentified_rate": 6.4242,
+    "execution_time": 0.0711
   },
   "languages": {
     "jpn": 99.93,
-    "kor": 99.83,
+    "kor": 99.8619,
     "cmn": 99.35,
     "deu": 94.18,
     "ara": 91.89,
     "fra": 87.32,
     "nld": 87.21,
-    "eng": 81.39,
+    "eng": 81.41,
     "por": 76.8,
     "ita": 74.31,
     "hin": 68.25,
