@@ -37,7 +37,7 @@ jobs:
       - run: |
           cd playground
           yarn
-          yarn build
+          yarn build --base=/tinyld/
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
