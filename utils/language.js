@@ -5,7 +5,7 @@ module.exports = (data, langs) => {
     title: 'NodeJS Language Detection - Per Language',
     subtitle: 'Tinyld vs Langdetect vs Cld vs Franc',
     labels: langs.map((x) => x.toUpperCase()),
-    series: ['tinyld', 'tinyld-heavy', 'langdetect', 'cld', 'franc'].map((lib) => {
+    series: ['tinyld', 'langdetect', 'cld', 'franc'].map((lib) => {
       return langs.map((lang) => {
         return data[lib].languages[lang]
       })

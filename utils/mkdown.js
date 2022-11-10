@@ -65,10 +65,10 @@ Here is the list of libraries in this benchmark
 
 | Library        | Script                      | Language | Properly Identified | Improperly identified | Not identified | Avg Execution Time | Disk Size |
 | -------------- | --------------------------- | -------- | ------------------- | --------------------- | -------------- | ------------------ | --------- |
+| **TinyLD Heavy** | \`yarn bench:tinyld-heavy\` | 64 | ${stats('tinyld-heavy')} | 2.0MB |
 | **TinyLD**     | \`yarn bench:tinyld\`       | 64 | ${stats('tinyld')} | 580KB     |
-| **TinyLD Light** | \`yarn bench:tinyld-light\` | 24 | ${stats('tinyld-light')} | **68KB** |
-| **TinyLD Heavy** | \`yarn bench:tinyld-heavy\` | 64 | ${stats('tinyld-heavy')} | **2672KB** |
-| **langdetect** | \`yarn bench:langdetect\`     | 53 | ${stats('langdetect')} |  1.8MB    |
+| **TinyLD Light** | \`yarn bench:tinyld-light\` | 24 | ${stats('tinyld-light')} | 68KB |
+| **langdetect | \`yarn bench:langdetect\`     | 53 | ${stats('langdetect')} |  1.8MB    |
 | node-cld       | \`yarn bench:cld\`            | 160 | ${stats('cld')} |  > 10MB    |
 | franc          | \`yarn bench:franc\`          | 187 | ${stats('franc')} |  267KB     |
 | franc-min      | \`yarn bench:franc-min\`      | 82 | ${stats('franc-min')} |  119KB |

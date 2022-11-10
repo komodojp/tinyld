@@ -6,7 +6,7 @@ module.exports = (data) => {
     title: 'NodeJS Language Detection - Execution Time',
     subtitle: 'in milliseconds (lower is better)',
     labels: length,
-    series: ['tinyld', 'tinyld-heavy', 'langdetect', 'cld', 'franc'].map((lib) => {
+    series: ['tinyld', 'langdetect', 'cld', 'franc'].map((lib) => {
       return length.map((len) => {
         return data[lib].size[len].execution_time
       })

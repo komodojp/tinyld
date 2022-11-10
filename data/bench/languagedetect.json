@@ -1,58 +1,64 @@
 {
   "size": {
-    "12": {
-      "success_rate": 29.4063,
-      "error_rate": 39.1875,
-      "unindentified_rate": 31.4063,
-      "execution_time": 0.0579
+    "10": {
+      "success_rate": 24.75,
+      "error_rate": 43.25,
+      "unindentified_rate": 32,
+      "execution_time": 0.0556
+    },
+    "16": {
+      "success_rate": 37.2188,
+      "error_rate": 33.5,
+      "unindentified_rate": 29.2812,
+      "execution_time": 0.0809
     },
     "24": {
-      "success_rate": 48.25,
-      "error_rate": 23.8438,
-      "unindentified_rate": 27.9063,
-      "execution_time": 0.0932
+      "success_rate": 50.1875,
+      "error_rate": 22.4063,
+      "unindentified_rate": 27.4063,
+      "execution_time": 0.1068
     },
     "36": {
       "success_rate": 59.5,
       "error_rate": 14.375,
       "unindentified_rate": 26.125,
-      "execution_time": 0.1388
+      "execution_time": 0.1445
     },
     "48": {
       "success_rate": 66.2813,
       "error_rate": 8.2813,
       "unindentified_rate": 25.4375,
-      "execution_time": 0.1712
+      "execution_time": 0.1792
     },
     "64": {
       "success_rate": 69.0938,
       "error_rate": 6,
       "unindentified_rate": 24.9063,
-      "execution_time": 0.2156
+      "execution_time": 0.222
     },
     "128": {
       "success_rate": 72.75,
       "error_rate": 3.6563,
       "unindentified_rate": 23.5938,
-      "execution_time": 0.3627
+      "execution_time": 0.3736
     },
     "256": {
       "success_rate": 74.625,
       "error_rate": 3.6875,
       "unindentified_rate": 21.6875,
-      "execution_time": 0.6905
+      "execution_time": 0.727
     },
     "512": {
       "success_rate": 74.9063,
       "error_rate": 4.5,
       "unindentified_rate": 20.5938,
-      "execution_time": 1.2673
+      "execution_time": 1.3109
     },
     "1024": {
       "success_rate": 75.3296,
       "error_rate": 5.5242,
       "unindentified_rate": 19.1463,
-      "execution_time": 1.8868
+      "execution_time": 1.9513
     }
   },
   "stats": {
@@ -61,7 +67,7 @@
     "success_rate": 65.306,
     "error_rate": 11.2826,
     "unindentified_rate": 23.4114,
-    "execution_time": 0.1738
+    "execution_time": 0.1813
   },
   "languages": {
     "hin": 98.58,

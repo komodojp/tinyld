@@ -1,58 +1,64 @@
 {
   "size": {
-    "12": {
-      "success_rate": 18.5313,
-      "error_rate": 35,
-      "unindentified_rate": 46.4688,
-      "execution_time": 0.0949
+    "10": {
+      "success_rate": 0.125,
+      "error_rate": 0.0625,
+      "unindentified_rate": 99.8125,
+      "execution_time": 0.0014
+    },
+    "16": {
+      "success_rate": 41.0938,
+      "error_rate": 58.9063,
+      "unindentified_rate": 0,
+      "execution_time": 0.1949
     },
     "24": {
-      "success_rate": 48.4375,
-      "error_rate": 51.5625,
+      "success_rate": 50,
+      "error_rate": 50,
       "unindentified_rate": 0,
-      "execution_time": 0.223
+      "execution_time": 0.2564
     },
     "36": {
       "success_rate": 60.5938,
       "error_rate": 39.4063,
       "unindentified_rate": 0,
-      "execution_time": 0.2973
+      "execution_time": 0.3145
     },
     "48": {
       "success_rate": 69.5625,
       "error_rate": 30.4375,
       "unindentified_rate": 0,
-      "execution_time": 0.3667
+      "execution_time": 0.39
     },
     "64": {
       "success_rate": 73.5938,
       "error_rate": 26.4062,
       "unindentified_rate": 0,
-      "execution_time": 0.4375
+      "execution_time": 0.463
     },
     "128": {
       "success_rate": 86.1563,
       "error_rate": 13.8438,
       "unindentified_rate": 0,
-      "execution_time": 0.6872
+      "execution_time": 0.7185
     },
     "256": {
       "success_rate": 93.6875,
       "error_rate": 6.3125,
       "unindentified_rate": 0,
-      "execution_time": 1.2163
+      "execution_time": 1.2591
     },
     "512": {
       "success_rate": 96.25,
       "error_rate": 3.75,
       "unindentified_rate": 0,
-      "execution_time": 2.1183
+      "execution_time": 2.1673
     },
     "1024": {
       "success_rate": 98.4306,
       "error_rate": 1.5694,
       "unindentified_rate": 0,
-      "execution_time": 3.564
+      "execution_time": 3.6586
     }
   },
   "stats": {
@@ -61,7 +67,7 @@
     "success_rate": 66.6957,
     "error_rate": 33.3043,
     "unindentified_rate": 0,
-    "execution_time": 0.3381
+    "execution_time": 0.3561
   },
   "languages": {
     "jpn": 99.93,
