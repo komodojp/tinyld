@@ -12,7 +12,6 @@ library.add(faGithub)
 library.add(faChartLine)
 library.add(faShareFromSquare)
 library.add(faCircleQuestion)
-console.log(faShareFromSquare)
 
 const app = createApp(App)
 app.component('v-icon', FontAwesomeIcon)
