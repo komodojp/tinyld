@@ -58,8 +58,9 @@ export async function benchmark(detect: DetectMethod): Promise<BenchmarkResult> 
   let executionTime = 0
 
   const countCategories = [
-    { min: 0, max: 12 },
-    { min: 12, max: 24 },
+    { min: 0, max: 10 },
+    { min: 10, max: 16 },
+    { min: 16, max: 24 },
     { min: 24, max: 36 },
     { min: 36, max: 48 },
     { min: 48, max: 64 },

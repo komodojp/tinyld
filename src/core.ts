@@ -19,15 +19,19 @@ const config = {
     TRAINING_UNIQUE_GRAMS: [1, 2, 3, 4, 5],
     TOP_LANGUAGE_UNIQUE_GRAMS: 100,
     TOP_LANGUAGE_STATS_GRAMS: 180
+  },
+  heavy: {
+    TRAINING_UNIQUE_GRAMS: [1, 2, 3, 4, 5],
+    TOP_LANGUAGE_UNIQUE_GRAMS: 320,
+    TOP_LANGUAGE_STATS_GRAMS: 1024
   }
 }
 
 // configuration
-export const configSet = (process.env.TINYLD_CONFIG || 'normal') as 'normal' | 'light'
+export const configSet = (process.env.TINYLD_CONFIG || 'normal') as 'heavy' | 'normal' | 'light'
 export const TRAINING_UNIQUE_GRAMS = config[configSet].TRAINING_UNIQUE_GRAMS
 export const TOP_LANGUAGE_UNIQUE_GRAMS = config[configSet].TOP_LANGUAGE_UNIQUE_GRAMS
 export const TOP_LANGUAGE_STATS_GRAMS = config[configSet].TOP_LANGUAGE_STATS_GRAMS
-
 const PROBABILITY_ACCURACY = 10000
 
 export function approximate(value: number): number {
@@ -155,7 +159,7 @@ const langMap: { [id: string]: LangOption } = {
 
 export const langs = new Set(
   Object.entries(langMap)
-    .filter((x) => configSet === 'normal' || (configSet === 'light' && !x[1].skipLight))
+    .filter((x) => configSet === 'heavy' || configSet === 'normal' || (configSet === 'light' && !x[1].skipLight))
     .map((x) => x[0])
 )
 export const supportedLanguages = [...langs.values()]

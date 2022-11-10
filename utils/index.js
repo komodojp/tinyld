@@ -10,6 +10,7 @@ function getJSON(filepath) {
 
 ;(async () => {
   const data = {
+    'tinyld-heavy': getJSON('./data/bench/tinyld-heavy.json'),
     tinyld: getJSON('./data/bench/tinyld.json'),
     'tinyld-light': getJSON('./data/bench/tinyld-light.json'),
     langdetect: getJSON('./data/bench/langdetect.json'),

@@ -13,12 +13,19 @@
       "require": "./dist/tinyld.light.node.js",
       "import": "./dist/tinyld.light.node.mjs",
       "browser": "./dist/tinyld.light.browser.js"
+    },
+    "./heavy": {
+      "require": "./dist/tinyld.heavy.node.js",
+      "import": "./dist/tinyld.heavy.node.mjs",
+      "browser": "./dist/tinyld.heavy.browser.js"
     }
   },
   "license": "MIT",
   "types": "./dist/tinyld.normal.node.d.ts",
   "bin": {
-    "tinyld": "./bin/tinyld.js"
+    "tinyld": "./bin/tinyld.js",
+    "tinyld-light": "./bin/tinyld-light.js",
+    "tinyld-heavy": "./bin/tinyld-heavy.js"
   },
   "keywords": [
     "lang",
@@ -41,9 +48,11 @@
     "train": "run-p train:*",
     "train:normal": "cross-env TINYLD_CONFIG=normal ts-node src/train.ts",
     "train:light": "cross-env TINYLD_CONFIG=light ts-node src/train.ts",
+    "train:heavy": "cross-env TINYLD_CONFIG=heavy ts-node src/train.ts",
     "bench": "run-s bench:*",
     "bench:tinyld": "cross-env TINYLD_CONFIG=normal ts-node src/benchmark/tinyld.ts",
     "bench:tinyld-light": "cross-env TINYLD_CONFIG=light ts-node src/benchmark/tinyld_light.ts",
+    "bench:tinyld-heavy": "cross-env TINYLD_CONFIG=heavy ts-node src/benchmark/tinyld_heavy.ts",
     "bench:cld": "ts-node src/benchmark/cld.ts",
     "bench:franc": "ts-node src/benchmark/franc.ts",
     "bench:franc-all": "ts-node src/benchmark/franc-all.ts",
@@ -57,10 +66,14 @@
     "build:light-node": "esbuild src/index_light.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"light\\\"} --bundle --charset=utf8 --minify --platform=node --outfile=dist/tinyld.light.node.js",
     "build:light-node-esm": "esbuild src/index_light.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"light\\\"} --bundle --charset=utf8 --minify --platform=node --format=esm --outfile=dist/tinyld.light.node.mjs",
     "build:light-web": "esbuild src/index_light.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"light\\\"} --bundle --charset=utf8 --minify --platform=browser --format=esm --outfile=dist/tinyld.light.browser.js",
+    "build:heavy-node": "esbuild src/index_heavy.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"heavy\\\"} --bundle --charset=utf8 --minify --platform=node --outfile=dist/tinyld.heavy.node.js",
+    "build:heavy-node-esm": "esbuild src/index_heavy.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"heavy\\\"} --bundle --charset=utf8 --minify --platform=node --format=esm --outfile=dist/tinyld.heavy.node.mjs",
+    "build:heavy-web": "esbuild src/index_heavy.ts --define:process.env={\\\"TINYLD_CONFIG\\\":\\\"heavy\\\"} --bundle --charset=utf8 --minify --platform=browser --format=esm --outfile=dist/tinyld.heavy.browser.js",
     "build:type": "run-s build:type:*",
     "build:type:build": "tsc --emitDeclarationOnly --declaration --project tsconfig.json --outDir dist",
     "build:type:normal": "mv ./dist/index.d.ts ./dist/tinyld.normal.node.d.ts && cp ./dist/tinyld.normal.node.d.ts ./dist/tinyld.normal.browser.d.ts",
-    "build:type:light": "mv ./dist/index_light.d.ts ./dist/tinyld.light.node.d.ts && cp ./dist/tinyld.light.node.d.ts ./dist/tinyld.normal.browser.d.ts",
+    "build:type:light": "mv ./dist/index_light.d.ts ./dist/tinyld.light.node.d.ts && cp ./dist/tinyld.light.node.d.ts ./dist/tinyld.light.browser.d.ts",
+    "build:type:heavy": "mv ./dist/index_heavy.d.ts ./dist/tinyld.heavy.node.d.ts && cp ./dist/tinyld.heavy.node.d.ts ./dist/tinyld.heavy.browser.d.ts",
     "build:post": "yarn gen:svg && yarn gen:mkd && yarn lint",
     "gen:mkd": "node ./utils/mkdown.js",
     "gen:svg": "node ./utils/index.js",
