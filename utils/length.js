@@ -6,7 +6,7 @@ module.exports = (data) => {
     title: 'NodeJS Language Detection - Text Length',
     subtitle: 'Accuracy in % (higher is better)',
     labels: length,
-    series: ['tinyld', 'langdetect', 'cld', 'franc'].map((lib) => {
+    series: ['tinyld', 'tinyld-heavy', 'langdetect', 'cld', 'franc'].map((lib) => {
       return length.map((len) => {
         return data[lib].size[len].success_rate
       })
