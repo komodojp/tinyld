@@ -1,4 +1,4 @@
-# Frequently Asked Question
+# Frequently Asked Questions
 
 - [Language Detection Error](#my-text-is-detected-in-the-wrong-language)
 - [Cand I have a custom version](#can-i-have-a-version-specific-for-my-app-and-my-needs)

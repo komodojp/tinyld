@@ -21,10 +21,12 @@
 
 ## Links
 
-- [**Playground** - Try the library](https://runkit.com/kefniark/tinyld)
+- [**Playground** - Try the library](https://komodojp.github.io/tinyld/)
+- [Play with some code](https://runkit.com/kefniark/tinyld)
 - [Getting Started](./docs/install.md)
 - [Supported Languages](./docs/langs.md)
 - [Algorithm](./docs/algorithm.md)
+- [Frequently Asked Questions](./docs/faq.md)
 
 ---
 
