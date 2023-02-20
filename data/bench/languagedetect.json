@@ -4,61 +4,61 @@
       "success_rate": 24.75,
       "error_rate": 43.25,
       "unindentified_rate": 32,
-      "execution_time": 0.0556
+      "execution_time": 0.0655
     },
     "16": {
       "success_rate": 37.2188,
       "error_rate": 33.5,
       "unindentified_rate": 29.2812,
-      "execution_time": 0.0809
+      "execution_time": 0.0922
     },
     "24": {
       "success_rate": 50.1875,
       "error_rate": 22.4063,
       "unindentified_rate": 27.4063,
-      "execution_time": 0.1068
+      "execution_time": 0.1135
     },
     "36": {
       "success_rate": 59.5,
       "error_rate": 14.375,
       "unindentified_rate": 26.125,
-      "execution_time": 0.1445
+      "execution_time": 0.1653
     },
     "48": {
       "success_rate": 66.2813,
       "error_rate": 8.2813,
       "unindentified_rate": 25.4375,
-      "execution_time": 0.1792
+      "execution_time": 0.2037
     },
     "64": {
       "success_rate": 69.0938,
       "error_rate": 6,
       "unindentified_rate": 24.9063,
-      "execution_time": 0.222
+      "execution_time": 0.2497
     },
     "128": {
       "success_rate": 72.75,
       "error_rate": 3.6563,
       "unindentified_rate": 23.5938,
-      "execution_time": 0.3736
+      "execution_time": 0.4227
     },
     "256": {
       "success_rate": 74.625,
       "error_rate": 3.6875,
       "unindentified_rate": 21.6875,
-      "execution_time": 0.727
+      "execution_time": 0.7902
     },
     "512": {
       "success_rate": 74.9063,
       "error_rate": 4.5,
       "unindentified_rate": 20.5938,
-      "execution_time": 1.3109
+      "execution_time": 1.4559
     },
     "1024": {
       "success_rate": 75.3296,
       "error_rate": 5.5242,
       "unindentified_rate": 19.1463,
-      "execution_time": 1.9513
+      "execution_time": 2.1604
     }
   },
   "stats": {
@@ -67,7 +67,7 @@
     "success_rate": 65.306,
     "error_rate": 11.2826,
     "unindentified_rate": 23.4114,
-    "execution_time": 0.1813
+    "execution_time": 0.1946
   },
   "languages": {
     "hin": 98.58,
