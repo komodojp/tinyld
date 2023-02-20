@@ -95,7 +95,7 @@ const results = computed(() => {
 })
 
 const link = computed(() => {
-  return `https://tinyld.vercel.app/?text=${encodeURIComponent(input.value)}`
+  return `https://komodojp.github.io/tinyld/?text=${encodeURIComponent(input.value)}`
 })
 
 const clipboard = useClipboard({ source: link })
