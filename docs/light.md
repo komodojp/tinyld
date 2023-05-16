@@ -4,7 +4,7 @@ The normal library can be a bit massive (mostly caused by the language profile d
 
 For this usage we also provide a lighter version (a tradeoff between disk size and accuracy)
 
-- import with: `import { detect } from 'tinyld/dist/tinyld.light.cjs'`
+- import with: `import { detect } from 'tinyld/light'`
 - normal version ~900KB, light version is only ~100KB (~25KB with gzip)
 - only 24 languages supported
 - slightly less accurate, only ~95%
