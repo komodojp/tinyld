@@ -10,15 +10,15 @@
           <div class="flex justify-between mt-4">
             <div class="flex items-center px-4 py-2 rounded border border-gray-200 dark:border-gray-700 bg-slate-200">
               <input id="bordered-radio-2" type="radio" v-model="flavor" value="tinyld-light" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="bordered-radio-2" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">TinyLD Light <span class="text-slate-400">~65KB</span></label>
+              <label for="bordered-radio-2" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-800">TinyLD Light <span class="text-slate-400">~65KB</span></label>
             </div>
             <div class="flex items-center px-4 py-2 rounded border border-gray-200 dark:border-gray-700 bg-slate-200">
               <input id="bordered-radio-1" type="radio" v-model="flavor" value="tinyld" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="bordered-radio-1" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">TinyLD <span class="text-slate-400">~500KB</span></label>
+              <label for="bordered-radio-1" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-800">TinyLD <span class="text-slate-400">~500KB</span></label>
             </div>
             <div class="flex items-center px-4 py-2 rounded border border-gray-200 dark:border-gray-700 bg-slate-200">
               <input id="bordered-radio-3" type="radio" v-model="flavor" value="tinyld-heavy" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="bordered-radio-3" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300">TinyLD Heavy <span class="text-slate-400">~2MB</span></label>
+              <label for="bordered-radio-3" class="ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-800">TinyLD Heavy <span class="text-slate-400">~2MB</span></label>
             </div>
           </div>
           <textarea
