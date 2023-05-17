@@ -2,26 +2,34 @@
   "name": "tinyld",
   "description": "Simple and Performant Language detection library (pure JS and zero dependencies)",
   "version": "1.3.3",
-  "main": "./dist/tinyld.normal.node.js",
+  "license": "MIT",
   "exports": {
-    ".": {
-      "require": "./dist/tinyld.normal.node.js",
-      "import": "./dist/tinyld.normal.node.mjs",
-      "browser": "./dist/tinyld.normal.browser.js"
-    },
     "./light": {
       "require": "./dist/tinyld.light.node.js",
       "import": "./dist/tinyld.light.node.mjs",
-      "browser": "./dist/tinyld.light.browser.js"
+      "browser": "./dist/tinyld.light.browser.js",
+      "types": "./dist/tinyld.light.node.d.ts"
     },
     "./heavy": {
       "require": "./dist/tinyld.heavy.node.js",
       "import": "./dist/tinyld.heavy.node.mjs",
-      "browser": "./dist/tinyld.heavy.browser.js"
+      "browser": "./dist/tinyld.heavy.browser.js",
+      "types": "./dist/tinyld.heavy.node.d.ts"
+    },
+    ".": {
+      "require": "./dist/tinyld.normal.node.js",
+      "import": "./dist/tinyld.normal.node.mjs",
+      "browser": "./dist/tinyld.normal.browser.js",
+      "types": "./dist/tinyld.normal.node.d.ts"
     }
   },
-  "license": "MIT",
-  "types": "./dist/tinyld.normal.node.d.ts",
+  "typesVersions": {
+    "*": {
+      "light": ["./dist/tinyld.light.node.d.ts"],
+      "heavy": ["./dist/tinyld.heavy.node.d.ts"],
+      "*": ["./dist/tinyld.normal.node.d.ts"]
+    }
+  },
   "bin": {
     "tinyld": "./bin/tinyld.js",
     "tinyld-light": "./bin/tinyld-light.js",
