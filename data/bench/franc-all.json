@@ -10,78 +10,78 @@
       "success_rate": 41.0938,
       "error_rate": 58.9063,
       "unindentified_rate": 0,
-      "execution_time": 0.2296
+      "execution_time": 0.264
     },
     "24": {
       "success_rate": 50,
       "error_rate": 50,
       "unindentified_rate": 0,
-      "execution_time": 0.3066
+      "execution_time": 0.3342
     },
     "36": {
       "success_rate": 60.5938,
       "error_rate": 39.4063,
       "unindentified_rate": 0,
-      "execution_time": 0.3881
+      "execution_time": 0.3994
     },
     "48": {
       "success_rate": 69.5625,
       "error_rate": 30.4375,
       "unindentified_rate": 0,
-      "execution_time": 0.476
+      "execution_time": 0.509
     },
     "64": {
       "success_rate": 73.5938,
       "error_rate": 26.4062,
       "unindentified_rate": 0,
-      "execution_time": 0.5802
+      "execution_time": 0.6104
     },
     "128": {
       "success_rate": 86.1563,
       "error_rate": 13.8438,
       "unindentified_rate": 0,
-      "execution_time": 0.8952
+      "execution_time": 0.925
     },
     "256": {
       "success_rate": 93.6875,
       "error_rate": 6.3125,
       "unindentified_rate": 0,
-      "execution_time": 1.5613
+      "execution_time": 1.6346
     },
     "512": {
       "success_rate": 96.25,
       "error_rate": 3.75,
       "unindentified_rate": 0,
-      "execution_time": 2.7102
+      "execution_time": 2.8385
     },
     "1024": {
-      "success_rate": 98.4306,
-      "error_rate": 1.5694,
+      "success_rate": 98.4331,
+      "error_rate": 1.5669,
       "unindentified_rate": 0,
-      "execution_time": 4.5519
+      "execution_time": 4.78
     }
   },
   "stats": {
     "min": 29.47,
     "max": 99.93,
-    "success_rate": 66.6957,
-    "error_rate": 33.3043,
+    "success_rate": 66.7081,
+    "error_rate": 33.2919,
     "unindentified_rate": 0,
-    "execution_time": 0.4345
+    "execution_time": 0.4763
   },
   "languages": {
     "jpn": 99.93,
-    "kor": 99.8619,
+    "kor": 99.8633,
     "cmn": 99.35,
     "heb": 98.18,
-    "ara": 91.73,
+    "ara": 91.72,
     "deu": 80.77,
-    "fin": 70.8,
+    "fin": 70.79,
     "fra": 67.27,
     "hin": 60.42,
-    "nld": 59.64,
-    "rus": 51.94,
-    "eng": 49.91,
+    "nld": 59.65,
+    "rus": 51.96,
+    "eng": 49.92,
     "por": 49.39,
     "ita": 42.55,
     "tur": 32.27,

@@ -4,86 +4,86 @@
       "success_rate": 0.125,
       "error_rate": 0.0625,
       "unindentified_rate": 99.8125,
-      "execution_time": 0.0014
+      "execution_time": 0.0022
     },
     "16": {
       "success_rate": 45.6875,
       "error_rate": 54.3125,
       "unindentified_rate": 0,
-      "execution_time": 0.0874
+      "execution_time": 0.1249
     },
     "24": {
       "success_rate": 56.5938,
       "error_rate": 43.4063,
       "unindentified_rate": 0,
-      "execution_time": 0.116
+      "execution_time": 0.1481
     },
     "36": {
       "success_rate": 69.0938,
       "error_rate": 30.9063,
       "unindentified_rate": 0,
-      "execution_time": 0.1498
+      "execution_time": 0.1847
     },
     "48": {
       "success_rate": 77.0625,
       "error_rate": 22.9375,
       "unindentified_rate": 0,
-      "execution_time": 0.1892
+      "execution_time": 0.2374
     },
     "64": {
       "success_rate": 80.9688,
       "error_rate": 19.0313,
       "unindentified_rate": 0,
-      "execution_time": 0.2303
+      "execution_time": 0.2791
     },
     "128": {
       "success_rate": 91.2813,
       "error_rate": 8.7188,
       "unindentified_rate": 0,
-      "execution_time": 0.3595
+      "execution_time": 0.4306
     },
     "256": {
       "success_rate": 96.7188,
       "error_rate": 3.2813,
       "unindentified_rate": 0,
-      "execution_time": 0.6621
+      "execution_time": 0.7921
     },
     "512": {
       "success_rate": 98.9063,
       "error_rate": 1.0938,
       "unindentified_rate": 0,
-      "execution_time": 1.1763
+      "execution_time": 1.3237
     },
     "1024": {
-      "success_rate": 99.6861,
-      "error_rate": 0.3139,
+      "success_rate": 99.6866,
+      "error_rate": 0.3134,
       "unindentified_rate": 0,
-      "execution_time": 2.028
+      "execution_time": 2.33
     }
   },
   "stats": {
     "min": 48.96,
     "max": 99.93,
-    "success_rate": 74.2478,
-    "error_rate": 25.7522,
+    "success_rate": 74.2577,
+    "error_rate": 25.7423,
     "unindentified_rate": 0,
-    "execution_time": 0.1783
+    "execution_time": 0.2242
   },
   "languages": {
     "jpn": 99.93,
-    "kor": 99.8619,
+    "kor": 99.8633,
     "cmn": 99.35,
     "heb": 98.23,
-    "ara": 91.85,
+    "ara": 91.84,
     "deu": 83.87,
     "fra": 79.36,
-    "fin": 78.53,
+    "fin": 78.52,
     "hin": 68.25,
-    "ita": 64.19,
+    "ita": 64.2,
     "por": 62.29,
     "nld": 62,
-    "eng": 60.38,
-    "rus": 52.3,
+    "eng": 60.39,
+    "rus": 52.32,
     "spa": 51.24,
     "tur": 48.96
   }
